@@ -1,0 +1,770 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retreat</title>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+
+    <style>
+        body {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .s-pageheader {
+            display: flex;
+            align-items: center;
+            background-image: url(images/platamonas/Platamon.2013.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            min-height: 100vh;
+        }
+        .s-pageheader__content {
+            width: 90%;
+            padding-left: 9%;
+            text-align: left;
+            color: white;
+            margin-top: 250px;
+        }
+        .row.width-narrow.content-block {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-top: auto;
+        }
+        .grid-list-items.list-items {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mobile and Tablet Styles */
+        @media (max-width: 1024px) {
+            .hide-on-mobile-tablet {
+                display: none !important;
+            }
+            .s-pageheader {
+                height: auto !important;
+                padding: 20px;
+                text-align: center;
+                flex-direction: column !important;
+            }
+            .s-pageheader__content {
+                width: 100% !important;
+                padding-left: 0 !important;
+                text-align: center;
+                margin-top: auto !important;
+            }
+            .page-title {
+                font-size: 24px !important;
+                margin-top: 10px !important;
+            }
+            .column.xl-10 {
+                display: none !important;
+            }
+            .row.width-narrow.content-block {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: justify !important;
+            }
+            .menu-list {
+                margin-left: -10px !important;
+                margin-right: 0 !important;
+            }
+            .cta-block {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 10px !important;
+            }
+            .attention-getter {
+                font-size: 16px !important;
+                text-align: justify !important;
+            }
+            .btn {
+                font-size: 16px !important;
+                padding: 10px 20px !important;
+                width: 100% !important;
+            }
+        }
+        /* Desktop Styles */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="page" class="s-pagewrap">
+        <div class="menu-underlay"></div>
+        <header class="s-header">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="back-on-track logo" href="index.html">
+                        <img src="images/BACK ON TRACK LOGO.svg" alt="Homepage">
+                    </a>
+                </div>
+                <div class="s-header__cta">
+                    <ul class="s-header__nav-links">
+                        <li><a href="index.html" class="btn btn--primary s-header__cta-btn">Home</a></li>
+                        <li><a href="about.html" class="btn btn--primary s-header__cta-btn">About Us</a></li>
+                        <li><a href="retreat.html" class="btn btn--primary s-header__cta-btn">Retreat</a></li>
+                        <li><a href="consultations.html" class="btn btn--primary s-header__cta-btn">Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="s-section" style="margin-bottom: 15px;">
+            <article class="s-content">
+                <!-- Mobile and Tablet Content -->
+                <div class="hide-on-desktop">
+                    <section class="s-pageheader">
+                        <div class="column xl-6 s-pageheader__content">
+                            <h1 class="page-title">7-Day Wellness Retreat</h1>
+                            <h1 class="page-title" style="font-size: 23px;">
+                                Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br> <br>
+                                <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>
+                            </h1>
+                        </div>
+                    </section>
+                </div>
+                <!-- Desktop Content -->
+                <div class="hide-on-mobile-tablet">
+                    <section class="s-pageheader">
+                        <div class="column xl-6 s-pageheader__content">
+                            <h1 class="page-title" style="margin-top: 25px;">7-Day Wellness Retreat</h1>
+                            <h1 class="page-title" style="font-size: 25px;">
+                                Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br><br><br>
+                                <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>
+                            </h1>
+                        </div>
+                    </section>
+                </div>
+                <div class="hide-on-mobile-tablet">
+                <div class="row width-narrow content-block">
+                    <div class="column xl-12">
+                        <h3 style="margin-top: 50px; margin-bottom: 0px;">A Tailored Retreat for Health and Relaxation</h3>
+                        <div class="grid-list-items list-items"></div>
+                    </div>
+                </div>
+                <div class="hide-on-desktop">
+                    <div class="row width-narrow content-block">
+                        <h3 style="margin-top: 90px; margin-bottom: -100px;">A Tailored Retreat for Health and Relaxation</h3>
+                        <div class="grid-list-items list-items"></div>
+                      </div>
+                    </div>
+                  </div>
+            </article>
+        </section>     
+    </div>
+</body>
+</html>
+<div>
+<div class="hide-on-desktop">
+    <div class="s-about__content-btn" class="hide-on-desktop" style="padding-inline: 10%;">
+        <p class="attention-getter">
+            <b>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach.</b><br>
+            Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
+        </p>
+    <a onclick="window.location.href='#target-section'" class="btn btn--stroke btn--medium u-fullwidth">See Our Facilities and Rooms</a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+             </div> <!-- end content-block -->
+         
+                <div class="row width-narrow content-block" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <section class="s-section" style="margin-top: -180px;">        
+                        <div class="row width-narrow content-block">
+                            <div class="column xl-12"> 
+                                <div class="row width-narrower content-block" style="margin-top: -20px; margin-bottom: -50px;">
+                                    <div class="column xl-12">
+                                        <div class="menu-block">
+                                            <div class="menu-block__group">
+                                                <ul class="menu-list">
+                                                        <div class="column xl-10 mob-12">
+                                                            <p class="attention-getter">
+                                                                <b>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach.</b><br>
+                                                                Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                            </p>
+                                                            <div class="s-about__content-btn">
+
+                                                                <a onclick="window.location.href='#target-section'" class="btn btn--stroke btn--medium u-fullwidth">See Our Facilities and Rooms</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Row 1: First Two Images with Text -->
+                                <div class="grid-list-items list-items" style="display: flex; gap: 20px; text-align: justify; flex-wrap: wrap;">
+                     
+                                    <div class="column" style="flex: 1;">
+                                        <figure>
+                                            <img src="images/gallery/1/medical3.jpeg"  
+                                                srcset="images/gallery/1/medical3.jpeg 1x, images/gallery/1/medical3.jpeg 2x" alt="" 
+                                                style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px;">
+                                        </figure>
+                                        <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                            <h6 class="list-items__item-small-title">Personalized Medical Guidance</h6>
+                                            <p>
+                                                Every participant begins their journey with a thorough online consultation with 
+                                                our medical and psychological team, followed by personalized assessments pre-departure, 
+                                                upon arrival, and post-retreat follow-up.
+                                            </p>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="column" style="flex: 1;">
+                                        <figure>
+                                            <img src="images/gallery/1/Petros lecture.jpeg"  
+                                                srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" 
+                                                style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px;">
+                                        </figure>
+                                        <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                            <h6 class="list-items__item-small-title">Psychological Support</h6>
+                                            <p> 
+                                                <i>Living with diabetes can often lead to feelings of isolation or emotional distress.</i>
+                                                Individual psychotherapy sessions with a combination of groups psychotherapeutic interventions. 
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Row 2: Next Two Images with Text -->
+                                <div class="grid-list-items list-items" style="display: flex; gap: 20px; text-align: center; flex-wrap: wrap; margin-top: 30px;">
+                    
+                                    <div class="column" style="flex: 1;">
+                                        <figure>
+                                            <img src="images/gallery/1/215.jpg"  
+                                                srcset="images/gallery/1/215.jpg 1x, images/gallery/1/215.jpg 2x" alt="" 
+                                                style="width: 100%; height: 450px; object-fit: cover; border-radius: 15px;">
+                                        </figure>
+                                        <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                            <h6 class="list-items__item-small-title">Nutrition and Cooking Workshops</h6>
+                                            <p>
+                                                Learn how to prepare Mediterranean-inspired meals tailored to the nutritional needs 
+                                                of individuals with diabetes. Our expert nutritionist will guide you through meal 
+                                                planning and interactive cooking classes, <i>ensuring you leave with practical knowledge 
+                                                to support your health goals.</i>
+                                            </p>
+                                        </div>
+                                    </div> 
+                                    
+                                                        
+                                <!-- Row 2: Next Two Images with Text -->
+                                <div class="grid-list-items list-items" style="display: flex; gap: 20px; text-align: center; flex-wrap: wrap; margin-top: 30px;">
+                    
+                                    <div class="row width-narrow content-block" style="display: flex; gap: 20px;">
+                                        <!-- First Image Column with Text -->
+                                        <div class="column" style="flex: 1;">
+                                            <figure>
+                                                <img src="images/gallery/1/ourdoor cooking pan.jpg"  
+                                                    srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" 
+                                                    style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px;">
+                                            </figure>
+                                            <!-- Text below the first image -->
+                                            <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                                <h6 class="list-items__item-small-title">Daily Mindfulness and Physical Activities</h6>
+                                                <p style="max-width: 90%; margin: 0 auto;">
+                                                    <i>We offer a variety of mindfulness practices, including meditation and gentle movement exercises, 
+                                                    such as yoga, designed to reduce stress and promote mental clarity.</i> 
+                                                    These activities are complemented by physical exercises suitable for all fitness levels.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Second Image Column with Text -->
+                                            <div class="column" style="flex: 1;">
+                                                <figure>
+                                                    <img src="images/gallery/1/outdoor cooking house.jpg"  
+                                                        srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" 
+                                                        style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px;">
+                                                </figure>
+                                            <!-- Text below the second image -->
+                                            <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                                <h6 class="list-items__item-small-title">Building Lasting Connections</h6>
+                                                <p style="max-width: 90%; margin: 0 auto;">
+                                                    The retreat also fosters a strong sense of community, helping participants 
+                                                    build connections that extend beyond the retreat. 
+                                                    You’ll join a group of like-minded individuals who understand the daily challenges of 
+                                                    living with T2D and <i>can support each other on the journey to better health</i>.
+                                                </p>
+                                                <br>
+                                                <br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="column" style="flex: 1;">
+                                        <figure>
+                                            <img src="images/gallery/1/Platamonas view.jpeg"  
+                                                srcset="images/gallery/1/Platamonas view.jpeg 1x, images/gallery/1/Platamonas view.jpeg 2x" alt="" 
+                                                style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-top: -60px;">
+                                        </figure>
+                                        <div class="text-block" style="max-width: 100%; margin-top: 10px;">
+                                            <h6 class="list-items__item-small-title">Serene Natural Surroundings</h6>
+                                            <p>
+                                                Experience a tranquil escape in the breathtaking landscapes of Platamonas, 
+                                                where nature’s beauty supports healing and relaxation, fostering an optimal 
+                                                environment for well-being.
+                                            </p>
+                                        </div>
+                                        <div class="s-about__content-btn">
+                                            <a href="schedule.html" class="btn btn--stroke btn--medium u-fullwidth">View Back on Track's Daily Schedule
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                            </div> <!--list-items -->  
+                        </div>
+                    </section>  
+                </div>          
+
+                <!-- Space between sections -->
+                <div class="row width-narrower content-block" style="margin-top: 0px; margin-bottom: 20px;">
+                    <div class="column xl-12">
+                        <div class="menu-block">
+                            <div class="menu-block__group">
+                                <h1 style="margin-left: 100px; margin-bottom: 15px; font-size: 40px;"></h1>
+                                <ul class="menu-list" style="margin-left: 100px; margin-right: 100px;">
+
+                                    <div id="target-section"></div>
+                                    <div class="row u-add-bottom" style="margin-left: 15px;" style="margin-right: 15px"></div>
+                                        <section id="target-section">
+                                        <h3><b>Back on Track Facilities and Rooms</b></h3>
+                                        <br>
+                                        <br>
+                                        <br>
+                                            <p>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach. Our facilities are a sanctuary of peace and luxury, where every detail is meticulously crafted to ensure your stay is nothing short of spectacular. Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
+                                                <br>
+                                            </p>
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                    
+                                                <title>Image Gallery</title>
+                                                <style>
+                                                    .image-gallery {
+                                                        display: flex;
+                                                        justify-content: space-between;
+                                                        gap: 10px;
+                                                        flex-wrap: wrap;
+                                                    }
+                                            
+                                                    .image-gallery img {
+                                                        width: 22%;  /* Adjust size */
+                                                        border-radius: 10px;  /* Rounded corners */
+                                                        object-fit: cover;  /* Keeps the aspect ratio and fills the space */
+                                                    }
+                                                </style>
+                                            </head>
+
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <h1 style="font-size: 45px;" style="font-weight:600;"> Our Facilities</h1>
+                                                </tr>
+                                            </thead>
+                                            <p style="margin-top:-3%;">Our facilities are a sanctuary of peace and luxury, where every detail is meticulously crafted to ensure your stay is nothing short of spectacular. Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
+                                                <br>
+                                            </p>
+                                        </table>
+                                            
+                                            <body>
+                                            
+                                            <div class="image-gallery" style="margin-top: -4%;">
+                                                <img src="images/retreat/lake3.jpg" alt="Image 1">
+                                                <img src="images/retreat/bedroom2.jpg" alt="Image 2">
+                                                <img src="images/retreat/hotel breakfast.jpeg" alt="Image 3">
+                                                <img src="images/retreat/hotel swimming pool.jpg" alt="Image 4">
+                                            </div>
+                                            
+                                            </body>
+                                            </html>                                                                                         
+                                            <p tyle="margin-top:-4%;">Relax in our air-conditioned rooms with anatomical mattresses and plush bathrobes, complemented by free Wi-Fi . 
+                                                Experience the perfect blend of nature and luxury at Back on Track, designed for <br>
+                                                tranquility and enriched with the elegance of modern comforts.
+                                                </p>
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>Image Gallery</title>
+                                                <style>
+                                                    .image-gallery {
+                                                        display: flex;
+                                                        justify-content: space-between;
+                                                        gap: 10px;
+                                                        flex-wrap: wrap;
+                                                    }
+                                            
+                                                    .image-gallery img {
+                                                        width: 22%;  /* Adjust size */
+                                                        border-radius: 10px;  /* Rounded corners */
+                                                        object-fit: cover;  /* Keeps the aspect ratio and fills the space */                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class="table-responsive">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <h1 style="font-size: 45px;" style="font-weight:600;">Rooms</h1>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            <!DOCTYPE html>
+                                            <html lang="en">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>Double Occupancy Deluxe / Superior</title>
+                                                <style>
+                                                    .image-container {
+                                                        width: 100%; /* Adds margin on sides */
+                                                        margin: -20px auto; /* Centers the images */
+                                                        display: flex;
+                                                        gap: 20px; /* Space between images */
+                                                    }
+                                            
+                                                    .image-container img {
+                                                        width: 50%; /* Each image takes half the container */
+                                                        height: 300px; /* Shorter height */
+                                                        border-radius: 10px; /* Rounded corners */
+                                                        object-fit: cover; /* Keeps proportions while cropping */
+                                                        display: block;
+                                                    }
+                                            
+                                                    @media (max-width: 768px) {
+                                                        .image-container {
+                                                            flex-direction: column; /* Stack images on small screens */
+                                                        }
+                                                        .image-container img {
+                                                            width: 100%; /* Full width on smaller screens */
+                                                        }
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                            
+                                            <div class="image-container" style="margin-top: -5%;">
+                                                <img src="images/retreat/deluxe room .jpg" alt="Retreat Bedroom">
+                                                <img src="images/gallery/1/Superior room.jpg" alt="Retreat Bedroom 2">
+                                            </div>
+
+                                            <div class="table-responsive">
+                                                <table>
+                                                        <thead>
+                                                        <tr>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align: light;">Double Occupancy Deluxe / Superior <br>   <b>2700€</b></td>
+                                                            </tr>
+                                                        </tbody>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <!DOCTYPE html>
+                                            <html lang="en">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>Two Images Side by Side</title>
+                                                <style>
+                                                    .image-container {
+                                                        width: 100%; /* Adds margin on sides */
+                                                        margin: -20px auto; /* Centers the images */
+                                                        display: flex;
+                                                        gap: 20px; /* Space between images */
+                                                    }
+                                            
+                                                    .image-container img {
+                                                        width: 50%; /* Each image takes half the container */
+                                                        height: 300px; /* Shorter height */
+                                                        border-radius: 10px; /* Rounded corners */
+                                                        object-fit: cover; /* Keeps proportions while cropping */
+                                                        display: block;
+                                                    }
+                                            
+                                                    @media (max-width: 768px) {
+                                                        .image-container {
+                                                            flex-direction: column; /* Stack images on small screens */
+                                                        }
+                                                        .image-container img {
+                                                            width: 100%; /* Full width on smaller screens */
+                                                        }
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                            
+                                            <div class="image-container">
+                                                <img src="images/retreat/deluxe room .jpg" style="align-items: right;" alt="Retreat Bedroom 2">
+                                            </div>
+                                            
+                                            </body>
+                                            </html>
+                                            
+                                            <div class="table-responsive">
+                                                <table>
+                                                        <thead>
+                                                        <tr>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="text-align: left;">Single Occupancy Deluxe / Superior <br>   <b>3100€</b></td>
+                                                            </tr>
+                                                            </tbody>
+                                                </table>
+                                            </div>
+                                            <br>
+                                            <!DOCTYPE html>
+                                            <html lang="en">
+                                            <head>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                                                <style>
+                                                    .image-container {
+                                                        width: 100%; /* Adds margin on sides */
+                                                        margin: -20px auto; /* Centers the images */
+                                                        display: flex;
+                                                        gap: 20px; /* Space between images */
+                                                    }
+                                            
+                                                    .image-container img {
+                                                        width: 50%; /* Each image takes half the container */
+                                                        height: 300px; /* Shorter height */
+                                                        border-radius: 10px; /* Rounded corners */
+                                                        object-fit: cover; /* Keeps proportions while cropping */
+                                                        display: block;
+                                                    }
+                                            
+                                                    @media (max-width: 768px) {
+                                                        .image-container {
+                                                            flex-direction: column; /* Stack images on small screens */
+                                                        }
+                                                        .image-container img {
+                                                            width: 100%; /* Full width on smaller screens */
+                                                        }
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                            <br>
+                                            <div class="image-container">
+                                                <img src="images/retreat/executive room .jpg" alt="Retreat Bedroom">
+                                            </div>
+                                            </head>
+                                            <body>
+                                            
+                                            </body>
+                                            </html>
+                                            <div class="table-responsive">
+                                                <table>
+                                                        <thead>
+                                                        <tr>
+                                                        </tr>
+                                                        </thead>
+                                                        <tr>
+                                                            <td style="text-align: left;">Single Occupancy Executive Room<br>   <b>3500€</b></td>
+                                                        </tr>
+                                                        <br>
+                                                        <br>
+                                                        </tbody>
+                                                    
+                                                </table>
+                                                <div class="row width-narrower row-x-center content-block content-block--grey cta-block" style="display: flex; justify-content: center; align-items: center; text-align: center; margin-left: auto; margin-right: auto;">
+                                                    <div class="column xl-10 mob-12">     
+                                                        <h3>Upcoming Retreat Dates</h3>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <p class="attention-getter">
+                                                            October 5th to 12th 2025
+                                                            <div>
+                                                                <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="margin-top: 1%;">Book A Consultation With Our Diabetes Specialist
+                                                                </a>
+                                                            </div>  
+                                                        </p>
+                                                    </div>
+                                                
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </tr>
+                                </h1>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hide-on-desktop">
+                    <div class="s-about__content-btn" class="hide-on-desktop" style="padding-inline: 10%;">
+                        <p class="attention-getter">
+                            <b>Upcoming Retreat Dates
+                        </p>
+                        <p>
+                            <b>
+                                October 5th to 12th 2025
+                            </b>
+                        </p>
+                    <a a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth">Book A Consultation With Our Diabetes Specialist</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            
+                
+             </div> <!-- end content-block -->
+
+             </section> <!-- pagecontent --> 
+                                    
+                        
+
+
+<!-- # footer ================================================== -->
+<div class="hide-on-mobile-tablet">
+    <footer id="footer" class="s-footer" style="padding-top: 250px;">  
+    
+        <div class="row s-footer__main-content">
+    
+            <div class="column xl-6 md-12 s-footer__block s-footer__about"> 
+                <div class="s-footer__logo">
+                    <a class="logo" href="home.html">
+                        <img src="images/BACK ON TRACK LOGO.svg" style=margin-top:20px; alt="Homepage">
+                    </a>
+                </div>  
+                <p>
+                    Integrating expert medical care, psychological support, and lifestyle modifications, 
+                    all delivered in a peaceful community setting where participants can feel safe and supported.
+                </p>               
+                <ul class="s-footer__social social-list" style="padding-top: -50px;">
+                    <li>
+                        <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                            <span class="u-screen-reader-text">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/back_on_track_diabetes?igsh=MW1scXJlcmt6cWdr&utm_source=qr">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                            <span class="u-screen-reader-text">Instagram</span>
+                        </a>
+                    </li>
+    
+                </ul> 
+            </div> <!-- end s-footer__about -->
+    
+            <div class="column xl-6 md-12 s-footer__block s-footer__info">
+                <div class="row">
+                    <div class="column xl-6 lg-12" style=margin-top:40px;>
+                        <h5>Location</h5>
+                        <p>
+                            Aegean Sea Coast, <br> Platamonas, Greece
+                        </p>
+                    </div>
+
+                    <div class="column xl-6 lg-12" style="margin-top: 7%;">     
+                        <div style="margin-left: -23%;">
+                            <h5 >Contacts</h5>
+                        </div>
+                        <ul class="link-list" style="font-size: 18px;">
+                            <li><a href="mailto:info@backontrack-diabetes.com" style="margin-left: -50px; style="margin-right: -20px;"">info@backontrack-diabetes.com</a></li>
+                            <li><a href="https://wa.me/46737510623?text=Hello!%20I%20am%20interested%20in%20the%20Back%20on%20Track%20Diabetes%20Wellness%20Retreat,%20can%20I%20schedule%20a%20consult%3F" style="margin-left: -70px; style="margin-right: 70px;">(46)737510623</a></li>
+                        </ul> 
+                    </div>                  
+                    <div class="row s-footer__top row-x-center">
+                        <div class="column xl-4 lg-6 tab-8 mob-12" class="s-about__content-btn" style="margin-left: 30px; margin-right: -10px; margin-top: 0px;">
+                        <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="margin-top: 0%;">Book A Consultation With Our Diabetes Specialist
+                        </a>
+                    </div>  
+                </div> <!-- end s-footer__info -->
+    
+            </div> <!-- end s-footer__main-content -->             
+        
+        </div> <!-- end section-footer__bottom -->          
+    </footer> <!-- end s-footer -->
+    
+    </div> <!-- end page-wrap -->
+    
+    
+
+
+
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.hero-image');
+            let currentIndex = 0;
+    
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                images[currentIndex].style.opacity = 0;
+    
+                currentIndex = (currentIndex + 1) % images.length;
+    
+                images[currentIndex].classList.add('active');
+                images[currentIndex].style.opacity = 1;
+            }
+    
+            const intervalId = setInterval(showNextImage, 3000);
+    
+            images[currentIndex].classList.add('active');
+            images[currentIndex].style.opacity = 1;
+    
+            images.forEach(image => {
+                image.addEventListener('mouseover', () => clearInterval(intervalId));
+                image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            });
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,370 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation</title>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+
+    <style>
+        body {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .s-pageheader {
+            display: flex;
+            align-items: center;
+            background-image: url(images/platamonas/Platamon.2013.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            min-height: 100vh;
+        }
+        .s-pageheader__content {
+            width: 90%;
+            padding-left: 9%;
+            text-align: left;
+            color: white;
+            margin-top: 250px;
+        }
+        .row.width-narrow.content-block {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-top: auto;
+        }
+        .grid-list-items.list-items {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mobile and Tablet Styles */
+        @media (max-width: 1024px) {
+            .hide-on-mobile-tablet {
+                display: none !important;
+            }
+            .s-pageheader {
+                height: auto !important;
+                padding: 20px;
+                text-align: center;
+                flex-direction: column !important;
+            }
+            .s-pageheader__content {
+                width: 100% !important;
+                padding-left: 0 !important;
+                text-align: center;
+                margin-top: auto !important;
+            }
+            .page-title {
+                font-size: 24px !important;
+                margin-top: 10px !important;
+            }
+            .column.xl-10 {
+                display: none !important;
+            }
+            .row.width-narrow.content-block {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: justify !important;
+            }
+            .menu-list {
+                margin-left: -10px !important;
+                margin-right: 0 !important;
+            }
+            .cta-block {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 10px !important;
+            }
+            .attention-getter {
+                font-size: 16px !important;
+                text-align: justify !important;
+            }
+            .btn {
+                font-size: 16px !important;
+                padding: 10px 20px !important;
+                width: 100% !important;
+            }
+        }
+        /* Desktop Styles */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="page" class="s-pagewrap">
+        <div class="menu-underlay"></div>
+        <header class="s-header">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="back-on-track logo" href="index.html">
+                        <img src="images/BACK ON TRACK LOGO.svg" alt="Homepage">
+                    </a>
+                </div>
+                <div class="s-header__cta">
+                    <ul class="s-header__nav-links">
+                        <li><a href="index.html" class="btn btn--primary s-header__cta-btn">Home</a></li>
+                        <li><a href="about.html" class="btn btn--primary s-header__cta-btn">About Us</a></li>
+                        <li><a href="retreat.html" class="btn btn--primary s-header__cta-btn">Retreat</a></li>
+                        <li><a href="consultations.html" class="btn btn--primary s-header__cta-btn">Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+            <nav class="s-header__nav">    
+
+                <a href="#0" class="s-header__nav-close-btn" title="close"><span>Close</span></a>
+
+                <div class="s-header__nav-logo">
+                    <a href="home.html">
+                        <img src="images/Ellipse 45.svg" alt="Homepage">
+                    </a>
+                </div> <!-- s-header__nav-logo -->  
+
+                <ul class="s-header__nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="retreat.html">Retreats</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="current"><a href="consultation.html">Consultation</a></li>
+                </ul> <!-- s-header__nav-links -->    
+
+                <div class="s-header__nav-bottom">
+
+                    <h6>Booking Request</h6>
+
+                    <div class="s-header__booking">
+                        <div class="s-header__booking-no"><a href="tel:+213123456">(213) 555-1234</a></div>
+                    </div>
+
+                    <ul class="s-header__nav-social social-list">
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                                <span class="u-screen-reader-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M8.31 10.28a2.5 2.5 0 1 0 2.5 2.49 2.5 2.5 0 0 0-2.5-2.49zm0 3.8a1.31 1.31 0 1 1 0-2.61 1.31 1.31 0 1 1 0 2.61zm7.38-3.8a2.5 2.5 0 1 0 2.5 2.49 2.5 2.5 0 0 0-2.5-2.49zM17 12.77a1.31 1.31 0 1 1-1.31-1.3 1.31 1.31 0 0 1 1.31 1.3z"></path><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm7.38 10.77a3.69 3.69 0 0 1-6.2 2.71L12 16.77l-1.18-1.29a3.69 3.69 0 1 1-5-5.44l-1.2-1.3H7.3a8.33 8.33 0 0 1 9.41 0h2.67l-1.2 1.31a3.71 3.71 0 0 1 1.2 2.72z"></path><path d="M14.77 9.05a7.19 7.19 0 0 0-5.54 0A4.06 4.06 0 0 1 12 12.7a4.08 4.08 0 0 1 2.77-3.65z"></path></svg>
+                                <span class="u-screen-reader-text">Tripadvisor</span>
+                            </a>
+                        </li>
+                    </ul> 
+                </div> <!-- s-header__nav-bottom -->  
+
+            </nav> <!-- end s-header__nav -->
+
+        </header> <!-- end s-header -->
+
+                 <!-- # main content
+        ================================================== -->
+        <section class="s-section" style="margin-bottom: 15px;">
+            <article class="s-content">
+                <!-- ## pageheader -->
+                <section class="s-pageheader" 
+                    style="display: flex; align-items: center; background-image: url(images/gallery/1/medical1.jpeg); 
+                           background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh;">
+            
+                    <!-- Left Text Content -->
+                    <div class="column xl-6 s-pageheader__content" 
+                        style="width: 90%; padding-left: 9%; text-align: left; color: white;">
+                        <h1 class="page-title" style="margin-top: 250px; font-size: 70px;">
+                            Schedule a Free Consulation with Us
+                        </h1>
+    
+                        <h1 class="page-title" style="font-size: 25px;">
+                            <b style="color: #ffffff;">Learn how we can help you take the first steps toward renewed well-being.</b>
+                        </h1>
+                    </div>
+            
+                    <!-- Right Image (Just for Alignment) -->
+                    <div class="column xl-10" style="width: 50%;"></div>
+            
+                </section> <!-- end pageheader -->
+            </article>  
+        
+            
+            <!-- ## pagecontent -->
+            <section class="s-pagecontent pagecontent">
+
+                <div class="row width-narrower pageintro text-center">
+                    <div class="column xl-12">
+                        <p class="lead">
+                        Add your details below & we'll be in touch shortly!
+                        </p>
+                    </div>                       
+                </div> <!-- end pageintro -->   
+                
+                <div class="row width-narrower content-block" style="padding-left: 20%;">
+                    <div class="column xl-12">
+
+                        <form name="rform" id="rform" class="reservation-form" method="post" action="" autocomplete="off">
+                            <fieldset class="row">
+                               
+                                <form action="https://formspree.io/f/mqaergbr" method="POST">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" required>
+                                    
+                                
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                    
+                                    <label for="message">Message:</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                
+                                    <button type="submit" style="color: #000000;">Send</button>                                
+                                </form>
+
+                    </div>
+                </div> <!-- end content-block -->
+
+
+            </section> <!-- pagecontent --> 
+
+        </article> <!-- end main content -->
+
+
+<!-- # footer ================================================== -->
+<div class="hide-on-mobile-tablet">
+    <footer id="footer" class="s-footer" style="padding-top: 250px;">  
+    
+        <div class="row s-footer__main-content">
+    
+            <div class="column xl-6 md-12 s-footer__block s-footer__about"> 
+                <div class="s-footer__logo">
+                    <a class="logo" href="home.html">
+                        <img src="images/BACK ON TRACK LOGO.svg" style=margin-top:20px; alt="Homepage">
+                    </a>
+                </div>  
+                <p>
+                    Integrating expert medical care, psychological support, and lifestyle modifications, 
+                    all delivered in a peaceful community setting where participants can feel safe and supported.
+                </p>               
+                <ul class="s-footer__social social-list" style="padding-top: -50px;">
+                    <li>
+                        <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                            <span class="u-screen-reader-text">Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/back_on_track_diabetes?igsh=MW1scXJlcmt6cWdr&utm_source=qr">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                            <span class="u-screen-reader-text">Instagram</span>
+                        </a>
+                    </li>
+    
+                </ul> 
+            </div> <!-- end s-footer__about -->
+    
+            <div class="column xl-6 md-12 s-footer__block s-footer__info">
+                <div class="row">
+                    <div class="column xl-6 lg-12" style=margin-top:40px;>
+                        <h5>Location</h5>
+                        <p>
+                            Aegean Sea Coast, <br> Platamonas, Greece
+                        </p>
+                    </div>
+
+                    <div class="column xl-6 lg-12" style="margin-top: 7%;">     
+                        <div style="margin-left: -23%;">
+                            <h5 >Contacts</h5>
+                        </div>
+                        <ul class="link-list" style="font-size: 18px;">
+                            <li><a href="mailto:info@backontrack-diabetes.com" style="margin-left: -50px; style="margin-right: -20px;"">info@backontrack-diabetes.com</a></li>
+                            <li><a href="https://wa.me/46737510623?text=Hello!%20I%20am%20interested%20in%20the%20Back%20on%20Track%20Diabetes%20Wellness%20Retreat,%20can%20I%20schedule%20a%20consult%3F" style="margin-left: -70px; style="margin-right: 70px;">(46)737510623</a></li>
+                        </ul> 
+                    </div>                  
+                    <div class="row s-footer__top row-x-center">
+                        <div class="column xl-4 lg-6 tab-8 mob-12" class="s-about__content-btn" style="margin-left: 30px; margin-right: -10px; margin-top: 0px;">
+                        <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="margin-top: 0%;">Book A Consultation With Our Diabetes Specialist
+                        </a>
+                    </div>  
+                </div> <!-- end s-footer__info -->
+    
+            </div> <!-- end s-footer__main-content -->             
+        
+        </div> <!-- end section-footer__bottom -->          
+    </footer> <!-- end s-footer -->
+    
+    </div> <!-- end page-wrap -->
+    
+    
+    
+    
+    
+    
+    
+        <!-- Java Script
+        ================================================== -->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const images = document.querySelectorAll('.hero-image');
+                let currentIndex = 0;
+        
+                function showNextImage() {
+                    images[currentIndex].classList.remove('active');
+                    images[currentIndex].style.opacity = 0;
+        
+                    currentIndex = (currentIndex + 1) % images.length;
+        
+                    images[currentIndex].classList.add('active');
+                    images[currentIndex].style.opacity = 1;
+                }
+        
+                const intervalId = setInterval(showNextImage, 3000);
+        
+                images[currentIndex].classList.add('active');
+                images[currentIndex].style.opacity = 1;
+        
+                images.forEach(image => {
+                    image.addEventListener('mouseover', () => clearInterval(intervalId));
+                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+                });
+            });
+        </script>
+    
+    </body>
+    </html>
+    
