@@ -90,28 +90,30 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
- @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-@import url(
-    .bricolage-grotesque-<uniquifier> {
-      font-family: "Bricolage Grotesque", serif;
-      font-optical-sizing: auto;
-      font-weight: <weight>;
-      font-style: normal;
-      font-variation-settings:
-        "wdth" 100;
-    );
-
-
-:root {
-    --font-1: "Bricolage Grotesque", Serif;
-    --font-2: "Bricolage Grotesque", Serif;
-    --font-3: "Bricolage Grotesque", Sans-serif;
-    --font-4: "Inter", Serif;
-
-    /* monospace */
-    --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace;
-}
-
+ @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+ 
+ :root {
+     --font-main: "Bricolage Grotesque", sans-serif; /* Main font for primary text */
+     --font-secondary: "Inter", sans-serif; /* Secondary font for accents or subtext */
+     --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace; /* Monospace for code or technical text */
+ }
+ 
+ /* Apply main font to body and headings */
+ body {
+     font-family: var(--font-main);
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+     font-family: var(--font-main);
+     font-weight: 600; /* Adjust weight for headings */
+ }
+ 
+ /* Apply secondary font to specific elements */
+ .subheading, blockquote, .accent-text {
+     font-family: var(--font-secondary);
+     font-weight: 400; /* Adjust weight for secondary text */
+ }
 /* ------------------------------------------------------------------- 
  * ## colors
  * ------------------------------------------------------------------- */
@@ -3436,6 +3438,62 @@ body.menu-is-open {
         margin-top: 10px; /* Increase space between text and line */
     }
 }
+
+/* Mobile Styles (max-width: 767px) */
+@media (max-width: 767px) {
+    .s-header__nav-links {
+        flex-direction: column !important; /* Stack menu items vertically */
+        align-items: flex-start !important; /* Align items to the left */
+        gap: 0px !important; /* Drastically reduce space between menu items */
+        padding-left: 70px !important; /* Add padding to prevent bleeding */
+        line-height: 1 !important; /* Reduce line height for menu items */
+    }
+
+    .s-header__nav-links li {
+        margin-right: 0 !important; /* Remove horizontal margin */
+        margin-bottom: -70px !important; /* Drastically reduce vertical margin between items */
+    }
+
+    .s-header__nav-links a {
+        font-size: 16px !important; /* Set font size for menu items */
+        padding: 4px 0 !important; /* Reduce padding for tighter spacing */
+        line-height: 1 !important; /* Reduce line height for menu items */
+    }
+
+    .s-header__nav-links a::before {
+        font-size: 0.3em !important; /* Adjust counter size for mobile */
+        margin-bottom: 0.05em !important; /* Reduce space between counter and text */
+    }
+}
+
+/* Tablet Styles (min-width: 768px) and (max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .s-header__nav-links {
+        flex-direction: column !important; /* Stack menu items vertically */
+        align-items: flex-start !important; /* Align items to the left */
+        gap: 4px !important; /* Slightly more space than mobile */
+        padding-left: 20px !important; /* Add padding to prevent bleeding */
+        line-height: 1.1 !important; /* Slightly larger line height than mobile */
+    }
+
+    .s-header__nav-links li {
+        margin-right: 0 !important; /* Remove horizontal margin */
+        margin-bottom: 4px !important; /* Slightly more space than mobile */
+    }
+
+    .s-header__nav-links a {
+        font-size: 18px !important; /* Slightly larger font size for tablet */
+        padding: 6px 0 !important; /* Adjust padding for better touch targets */
+        line-height: 1.1 !important; /* Slightly larger line height than mobile */
+    }
+
+    .s-header__nav-links a::before {
+        font-size: 0.35em !important; /* Adjust counter size for tablet */
+        margin-bottom: 0.1em !important; /* Slightly more space than mobile */
+    }
+}
+
+
  .s-header {
     --header-height : 72px;
     --logo-width    : 15rem;
@@ -3479,8 +3537,16 @@ body.menu-is-open {
 
 .s-header__logo img {
     width         : var(--logo-width);
-    margin        : 0;
+    margin        : 0; /* Corrected margin value (removed invalid '100') */
     vertical-align: top;
+}
+
+/* Mobile Styles (max-width: 767px) */
+@media (max-width: 767px) {
+    .s-header__logo img {
+        width: 120px; /* Adjust logo width for mobile */
+        margin-left: 50px; /* Add left margin to prevent bleeding */
+    }
 }
 
 /* --------------------------------------------------------------------
@@ -3824,6 +3890,8 @@ body.menu-is-open {
     opacity: 0.8; /* Increase visibility on hover */
 }
 
+
+
 /* navigation menu underlay
  */
 .menu-underlay {
@@ -3860,38 +3928,61 @@ body.menu-is-open {
  * site-header
  * ------------------------------------------------------------------- */
 
-@media screen and (max-width: 768px) {
-    .s-header__block {
-      flex-direction: column; /* Stack logo and menu vertically */
-      align-items: flex-start; /* Align everything to the left */
+/* Mobile Styles (max-width: 767px) */
+@media (max-width: 767px) {
+    .s-pageheader {
+        height: auto !important; /* Allow height to adjust based on content */
+        min-height: 50vh; /* Minimum height for mobile */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
     }
-  
-    .s-header__logo {
-      position: static; /* Reset absolute positioning */
-      left: auto;
-      transform: none; /* Remove centering */
-      margin-bottom: 5px; /* Space between logo and menu */
-      margin-left: 30px;
-    }
-  
-    .s-header__cta {
-      position: static; /* Reset absolute positioning */
-      display: block; /* Ensure menu is visible */
-      width: 100%; /* Full width for menu */
-    }
-  
-    .s-header__nav-links {
-      flex-direction: row; /* Horizontal menu */
-      justify-content: flex-start; /* Align menu items to the left */
-      gap: 0px; /* Space between menu items */
-      padding-left: 0; /* Remove default padding */
-    }
-  
-    .s-header__menu-toggle {
-      display: none; /* Hide toggle icon if not needed */
-    }
-  }
 
+    .s-pageheader__content {
+        width: 100% !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+    }
+
+    .s-pageheader h1 {
+        font-size: 24px !important;
+        margin-top: 0 !important; /* Remove top margin for better stacking */
+    }
+
+    .s-pageheader h1.page-title {
+        font-size: 20px !important;
+    }
+}
+
+/* Tablet Styles (min-width: 768px) and (max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .s-pageheader {
+        height: auto !important; /* Allow height to adjust based on content */
+        min-height: 70vh; /* Minimum height for tablet */
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .s-pageheader__content {
+        width: 80% !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+    }
+
+    .s-pageheader h1 {
+        font-size: 28px !important;
+        margin-top: 0 !important; /* Remove top margin for better stacking */
+    }
+
+    .s-pageheader h1.page-title {
+        font-size: 20px !important;
+    }
+}
 
 /* ===================================================================
  * # PAGEHEADER & PAGECONTENT
