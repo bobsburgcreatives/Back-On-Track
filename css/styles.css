@@ -3948,12 +3948,12 @@ body.menu-is-open {
     }
 
     .s-pageheader h1 {
-        font-size: 24px !important;
+        font-size: 40px !important;
         margin-top: 0 !important; /* Remove top margin for better stacking */
     }
 
     .s-pageheader h1.page-title {
-        font-size: 20px !important;
+        font-size: 40px !important;
     }
 }
 
