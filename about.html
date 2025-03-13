@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back on Track</title>
+    <title>About Us</title>
     <script>
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
@@ -15,7 +15,121 @@
     <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
     <link rel="manifest" href="site.webmanifest">
 
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        /* Section Styling */
+        .s-pagecontent {
+            padding: 40px 20px;
+            background-color: white;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .content-block--media-left, .content-block--media-right {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .content-block--media-left .content-block__media {
+            order: -1;
+        }
+
+        .content-block__media img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-width: 360px; /* Add this line */
+            max-height: 600px; /* Add this line */
+        }
+
+        .content-block__text {
+            flex: 1;
+        }
+
+        .content-block__text h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .content-block__text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer Styling */
+        .s-footer {
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .s-footer__main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .s-footer__block {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .s-footer__logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .s-footer__social {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .s-footer__social a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .s-footer__social svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-block--media-left, .content-block--media-right {
+                flex-direction: column;
+            }
+
+            .content-block__media img {
+                height: 300px;
+            }
+
+            .s-footer__main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
     <style>
         body {
             text-align: justify;
@@ -140,10 +254,10 @@
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 30px; color: white;">
+                            <h1 class="page-title" style="font-size: 17px; color: white;">
                                 Who We Are
                             </h1>
-                            <h1 class="page-title" style="font-size: 19px; color: white;">
+                            <h1 class="page-title" style="font-size: 15px; color: white;">
                                 Back on Track is led by a multidisciplinary team of healthcare and wellness professionals<br> 
                                 dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                  
                             </h1>
@@ -154,10 +268,10 @@
                 <div class="hide-on-mobile-tablet">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 70px; color: white;">
+                            <h1 class="page-title" style="font-size: 60px; color: white;">
                                 WHO WE ARE
                             </h1>
-                            <h1 class="page-title" style="font-size: 23px; color: white;">
+                            <h1 class="page-title" style="font-size: 21px; color: white;">
                                 Back on Track is led by a multidisciplinary team of healthcare and wellness professionals<br> 
                                 dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                            </h1>
                         </div>
@@ -166,6 +280,8 @@
                 </div>
             </article>
         </section>
+    </div>
+</body>
 
 
         <!-- # testimonials
@@ -173,16 +289,16 @@
 <section id="testimonials" class="s-testimonials">
 
     <div class="row s-testimonials__content">
-        <div class="column xl-12">
+        <div class="column xl-12" style="text-align: justify;">
             <h3 class="s-testimonials__title text-center" style="margin-bottom: 40px;" >Our Team</h3>
-            <div class="s-testimonials__grid" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="s-testimonials__grid" style="display: flex; flex-direction: column; align-items: center; text-align: justify;">
                 <div class="s-testimonials__member" style="margin-bottom: 30px; text-align: center;">
                     <img src="images/avatars/Petros Profile.png" alt="Petros Katsogiannos" class="s-testimonials__avatar" style="width: 250px; height: 250px; border-radius: 10%; object-fit: cover; object-position: top;">
                     <h4 style="margin-top: 6px; font-size: 30px;">Petros Katsogiannos</h4>
-                    <p style="margin-top: -30px; font-size: 17px;"><b>Endocrinologist</b></p>
-                    <p style="margin-top: -35px; font-size: 17px;">Petros brings extensive experience in treating diabetes and metabolic conditions. <br>
-                        He combines the latest research with personalized care plans to help optimize metabolic health. <br>
-                        His focus is always on the individual, ensuring treatments are tailored to each participant's specific needs.,<br>
+                    <p style="margin-top: -30px; font-size: 17px;"><b>MD, PhD – Senior Consultant Endocrinologist & Diabetologist</b></p>
+                    <p style="margin-top: -35px; font-size: 16px;">Petros brings extensive experience in treating diabetes and metabolic conditions. He combines <br>
+                        the latest research with personalized care plans to help optimize metabolic health. His focus is always<br>
+                         on the individual, ensuring treatments are tailored to each participant's specific needs,<br>
                          ensuring treatments are tailored to each participant's specific needs.</p>
                 </div> <!-- end s-testimonials__member -->
 
@@ -190,17 +306,16 @@
                     <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;">
                         <img src="images/avatars/Lefteris Profile.jpg" alt="Lefteris Saftis" class="s-testimonials__avatar" style="width: 250px; height: 250px; border-radius: 10%; object-fit: cover; object-position: top;">
                         <h4 style="margin-top: 6px; font-size: 30px;">Lefteris Saftis</h4>
-                        <p style="margin-top: -30px;font-size: 17px;"><b>Psychologist</b></p>
-                        <p style="margin-top: -40px;font-size: 17px;"><i>Freud Centre for Psychoanalysis</i></p>
-                        <p style="margin-top: -35px; font-size: 18px;">With a deep understanding of the human psyche, Lefteris helps participants explore their emotional landscapes and supports both personal growth and emotional healing. His evidence-based practices provide both individual and group therapy sessions, fostering mental and emotional exploration.
+                        <p style="margin-top: -30px;font-size: 17px;"><b>Psychologist - Bsc. Psychology, Msc. Psychology, Pgd. Integrative Psychotherapy, Freud Centre for Psychoanalysis </b></p>
+                        <p style="margin-top: -35px; font-size: 16px;">With a deep understanding of the human psyche, Lefteris helps participants explore their emotional landscapes and supports both personal growth and emotional healing. His evidence-based practices provide both individual and group therapy sessions, fostering mental and emotional exploration.
                         </p>
                     </div> <!-- end s-testimonials__member -->
 
                     <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;">
                         <img src="images/avatars/Tzanos profile.jpg" alt="Theodosios Tzanos" class="s-testimonials__avatar" style="width: 250px; height: 250px; border-radius: 10%; object-fit: cover; object-position: top;">
                         <h4 style="margin-top: 6px; font-size: 30px;">Theodosios Tzanos</h4>
-                        <p style="margin-top: -30px; font-size: 17px;"><b>Community Builder</b></p>
-                        <p style="margin-top: -35px; font-size: 18px;">With over 15 years of experience in community building, Theodosios empowers individuals and fosters sustainable, active communities. He is also deeply engaged in mindfulness practices, particularly Vipassana meditation, which he incorporates into his approach to wellness and personal growth.</p>
+                        <p style="margin-top: -30px; font-size: 17px;"><b>BEng Mechanical Engineering, Msc Management - Community Builder</b></p>
+                        <p style="margin-top: -35px; font-size: 16px;">With over 15 years of experience in community building, Theodosios empowers individuals and fosters sustainable, active communities. He is also deeply engaged in mindfulness practices, particularly Vipassana meditation, which he incorporates into his approach to wellness and personal growth.</p>
                     </div> <!-- end s-testimonials__member -->
                 </div> <!-- end flex container for side by side members -->
 
@@ -209,143 +324,23 @@
     </div> <!-- end s-testimonials__content -->
 </section> <!-- end s-testimonials -->
                     </div> <!-- end grid-list-items -->
-            
-        <!-- ## pagecontent --> 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>About Us</title>
-            <style>
-                /* General Reset */
-                * {
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
-        
-                body {
-                    font-family: Arial, sans-serif;
-                    line-height: 1.6;
-                }
-        
-                /* Section Styling */
-                .s-pagecontent {
-                    padding: 40px 20px;
-                    background-color: white;
-                }
-        
-                .content-block {
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 40px;
-                }
-        
-                .content-block--media-left, .content-block--media-right {
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 20px;
-                }
-        
-                .content-block--media-left .content-block__media {
-                    order: -1;
-                }
-        
-                .content-block__media img {
-                    border-radius: 10px;
-                    width: 100%;
-                    height: auto;
-                    object-fit: cover;
-                    max-width: 360px; /* Add this line */
-                    max-height: 600px; /* Add this line */
-                }
-        
-                .content-block__text {
-                    flex: 1;
-                }
-        
-                .content-block__text h3 {
-                    margin-bottom: 15px;
-                    font-size: 24px;
-                }
-        
-                .content-block__text p {
-                    font-size: 16px;
-                    line-height: 1.6;
-                }
-        
-                /* Footer Styling */
-                .s-footer {
-                    padding: 40px 20px;
-                    background-color: #f8f8f8;
-                    text-align: center;
-                }
-        
-                .s-footer__main-content {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                    justify-content: space-between;
-                }
-        
-                .s-footer__block {
-                    flex: 1;
-                    min-width: 250px;
-                }
-        
-                .s-footer__logo img {
-                    max-width: 150px;
-                    margin-bottom: 20px;
-                }
-        
-                .s-footer__social {
-                    list-style: none;
-                    display: flex;
-                    justify-content: center;
-                    gap: 10px;
-                }
-        
-                .s-footer__social a {
-                    color: #000;
-                    text-decoration: none;
-                }
-        
-                .s-footer__social svg {
-                    width: 24px;
-                    height: 24px;
-                }
-        
-                /* Responsive Design */
-                @media (max-width: 768px) {
-                    .content-block--media-left, .content-block--media-right {
-                        flex-direction: column;
-                    }
-        
-                    .content-block__media img {
-                        height: 300px;
-                    }
-        
-                    .s-footer__main-content {
-                        flex-direction: column;
-                        align-items: center;
-                    }
-                }
-            </style>
-        </head>
-        <body>
-
-            <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;" style="margin-top:-10%;">
+                    
+                    <section id="testimonials" class="s-testimonials">
+                        <div class="row s-testimonials__content">
+                            <div class="column xl-12" style="text-align: justify;">
+             <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;" style="margin-top:-10%;">
                 <img class="rounded-corners" src="images/gallery/1/our expertise.webp" alt="our expertise" style="width: 650px; height: 450px; border-radius: 10%; object-fit: cover; object-position: top;">
                 <h3 style="margin-top:0%;">Our Expertise</h3>
                 <p style="margin-top: 10px; margin-left: 20%; margin-right: 20%; font-size: 20px;">Each team member brings specialized knowledge in their field, ensuring that every participant receives comprehensive care.
                     <i>Our team includes an endocrinologist, diabetes nurse, psychologist, nutritionist, and community-building expert, all working together to create a personalized, impactful experience.</i></p>
-            </div> <!-- end s-testimonials__member -->
+            <br>
+                </div> <!-- end s-testimonials__member -->
 
             <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;">
                 <img class="rounded-corners" src="images/gallery/1/stop diabetes.jpeg" alt="stop diabetes" style="width: 650px; height: 450px; border-radius: 10%; object-fit: cover; object-position: top;">
                 <h3 style="margin-top: 0%;">Our Philosophy</h3>
                 <p style="margin-top: 10px; margin-left: 20%; margin-right: 20%; font-size: 20px;">Physical, mental and emotional well-being are interconnected. Our program is built on the pillars of medical science, psychological support, and sustainable lifestyle changes, aiming to empower individuals to manage their health proactively.                </i></p>
+            <br>
             </div> <!-- end s-testimonials__member -->
 
             
@@ -353,12 +348,16 @@
                 <img class="rounded-corners" src="images/gallery/1/pexels-photo-11423202.jpeg" alt="stop diabetes" style="width: 650px; height: 450px; border-radius: 10%; object-fit: cover; object-position: top;">
                 <h3 style="margin-top: 0%;">Curated Interdisciplinary Approach</h3>
                 <p style="margin-top: 10px; margin-left: 20%; margin-right: 20%; font-size: 20px;">Our retreat offers an interdisciplinary approach for individuals with Type 2 Diabetes (T2D). Combining personalized medical consultations, psychological support, and lifestyle interventions, this 7-day program is set in a beautiful, tranquil environment.</i></p>
+            <br>
+            <br>
             </div> <!-- end s-testimonials__member -->
+           </section>
+            
 
 
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 250px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 250px; background-color: #ffffff;">  
     
         <div class="row s-footer__main-content">
     

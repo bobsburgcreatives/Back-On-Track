@@ -90,34 +90,29 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
- @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Urbanist:wght@100..900&display=swap");
 
- 
  :root {
      --font-main: "Bricolage Grotesque", sans-serif; /* Main font for primary text */
-     --font-secondary: "Inter", sans-serif; /* Secondary font for accents or subtext */
+     --font-secondary: "Urbanist", sans-serif; /* Secondary font for accents or subtext */
      --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace; /* Monospace for code or technical text */
  }
  
- /* Apply main font to body and headings */
  body {
      font-family: var(--font-main);
  }
  
  h1, h2, h3, h4, h5, h6 {
      font-family: var(--font-main);
-     font-weight: 600; /* Adjust weight for headings */
+     font-weight: 600;
  }
  
- /* Apply secondary font to specific elements */
  .subheading, blockquote, .accent-text {
      font-family: var(--font-secondary);
-     font-weight: 400; /* Adjust weight for secondary text */
+     font-weight: 400;
  }
-/* ------------------------------------------------------------------- 
- * ## colors
- * ------------------------------------------------------------------- */
+ 
+ 
 :root {
 
   /* color-1(#C73E1D)
@@ -352,7 +347,7 @@
         position: static;
         left: auto;
         transform: none;
-        margin-bottom: 15px;
+        margin-bottom: 17px;
         margin-left: 0;
     }
 

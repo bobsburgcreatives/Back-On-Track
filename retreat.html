@@ -15,6 +15,121 @@
     <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
     <link rel="manifest" href="site.webmanifest">
 
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        /* Section Styling */
+        .s-pagecontent {
+            padding: 40px 20px;
+            background-color: white;
+        }
+
+        .content-block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .content-block--media-left, .content-block--media-right {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .content-block--media-left .content-block__media {
+            order: -1;
+        }
+
+        .content-block__media img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            max-width: 360px; /* Add this line */
+            max-height: 600px; /* Add this line */
+        }
+
+        .content-block__text {
+            flex: 1;
+        }
+
+        .content-block__text h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .content-block__text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Footer Styling */
+        .s-footer {
+            padding: 40px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .s-footer__main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .s-footer__block {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .s-footer__logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .s-footer__social {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .s-footer__social a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .s-footer__social svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-block--media-left, .content-block--media-right {
+                flex-direction: column;
+            }
+
+            .content-block__media img {
+                height: 300px;
+            }
+
+            .s-footer__main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 
     <style>
         body {
@@ -107,6 +222,7 @@
         }
     </style>
 </head>
+
 <body id="top">
     <div id="preloader">
         <div id="loader" class="dots-fade">
@@ -140,10 +256,10 @@
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 30px; color: white;">
+                            <h1 class="page-title" style="font-size: 17px; color: white;">
                                         7-Day Wellness Retreat
                                     </h1>
-                                    <h2 class="page-title" style="font-size: 19px; color: white;">
+                                    <h2 class="page-title" style="font-size: 15px; color: white;">
                                         Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br><br><br>
                                         <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>                                    </h2>
                                 </div>
@@ -153,10 +269,10 @@
                         <div class="hide-on-mobile-tablet">
                             <section class="s-pageheader">
                                 <div class="column xl-6 s-pageheader__content">
-                                    <h1 class="page-title" style="font-size: 70px; color: white;">
+                                    <h1 class="page-title" style="font-size: 60px; color: white;">
                                         7-Day Wellness Retreat
                                     </h1>
-                                    <h1 class="page-title" style="font-size: 23px; color: white;">
+                                    <h1 class="page-title" style="font-size: 21px; color: white;">
                                         Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br>
                                         <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>                                    </h1>
                                 </div>
@@ -165,10 +281,13 @@
                     </article>
                 </section>
 
+        <section>
+
+            <article>
                 <div class="hide-on-mobile-tablet">
                 <div class="row width-narrow content-block">
                     <div class="column xl-12">
-                        <h3 style="margin-top: 50px; margin-bottom: 0px;">A Tailored Retreat for Health and Relaxation</h3>
+                        <h3 style="margin-top: 30px; margin-bottom: 0px;">A Tailored Retreat for Health and Relaxation</h3>
                         <div class="grid-list-items list-items"></div>
                     </div>
                 </div>
@@ -183,7 +302,7 @@
         </section>     
     </div>
 </body>
-</html>
+
 <div>
 <div class="hide-on-desktop">
     <div class="s-about__content-btn" class="hide-on-desktop" style="padding-inline: 10%;">
@@ -346,7 +465,7 @@
                                             </p>
                                         </div>
                                         <div class="s-about__content-btn">
-                                            <a href="schedule.html" class="btn btn--stroke btn--medium u-fullwidth">View Back on Track's Daily Schedule
+                                            <a href="schedule.html" class="btn btn--stroke btn--medium u-fullwidth">View Back on Track's Example Daily Schedule
                                             </a>
                                         </div>
                                     </div>
@@ -357,16 +476,17 @@
                     </section>  
                 </div>          
 
-                <!-- Space between sections -->
-                <div class="row width-narrower content-block" style="margin-top: 0px; margin-bottom: 20px;">
-                    <div class="column xl-12">
-                        <div class="menu-block">
-                            <div class="menu-block__group">
-                                <h1 style="margin-left: 100px; margin-bottom: 15px; font-size: 40px;"></h1>
-                                <ul class="menu-list" style="margin-left: 100px; margin-right: 100px;">
+                                <!-- Space between sections -->
+                                <div class="row width-narrower content-block" style="margin-top: 0px; margin-bottom: 20px;">
+                                    <div class="column xl-12">
+                                        <div class="menu-block">
+                                            <div class="menu-block__group">
+                                                <h1 style="margin-left: 100px; margin-bottom: 15px; font-size: 40px;"></h1>
+                                                <ul class="menu-list" style="margin-left: 100px; margin-right: 100px;">
+                
+                                                    <div id="target-section"></div>
+                                                    <div class="row u-add-bottom" style="margin-left: 15px;" style="margin-right: 15px"></div>
 
-                                    <div id="target-section"></div>
-                                    <div class="row u-add-bottom" style="margin-left: 15px;" style="margin-right: 15px"></div>
                                         <section id="target-section">
                                         <h3><b>Back on Track Facilities and Rooms</b></h3>
                                         <br>
@@ -419,7 +539,7 @@
                                             </body>
                                             </html>                                                                                         
                                             <p tyle="margin-top:-4%;">Relax in our air-conditioned rooms with anatomical mattresses and plush bathrobes, complemented by free Wi-Fi . 
-                                                Experience the perfect blend of nature and luxury at Back on Track, designed for <br>
+                                                Experience the perfect blend of nature and luxury at Back on Track, designed for
                                                 tranquility and enriched with the elegance of modern comforts.
                                                 </p>
                                             <head>
@@ -485,7 +605,7 @@
                                             <body>
                                             
                                             <div class="image-container" style="margin-top: -5%;">
-                                                <img src="images/retreat/deluxe room .jpg" alt="Retreat Bedroom">
+                                                <img src="images/retreat/superior room .jpg" alt="Retreat Bedroom 2">
                                                 <img src="images/gallery/1/Superior room.jpg" alt="Retreat Bedroom 2">
                                             </div>
 
@@ -557,61 +677,21 @@
                                                             </tbody>
                                                 </table>
                                             </div>
-                                            <br>
-                                            <!DOCTYPE html>
-                                            <html lang="en">
-                                            <head>
-                                                <meta charset="UTF-8">
-                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-                                                <style>
-                                                    .image-container {
-                                                        width: 100%; /* Adds margin on sides */
-                                                        margin: -20px auto; /* Centers the images */
-                                                        display: flex;
-                                                        gap: 20px; /* Space between images */
-                                                    }
-                                            
-                                                    .image-container img {
-                                                        width: 50%; /* Each image takes half the container */
-                                                        height: 300px; /* Shorter height */
-                                                        border-radius: 10px; /* Rounded corners */
-                                                        object-fit: cover; /* Keeps proportions while cropping */
-                                                        display: block;
-                                                    }
-                                            
-                                                    @media (max-width: 768px) {
-                                                        .image-container {
-                                                            flex-direction: column; /* Stack images on small screens */
-                                                        }
-                                                        .image-container img {
-                                                            width: 100%; /* Full width on smaller screens */
-                                                        }
-                                                    }
-                                                </style>
-                                            </head>
-                                            <body>
-                                            <br>
                                             <div class="image-container">
                                                 <img src="images/retreat/executive room .jpg" alt="Retreat Bedroom">
                                             </div>
-                                            </head>
-                                            <body>
-                                            
-                                            </body>
-                                            </html>
-                                            <div class="table-responsive">
-                                                <table>
-                                                        <thead>
-                                                        <tr>
-                                                        </tr>
-                                                        </thead>
-                                                        <tr>
-                                                            <td style="text-align: left;">Single Occupancy Executive Room<br>   <b>3500€</b></td>
-                                                        </tr>
-                                                        <br>
-                                                        <br>
-                                                        </tbody>
+                                                        <div class="table-responsive">
+                                                            <table>
+                                                                    <thead>
+                                                                    <tr>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="text-align: left;">Single Occupancy Executive Room<br>   <b>3500€</b></td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                            </table>
                                                     
                                                 </table>
                                                 <div class="row width-narrower row-x-center content-block content-block--grey cta-block" style="display: flex; justify-content: center; align-items: center; text-align: center; margin-left: auto; margin-right: auto;">
@@ -668,7 +748,7 @@
 
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 250px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
     
         <div class="row s-footer__main-content">
     
