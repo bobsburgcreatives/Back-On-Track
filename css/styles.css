@@ -95,7 +95,7 @@
  :root {
      --font-main: "Bricolage Grotesque", sans-serif; /* Main font for primary text */
      --font-secondary: "Urbanist", sans-serif; /* Secondary font for accents or subtext */
-     --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace; /* Monospace for code or technical text */
+     --font-mono: Consolas, "Urbanist", sans-serif; /* Monospace for code or technical text */
  }
  
  body {
