@@ -255,10 +255,10 @@
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 17px; color: white;">
+                            <h1 class="page-title slide-down" style="font-size: 12px; color: white;">
                                 FAQs
                             </h1>
-                            <h1 class="page-title" style="font-size: 15px; color: white;">
+                            <h1 class="page-title slide-down" style="font-size: 15px; color: white;">
                                 Have a question for us?                 
                             </h1>
                         </div>
@@ -268,10 +268,10 @@
                 <div class="hide-on-mobile-tablet">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 60px; color: white;">
+                            <h1 class="page-title slide-down" style="font-size: 60px; color: white;">
                                 FAQs
                             </h1>
-                            <h1 class="page-title" style="font-size: 21px; color: white;">
+                            <h1 class="page-title slide-down" style="font-size: 21px; color: white;">
                                 Have a question for us?                          
                             </h1>
                         </div>
@@ -295,7 +295,8 @@
                 <dl class="dictionary-style" style="margin-left: 110px; margin-right: 25px;">
                     <dt><strong>Who can benefit from attending the retreat?<br>
                     </strong></dt>
-                        <p1>Individuals diagnosed with diabetes, particularly from the Nordic region looking for a comprehensive program to manage their condition in a holistic manner, are ideal candidates for our retreat.
+                        <p1>Individuals diagnosed with diabetes looking for a comprehensive program to manage their condition in a holistic manner, are ideal candidates for our retreat.
+
                 </dl>
                 
 
@@ -380,10 +381,9 @@
         </article> <!-- end main content -->
 
 
-
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 80px;">  
     
         <div class="row s-footer__main-content">
     
@@ -396,7 +396,8 @@
                 <p>
                     Integrating expert medical care, psychological support, and lifestyle modifications, 
                     all delivered in a peaceful community setting where participants can feel safe and supported.
-                </p>               
+                </p>   
+                            
                 <ul class="s-footer__social social-list" style="padding-top: -50px;">
                     <li>
                         <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
@@ -412,12 +413,15 @@
                             <span class="u-screen-reader-text">Instagram</span>
                         </a>
                     </li>
+                    <ul class="link-list" style="font-size: 18px;" style="margin-left: -50px;">
+                        <li><a href="FAQs.html">have more questions?</a></li>
+                    </ul> 
     
                 </ul> 
             </div> <!-- end s-footer__about -->
     
             <div class="column xl-6 md-12 s-footer__block s-footer__info">
-                <div class="row">
+                <div class="row" style="margin-top: -5%;">
                         <div class="column xl-6 lg-12" style="margin-top: 7%;">     
                             <div style="margin-left: -10%;">
                                 <h5 >Location</h5>
@@ -454,39 +458,35 @@
     
     
     
-    
         <!-- Java Script
         ================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll('.hero-image');
-                let currentIndex = 0;
-        
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    images[currentIndex].style.opacity = 0;
-        
-                    currentIndex = (currentIndex + 1) % images.length;
-        
-                    images[currentIndex].classList.add('active');
-                    images[currentIndex].style.opacity = 1;
-                }
-        
-                const intervalId = setInterval(showNextImage, 3000);
-        
-                images[currentIndex].classList.add('active');
-                images[currentIndex].style.opacity = 1;
-        
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => clearInterval(intervalId));
-                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            document.addEventListener('DOMContentLoaded', function() {
+                // Trigger the scroll event once the page loads
+                window.dispatchEvent(new Event('scroll'));
+            });
+    
+            document.addEventListener('scroll', function() {
+                const slideDownElements = document.querySelectorAll('.slide-down');
+    
+                slideDownElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+    
+                    // Check if the element is in the viewport
+                    if (elementTop < window.innerHeight && elementBottom >= 0) {
+                        element.classList.add('animate');
+                    } else {
+                        element.classList.remove('animate');
+                    }
                 });
             });
         </script>
-    
+    </body>
+    </html>
     </body>
     </html>
     

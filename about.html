@@ -133,7 +133,7 @@
     <style>
         body {
             text-align: justify;
-            line-height: 1.6;
+            line-height: 1.0;
         }
         .s-pageheader {
             display: flex;
@@ -220,6 +220,96 @@
             }
         }
     </style>
+
+    <style>
+        /* Slide Down Animation - Non-Intrusive */
+        .slide-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .slide-down.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add delays for each element */
+        .slide-down:nth-child(1) {
+            transition-delay: 0.5s;
+        }
+
+        .slide-down:nth-child(2) {
+            transition-delay: 1s;
+        }
+
+        .slide-down:nth-child(3) {
+            transition-delay: 1.5s;
+        }
+    </style>
+
+
+ <style>
+        /* Mobile Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            /* Adjust margins and padding for mobile */
+            .hide-on-mobile-tablet[style] {
+                margin: 0px 20px !important; /* Reduce side margins */
+                padding: 0 15px !important; /* Reduce padding */
+                margin-top: 0 !important; /* Reset top margin */
+                margin-bottom: 0 !important; /* Reset bottom margin */
+            }
+
+            /* Adjust font size and line height for mobile */
+            .page-title[style] {
+                font-size: 15px !important; /* Smaller font size for mobile */
+                line-height: 18px !important; /* Adjust line height */
+            }
+
+            /* Center-align text for mobile */
+            .page-title {
+                text-align: center;
+            }
+
+            /* Adjust blockquote spacing for mobile */
+            blockquote {
+                margin-top: 5px !important; /* Reduce top margin */
+            }
+
+            /* Ensure flex containers stack vertically on mobile */
+            div[style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.s-menublock__slider', {
+        slidesPerView: 1, // Default for mobile
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: { // Tablet
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: { // Desktop
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+
 </head>
 <body id="top">
     <div id="preloader">
@@ -248,38 +338,38 @@
                 </div>
             </div>
         </header>
-        <section class="s-section" style="padding-bottom: 25px;">
+
+
+
+
+        <section class="s-section" style="margin-bottom: 25px;">
             <article class="s-content">
                 <!-- Mobile and Tablet Content -->
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 17px; color: white;">
-                                Who We Are
+                            <h1 class="page-title" style="font-size: 12px; color: white;">
+                                Who We Are                                   
                             </h1>
-                            <h2 class="page-title" style="font-size: 15px; color: white;">
+                            <h2 class="page-title" style="font-size: 15px; color: white;" style="margin-bottom: 160px;">
                                 Back on Track is led by a multidisciplinary team of healthcare and wellness professionals<br> 
-                                dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                             
-                            </h2>
+                                dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                             </section>
                         </div>
-                    </section>
-                </div>
-                <!-- Desktop Content -->
-                <div class="hide-on-mobile-tablet">
-                    <section class="s-pageheader">
-                        <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 60px; color: white;">
-                                Who We Are
-                            </h1>
-                            <h1 class="page-title" style="font-size: 21px; color: white;">
-                                Back on Track is led by a multidisciplinary team of healthcare and wellness professionals<br> 
-                                dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                             
-                            </h1>
+                        <!-- Desktop Content -->
+                        <div class="hide-on-mobile-tablet">
+                            <section class="s-pageheader">
+                                <div class="column xl-6 s-pageheader__content">
+                                    <h1 class="page-title" style="font-size: 60px; color: white;">
+                                        Who We Are                                    
+                                    </h1>
+                                    <h1 class="page-title" style="font-size: 20px; color: white;">
+                                        Back on Track is led by a multidisciplinary team of healthcare and wellness professionals<br> 
+                                        dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i>                                     </div>
+                            </section>
                         </div>
-                    </section>
-                </div>
-            </article>
-        </section>
+                    </article>
+                </section>
+
 
 
 
@@ -327,8 +417,8 @@
                     <section id="testimonials" class="s-testimonials">
                         <div class="row s-testimonials__content">
                             <div class="column xl-12" style="text-align: justify;">
-             <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;" style="margin-top:-10%;">
-                <img class="rounded-corners" src="images/gallery/1/our expertise.webp" alt="our expertise" style="width: 650px; height: 450px; border-radius: 10%; object-fit: cover; object-position: top;">
+             <div class="s-testimonials__member" style="margin: 0 20px; text-align: center;" style="margin-top:-30%;">
+                <img class="rounded-corners" src="images/gallery/1/our expertise.webp" alt="our expertise" style="width: 650px; height: 250px; border-radius: 10%; object-fit: cover; object-position: top;">
                 <h3 style="margin-top:0%;">Our Expertise</h3>
                 <p style="margin-top: 10px; margin-left: 20%; margin-right: 20%; font-size: 20px;">Each team member brings specialized knowledge in their field, ensuring that every participant receives comprehensive care.
                     <i>Our team includes an endocrinologist, diabetes nurse, psychologist, nutritionist, and community-building expert, all working together to create a personalized, impactful experience.</i></p>
@@ -353,10 +443,9 @@
            </section>
             
 
-
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 80px;">  
     
         <div class="row s-footer__main-content">
     
@@ -369,7 +458,8 @@
                 <p>
                     Integrating expert medical care, psychological support, and lifestyle modifications, 
                     all delivered in a peaceful community setting where participants can feel safe and supported.
-                </p>               
+                </p>   
+                            
                 <ul class="s-footer__social social-list" style="padding-top: -50px;">
                     <li>
                         <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
@@ -385,12 +475,15 @@
                             <span class="u-screen-reader-text">Instagram</span>
                         </a>
                     </li>
+                    <ul class="link-list" style="font-size: 18px;" style="margin-left: -50px;">
+                        <li><a href="FAQs.html">have more questions?</a></li>
+                    </ul> 
     
                 </ul> 
             </div> <!-- end s-footer__about -->
     
             <div class="column xl-6 md-12 s-footer__block s-footer__info">
-                <div class="row">
+                <div class="row" style="margin-top: -5%;">
                         <div class="column xl-6 lg-12" style="margin-top: 7%;">     
                             <div style="margin-left: -10%;">
                                 <h5 >Location</h5>
@@ -427,41 +520,36 @@
     
     
     
-    
         <!-- Java Script
         ================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll('.hero-image');
-                let currentIndex = 0;
-        
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    images[currentIndex].style.opacity = 0;
-        
-                    currentIndex = (currentIndex + 1) % images.length;
-        
-                    images[currentIndex].classList.add('active');
-                    images[currentIndex].style.opacity = 1;
-                }
-        
-                const intervalId = setInterval(showNextImage, 3000);
-        
-                images[currentIndex].classList.add('active');
-                images[currentIndex].style.opacity = 1;
-        
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => clearInterval(intervalId));
-                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            document.addEventListener('DOMContentLoaded', function() {
+                // Trigger the scroll event once the page loads
+                window.dispatchEvent(new Event('scroll'));
+            });
+    
+            document.addEventListener('scroll', function() {
+                const slideDownElements = document.querySelectorAll('.slide-down');
+    
+                slideDownElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+    
+                    // Check if the element is in the viewport
+                    if (elementTop < window.innerHeight && elementBottom >= 0) {
+                        element.classList.add('animate');
+                    } else {
+                        element.classList.remove('animate');
+                    }
                 });
             });
         </script>
-    
     </body>
     </html>
-    
+    </body>
+    </html>
     
     

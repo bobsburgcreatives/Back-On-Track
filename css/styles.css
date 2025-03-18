@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
 /* =================================================================== 
- * Maillard Main Stylesheet
- * Template Ver. 1.0.0
- * 08-03-2023
+ * BB Creatives / Sofia 1.0.0
+
  * ------------------------------------------------------------------
  *
  * TOC:
@@ -108,7 +107,7 @@
  }
  
  .subheading, blockquote, .accent-text {
-     font-family: var(--font-secondary);
+     font-family: var(--font-primary);
      font-weight: 400;
  }
  
@@ -1000,7 +999,7 @@ body {
     }
 
     .s-pageheader h1.page-title {
-        font-size: 18px !important;
+        font-size: 15px !important;
     }
 
     .s-testimonials__member {
@@ -1430,6 +1429,84 @@ body, html {
 
 
 
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 120%;
+    height: 450px;
+    border-radius: 15px;
+    padding-right: 20%;
+    margin-left: -30%;
+    margin-top: -10%;
+  }
+
+  .slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+  }
+
+  .slider-image {
+    flex: 0 0 100%; /* Each image takes full width */
+    height: 100%;
+  }
+
+  .responsive-img {
+    object-fit: cover; /* Ensure images fill the container */
+    height: 100%;
+    width: 100%;
+  }
+
+
+  /* Container for the slider */
+  .new-slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 120%;
+    height: 450px;
+    border-radius: 15px;
+    padding-right: 20%;
+    margin-left: -30%;
+    margin-top: -10%;
+  }
+
+  /* Slider wrapper */
+  .new-slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+  }
+
+  /* Individual slide */
+  .new-slider-image {
+    flex: 0 0 100%; /* Each image takes full width */
+    height: 100%;
+  }
+
+  /* Responsive images */
+  .new-responsive-img {
+    object-fit: cover; /* Ensure images fill the container */
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Responsive margins */
+  @media (max-width: 1024px) {
+    .new-slider-container {
+      width: 100%;
+      margin-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .new-slider-container {
+      width: 90%;
+      margin-left: 5%;
+      padding-right: 0;
+    }
+  }
+
 
 
 .s-footer {
@@ -1496,6 +1573,88 @@ body, html {
 
 
 
+
+<style>
+  /* Hide Mobile Footer on Desktop */
+  .hide-on-desktop {
+    display: none;
+  }
+
+  /* Mobile Footer Styles */
+  @media (max-width: 767px) {
+    .hide-on-desktop {
+      display: block;
+    }
+
+    .s-footer-mobile {
+      padding: 20px;
+      background: #3062a0; /* Match your background color */
+      text-align: center;
+    }
+
+    .s-footer-mobile__logo img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .s-footer-mobile__about p {
+      font-size: 14px;
+      color: #e2e2e2;
+      margin-bottom: 20px;
+    }
+
+    .s-footer-mobile__social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .s-footer-mobile__social svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .s-footer-mobile__info h5 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .s-footer-mobile__info .link-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .s-footer-mobile__info .link-list a {
+      font-size: 14px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .s-footer-mobile__info .link-list a:hover {
+      text-decoration: underline;
+    }
+
+    .btn--medium {
+      font-size: 14px;
+      padding: 10px 20px;
+      background: #c52929;
+      border: 1px solid #333;
+      color: #ffffff;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .btn--medium:hover {
+      background: #ffffff;
+      color: #fff;
+    }
+  }
+</style>
 
 /* Target the menu container */
 .nav-menu {
@@ -1835,6 +1994,90 @@ hr.fancy::before {
 }
 
 /* --------------------------------------------------------------------
+ * ## slider animation 
+ * -------------------------------------------------------------------- */
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    10% { transform: translateX(0%); } /* Pause for 3s (10% of 30s) */
+    20% { transform: translateX(-10%); }
+    30% { transform: translateX(-10%); } /* Pause for 3s */
+    40% { transform: translateX(-20%); }
+    50% { transform: translateX(-20%); } /* Pause for 3s */
+    60% { transform: translateX(-30%); }
+    70% { transform: translateX(-30%); } /* Pause for 3s */
+    80% { transform: translateX(-40%); }
+    90% { transform: translateX(-40%); } /* Pause for 3s */
+    100% { transform: translateX(-50%); }
+}
+
+.slider {
+    animation: slide 30s infinite;
+}
+
+
+
+
+
+
+/* --------------------------------------------------------------------
+ * ## animation
+ * -------------------------------------------------------------------- */
+
+ .slide-down {
+    animation: slideDown 2.5s ease-out;
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Slide Down Animation */
+.slide-down-1 {
+    opacity: 0 !important;
+    transform: translateY(-100%) !important;
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out !important;
+}
+
+.slide-down-1.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Slide Left Animation */
+.slide-left {
+    opacity: 0 !important;
+    transform: translateX(-100%) !important;
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out !important;
+}
+
+.slide-left.animate {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* Slide Right Animation */
+.slide-right {
+    opacity: 0 !important;
+    transform: translateX(100%) !important;
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out !important;
+}
+
+.slide-right.animate {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+
+
+
+/* --------------------------------------------------------------------
  * ## additional typography & helper classes
  * -------------------------------------------------------------------- */
 .lead,
@@ -1871,7 +2114,7 @@ hr.fancy::before {
 
 .pull-quote blockquote {
     border     : none;
-    margin     : 0 auto;
+    margin     : -30px -20px;
     max-width  : 62rem;
     padding-top: var(--vspace-2_5);
     position   : relative;
@@ -2435,7 +2678,7 @@ select:-webkit-autofill:focus {
      font-weight            : 400;
      font-size              : var(--text-xs);
      letter-spacing         : 0.02em;
-     height                 : var(--btn-height);
+     height                 : auto;
      line-height            : calc(var(--btn-height) - 8px);
      padding                : 0 3.6rem;
      margin                 : 0 0.4rem var(--vspace-0_5) 0;
@@ -3442,12 +3685,12 @@ body.menu-is-open {
         align-items: flex-start !important; /* Align items to the left */
         gap: 0px !important; /* Drastically reduce space between menu items */
         padding-left: 70px !important; /* Add padding to prevent bleeding */
-        line-height: 1 !important; /* Reduce line height for menu items */
+        line-height: 3 !important; /* Reduce line height for menu items */
     }
 
     .s-header__nav-links li {
         margin-right: 0 !important; /* Remove horizontal margin */
-        margin-bottom: -70px !important; /* Drastically reduce vertical margin between items */
+        margin-bottom: -80px !important; /* Drastically reduce vertical margin between items */
     }
 
     .s-header__nav-links a {
@@ -3948,7 +4191,8 @@ body.menu-is-open {
     }
 
     .s-pageheader h1.page-title {
-        font-size: 40px !important;
+        font-size: 25px !important;
+        margin-bottom:
     }
 }
 
@@ -5184,7 +5428,7 @@ footer {
 }
 
 .s-footer__about {
-    padding-top: var(--vspace-0_25);
+    padding-top: 10px;
 }
 
 .s-footer__about > * {

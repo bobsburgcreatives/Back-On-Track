@@ -133,7 +133,7 @@
     <style>
         body {
             text-align: justify;
-            line-height: 1.6;
+            line-height: 1.0;
         }
         .s-pageheader {
             display: flex;
@@ -220,6 +220,96 @@
             }
         }
     </style>
+
+    <style>
+        /* Slide Down Animation - Non-Intrusive */
+        .slide-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .slide-down.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add delays for each element */
+        .slide-down:nth-child(1) {
+            transition-delay: 0.5s;
+        }
+
+        .slide-down:nth-child(2) {
+            transition-delay: 1s;
+        }
+
+        .slide-down:nth-child(3) {
+            transition-delay: 1.5s;
+        }
+    </style>
+
+
+ <style>
+        /* Mobile Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            /* Adjust margins and padding for mobile */
+            .hide-on-mobile-tablet[style] {
+                margin: 0px 20px !important; /* Reduce side margins */
+                padding: 0 15px !important; /* Reduce padding */
+                margin-top: 0 !important; /* Reset top margin */
+                margin-bottom: 0 !important; /* Reset bottom margin */
+            }
+
+            /* Adjust font size and line height for mobile */
+            .page-title[style] {
+                font-size: 15px !important; /* Smaller font size for mobile */
+                line-height: 18px !important; /* Adjust line height */
+            }
+
+            /* Center-align text for mobile */
+            .page-title {
+                text-align: center;
+            }
+
+            /* Adjust blockquote spacing for mobile */
+            blockquote {
+                margin-top: 5px !important; /* Reduce top margin */
+            }
+
+            /* Ensure flex containers stack vertically on mobile */
+            div[style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.s-menublock__slider', {
+        slidesPerView: 1, // Default for mobile
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: { // Tablet
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: { // Desktop
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+
 </head>
 <body id="top">
     <div id="preloader">
@@ -248,58 +338,116 @@
                 </div>
             </div>
         </header>
-        <section class="s-section" style="padding-bottom: 25px;">
+
+
+
+
+        <section class="s-section" style="margin-bottom: 25px;">
             <article class="s-content">
                 <!-- Mobile and Tablet Content -->
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 17px; color: white;">
-                                DIABETES WELLNESS RETREAT
+                            <h1 class="page-title" style="font-size: 12px; color: white;">
+                                DIABETES WELLNESS RETREAT                                    
                             </h1>
-                            <h2 class="page-title" style="font-size: 15px; color: white;">
-                                A life-changing experience designed for individuals with Type 2 Diabetes (T2D), located on the stunning Aegean Sea coast in Platamonas, Greece, just 25 km from Mount Olympus.
-                            </h2>
+                            <h2 class="page-title" style="font-size: 15px; color: white;" style="margin-bottom: 160px;">
+                                A life-changing experience designed for individuals with Type 2 Diabetes (T2D), located on the stunning Aegean Sea coast in Platamonas, Greece, just 25 km from Mount Olympus.                                </div>
+                            </section>
                         </div>
-                    </section>
-                </div>
-                <!-- Desktop Content -->
-                <div class="hide-on-mobile-tablet">
-                    <section class="s-pageheader">
-                        <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 60px; color: white;">
-                                DIABETES WELLNESS RETREAT
-                            </h1>
-                            <h1 class="page-title" style="font-size: 21px; color: white;">
-                                A life-changing experience designed for individuals with Type 2 Diabetes (T2D), located on the stunning Aegean Sea coast in Platamonas, Greece, just 25 km from Mount Olympus.
-                            </h1>
+                        <!-- Desktop Content -->
+                        <div class="hide-on-mobile-tablet">
+                            <section class="s-pageheader">
+                                <div class="column xl-6 s-pageheader__content">
+                                    <h1 class="page-title" style="font-size: 60px; color: white;">
+                                        DIABETES WELLNESS RETREAT                                    
+                                    </h1>
+                                    <h1 class="page-title" style="font-size: 20px; color: white;">
+                                        A life-changing experience designed for individuals with Type 2 Diabetes (T2D), located on the stunning Aegean Sea coast in Platamonas, Greece, just 25 km from Mount Olympus.
+                                    </div>
+                            </section>
                         </div>
-                    </section>
-                </div>
-            </article>
+                    </article>
+                </section>
+
+
+
+<section style="margin: 0px 40px; padding: 0 30px; margin-bottom: 0px; margin-left:20%">
+    <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+        <figure class="slide-down" style="animation-delay: 1.5s;">
+            <blockquote style="margin-top: 10px;">
+                <br>
+                <br>
+            </blockquote>
+        </figure>
+    </div>
+</section>
+</section>
+
+
+<body>
+    <section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-top: -70px;">
+            <h1 style="font-size: 28px; line-height: 40px; margin-bottom: 10px;" class="page-title slide-down" style="animation-delay: 1s;">
+                <b>At Back on Track, our program recognizes the physical, psychological, and social factors as deeply interconnected in both the manifestation of symptoms and our relationship to them.</b>
+            </h1>
         </section>
 
+    <section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -90px; margin-top: 0px;" class="hide-on-desktop">
+            <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                Our team goes beyond medical treatment; we are committed to building strong relationships with participants, fostering a community environment where individuals feel supported and cared for and can explore the physical, emotional, and social impacts of T2D.
+            </h1>
+            <br>
+            <br>
+        </section>
 
+    <section style="margin: 0px 40px; padding: 0 30px; margin-top: 50px; margin-left:20%; margin-bottom: -180px" >
+        <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+            <figure class="slide-down" style="animation-delay: 1.5s;">
+                <blockquote style="margin-top: 0px;">
+                    <br>
+                    <br>
+                </blockquote>
+            </figure>
+        </div>
+    </section>
+    </section>
 
-<!-- Add CSS for animation -->
-<style>
-    @keyframes slideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-</style>
+    <section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -50px; margin-top: 150px;" class="hide-on-mobile-tablet">
+            <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                <br> Our team goes beyond medical treatment; we are committed to building strong relationships with participants, fostering a community environment where individuals feel supported and cared for and can explore the physical, emotional, and social impacts of T2D.
+                <br>
+                <br>
+            
+            </h1>
+            <br>
+            <br>
+            <br>
+        </section>
+    </section>
+
+        <section  style="margin: 0px 40px; padding: 0 30px; margin-bottom: -200px" class="hide-on-mobile-tablet">
+            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                <figure class="slide-down" style="animation-delay: 1.5s;">
+                    <blockquote style="margin-top: -10px;">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </blockquote>
+                </figure>
+            </div>
+        </section>
+    </section>
+
 
         <!-- # about
         ================================================== -->
         <section id="about" class="s-about" style="margin-left: 3%;" style="margin-right: 40%;"
 
-            <div class="row s-about__content" style="margin-top: -150px;">
+            <div class="row s-about__content" style="margin-top: 0px;">
                 <div class="column xl-12 s-about__content-grid grid-block">    
                     
                     <div class="s-about__content-header section-header">
@@ -307,13 +455,13 @@
                             Our Retreat</h2>                        
                         <div class="s-about__content-header-inner">
                             <p class="text-desc">
-                                <a style="margin-top: 40%; display: flex; justify-content: center; text-decoration: none; color: #41BCA5; font-size: 26px; font-family: 'Jost', sans-serif;"><b>Diabetes Wellness Retreat</b>
+                                <a style="margin-top: -10%; display: flex; justify-content: center; text-decoration: none; color: #41BCA5; font-size: 26px; font-family: 'Jost', sans-serif;"><b>Diabetes Wellness Retreat</b>
                                 </a>
                                 <a style= "margin-top: -4%; display: flex; justify-content: center; text-decoration: none; color: #000000; font-size: 20px; font-family: 'Jost', sans-serif;">
                                     <p><i>October 5 - October 12 2025</i></p>
                                 </a>
     
-                                <div class="s-about__content-btn" style= "margin-top: -1%; margin-left: 20px; margin-right: 20px; ">
+                                <div class="s-about__content-btn" style= "margin-top: 50%; margin-left: 20px; margin-right: 20px; ">
                                     <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="align-items: ;">Early Bird Reservation <br> 
                                     </a>
                                 </div>
@@ -327,7 +475,7 @@
                     
                     <div class="s-about__content-main">
 
-                    <div class="slider-container" style="position: relative; overflow: hidden; width: 120%; height: 400px; border-radius: 15px; padding-right: 20%; margin-left: -30%; margin-top: -10%;">
+                    <div class="slider-container; hide-on-mobile-tablet" style="position: relative; overflow: hidden; width: 120%; height: 400px; border-radius: 15px; padding-right: 20%; margin-left: -30%; margin-top: -10%;">
                         <div class="slider" style="display: flex; transition: transform 3.8s ease-in-out;">
                             <div class="slider-image" style="flex: 0 0 100%; height: 100%; display: flex; justify-content: center;">
                                 <img src="images/gallery/1/best hotel pic.jpg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
@@ -363,41 +511,109 @@
                         </div>     
                 </div> <!-- end s-about__content-grid -->
             </div> <!--end s-about__content -->      
-            <br>
         </div> <!-- end s-about-content-main -->  
-            <br>
         </section> <!-- end s-about --> 
-        <section class="image-section" style="margin: 0px 40px; padding: 0 30px; margin-top:-60px;">
-            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap;">
-                <figure>
-                    <blockquote>
-                        <p3>
-                            Back on Track - Diabetes: A Unique Approach
-                        </p3>
-                        <br>
-                        <br>
-                        <h10 style="font-size: 17px; line-height: 0.9px;">
-                            <b>Expertise Meets Real Support</b><br>
-                            Back on Track - Diabetes offers a unique combination of <b>medical expertise and psychological support,</b> <u>specifically designed to assist</u> individuals with Type 2 Diabetes in managing the physical, psychological, and social challenges associated with the condition.      
-                        </h10>
-                        <br>
-                        <br>
 
-                        </blockquote>                    
 
+        
+
+        <body>
+            <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -130px;" >
+                <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-mobile-tablet">
+                    <figure class="slide-down" style="animation-delay: 1.5s;">
+                        <blockquote style="margin-top: 10px;">
+                            <br>
+                            <br>
+                        </blockquote>
+                    </figure>
+                </div>
+            </section>
+        </section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-top: 0px; margin-left:20%;">
+            <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+                <figure class="slide-down" style="animation-delay: 1.5s;">
+                    <blockquote style="margin-top: 0px;">
+                        <br>
+                        <br>
+                    </blockquote>
                 </figure>
             </div>
         </section>
+            <section>
+                <section style="margin: 0px 40px; padding: 0 30px; margin-top: 230px;" class="hide-on-mobile-tablet">
+                    <h1 style="font-size: 28px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                        <b>Back on Track - Diabetes: A Unique Approach</b>
+                    </h1>
+                </section>
+
+                <section>
+                    <section style="margin: 0px 40px; padding: 0 30px; margin-top: -40px;" class="hide-on-desktop">
+                        <h1 style="font-size: 28px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                            <b>Back on Track - Diabetes: A Unique Approach</b>
+                        </h1>
+                    </section>
+    
         
+            <section>
+                <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -90px; margin-top: 0px;" class="hide-on-desktop">
+                    <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                        Our team goes beyond medical treatment; we are committed to building strong relationships with participants, fostering a community environment where individuals feel supported and cared for and can explore the physical, emotional, and social impacts of T2D.
+                    </h1>
+                    <br>
+                    <br>
+                </section>
+        
+            <section style="margin: 0px 40px; padding: 0 30px; margin-top: 50px; margin-left:20%; margin-bottom:-170px" >
+                <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+                    <figure class="slide-down" style="animation-delay: 1.5s;">
+                        <blockquote style="margin-top: 0px;">
+                            <br>
+                            <br>
+                        </blockquote>
+                    </figure>
+                </div>
+            </section>
+            </section>
+        
+            <section>
+                <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -50px; margin-top: -150px;" class="hide-on-mobile-tablet">
+                    <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                        <br> <br> <b>Expertise Meets Real Support</b><br>
+                        Back on Track - Diabetes offers a unique combination of <b>medical expertise and psychological support,</b> <u>specifically designed to assist</u> individuals with Type 2 Diabetes in managing the physical, psychological, and social challenges associated with the condition.
+                    </h1>
+                    <br>
+                    <br>
+                    <br>
+                </section>
+            </section>
+        
+                <section  style="margin: 0px 40px; padding: 0 30px; margin-bottom: -200px" class="hide-on-mobile-tablet">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                        <figure class="slide-down" style="animation-delay: 1.5s;">
+                            <blockquote style="margin-top: -10px;">
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </blockquote>
+                        </figure>
+                    </div>
+                </section>
+            </section>
+        
+
+        
+
+
         <section>
-            <div class="text-block" style="width: 100%; padding-left: 1px; margin-bottom: -5%; margin-top: -60px;">
+            <div class="text-block" style="width: 100%; padding-left: 1px; margin-bottom: -5%; margin-top: 80px;">
                 <h3 style="font-size: 30px; line-height: 1.0;">Platamonas and Surrounding Locations</h3>
                 <p style="font-size: 25px; line-height: 1.5;">Explore the stunning natural beauty and historical landmarks around Platamonas.</p>
             </div>
             <br>
         </section>
-        <section class="image-section" style="margin: 20px 40px; padding: 0 30px;">
-            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap;">
+        <section class="image-section; hide-on-mobile-tablet" style="margin: 10px 30px; padding: 0 30px;">
+            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap; margin-top: 3%;">
                 <div class="slider-image" style="flex: 0 0 50%; height: 100%; display: flex; justify-content: center;">
                     <img src="images/platamonas/platamonas beach.jpeg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
                 </div>
@@ -412,7 +628,31 @@
                         </h10>
                     
                     </blockquote>
-                    <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 100px; margin-top: 0px;">
+                    <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 100px;">
+                        <a href="retreat.html" class="btn btn--stroke btn--medium u-fullwidth" 
+                           style="width: 400px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            Read More 
+                        </a>
+                    </div>
+            </div>
+        </section>
+        <section class="image-section; hide-on-desktop" style="margin: 10px 10px; padding: 0 30px;">
+            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap; margin-top: 3%;">
+                <div class="slider-image" style="flex: 0 0 50%; height: 100%; display: flex; justify-content: center;">
+                    <img src="images/platamonas/platamonas beach.jpeg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+                <figure class="pull-quote">
+                    <blockquote>
+                        <p3 style="font-size: 20px;">
+                            Explore Mount Olympus and its unique nature, embracing the energy the “Mountain of the Gods” offers.
+                        </p3>
+                        <br>
+                        <h10 style="font-size: 17px; line-height: 0.2px; font-size: 16px;">
+                            Experience the unique charm of a quaint Greek fishing town at our retreat in Platamonas. Just a stone's throw from the serene Platamonas Beach, our location offers authentic coastal Greek life with fresh seafood, local markets, and warm hospitality. Explore the scenic docks, indulge in the rich cultural heritage, and unwind in luxury amidst breathtaking views, all in the heart of this picturesque seaside village.
+                        </h10>
+                    
+                    </blockquote>
+                    <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 150px;">
                         <a href="retreat.html" class="btn btn--stroke btn--medium u-fullwidth" 
                            style="width: 400px; height: 70px; display: flex; align-items: center; justify-content: center;">
                             Read More 
@@ -421,25 +661,139 @@
             </div>
         </section>
 
-        <section class="image-section" style="margin: 0px 40px; padding: 0 30px;">
+
+
+        
+
+<section style="margin: 0px 40px; padding: 0 30px; margin-bottom: 0px; margin-left:20%">
+    <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+        <figure class="slide-down" style="animation-delay: 1.5s;">
+            <blockquote style="margin-top: 10px;">
+                <br>
+                <br>
+            </blockquote>
+        </figure>
+    </div>
+</section>
+</section>
+
+
+<body>
+    <section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-top: -60px; margin-bottom: -30px;">
+            <h1 style="font-size: 28px; line-height: 40px; " class="page-title slide-down" style="animation-delay: 1s;">
+                <b>An Interdisciplinary Approach for Better Outcomes</b>
+            </h1>
+        </section>
+
+        <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: 0px;" >
+            <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-mobile-tablet">
+                <figure class="slide-down" style="animation-delay: 1.5s;">
+                    <blockquote style="margin-top: 0px;">
+                        <br>
+                        <br>
+                    </blockquote>
+                </figure>
+            </div>
+        </section>
+    </section>
+    <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -20px; margin-left:20%">
+        <div style="display: flex; align-items: center; flex-wrap: wrap;" class="hide-on-desktop">
+            <figure class="slide-down" style="animation-delay: 1.5s;">
+                <blockquote style="margin-top: 0px;">
+                    <br>
+                    <br>
+                </blockquote>
+            </figure>
+        </div>
+    </section>
+    </section>
+
+
+    <section>
+        <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -40px; margin-top: -170px;" class="hide-on-mobile-tablet">
+            <h1 style="font-size: 21px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                <br> <b>Our approach allows us to come closer to our participants. </b>
+                <br>By creating an environment where participants join a community, we manage to strip away the distant medical model of care.
+            </h1>
+            <br>
+            <br>
+            <br>
+        </section>
+    </section>
+
+
+<section>
+    <section style="margin: 0px 0px; padding: 0 30px; margin-bottom: -90px; margin-top: -60px;" class="hide-on-desktop">
+        <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+            <h1 style="font-size: 22px; line-height: 40px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+                <br> <b>Our approach allows us to come closer to our participants. </b>
+                <br>By creating an environment where participants join a community, we manage to strip away the distant medical model of care.          
+                <br>
+                We are guided by evidence and research-based practices, yet we remain keenly aware that each participant is unique, ensuring that our approach is not reduced to another mechanical process of care. This philosophy is supported by numerous recent studies on the benefits of a multidisciplinary approach, which highlight the holistic impacts of integrated care. It is well documented that combining medical treatment, nutritional counseling, psychological support, and physical activity significantly enhances patient outcomes, emphasizing personalized, comprehensive health management.        
+            </h1>
+            <br>
+        </h1>
+        <br>
+        <br>
+    </section>
+
+<section>
+    <section style="margin: 0px 40px; padding: 0 30px; margin-bottom: -50px; margin-top: -120px;" class="hide-on-mobile-tablet">
+        <h1 style="font-size: 18px; line-height: 30px; margin-bottom: 3px;" class="page-title slide-down" style="animation-delay: 1s;">
+            We are guided by evidence and research-based practices, yet we remain keenly aware that each participant is unique, ensuring that our approach is not reduced to another mechanical process of care. This philosophy is supported by numerous recent studies on the benefits of a multidisciplinary approach, which highlight the holistic impacts of integrated care. It is well documented that combining medical treatment, nutritional counseling, psychological support, and physical activity significantly enhances patient outcomes, emphasizing personalized, comprehensive health management.
+        </h1>
+        <br>
+        <br>
+        <br>
+    </section>
+</section>
+
+    <section  style="margin: 0px 40px; padding: 0 30px; margin-bottom: -200px" class="hide-on-mobile-tablet">
+        <div style="display: flex; align-items: center; flex-wrap: wrap;">
+            <figure class="slide-down" style="animation-delay: 1.5s;">
+                <blockquote style="margin-top: -10px;">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </blockquote>
+            </figure>
+        </div>
+    </section>
+</section>
+
+
+        
+
+
+        <section class="image-section; hide-on-mobile-tablet" style="margin: 0px 40px; padding: 0 30px;">
             <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap;">
                 <figure>
                     <blockquote>
                         <h10 style="font-size: 17px; line-height: 0.9px;">
-                            <b>An Interdisciplinary Approach for Better Outcomes</b><br>
-                            Our program emphasizes an interdisciplinary approach that fosters improved outcomes by viewing these aspects as interconnected and equally important components of effective health management.                        </h10>
-                            <br>
-                            <br>
                             <h10 style="font-size: 17px; line-height: 0.9px;">
-                                <b>During the retreat,</b><br>
-                                we offer a combination of individual and group psychotherapeutic interventions for all participants.
-                    </blockquote>                    
+                                <b>Back on Track Retreat Journey: Preparation, Experience, and Follow-Up</b><br>
+                                A client's journey at Back on Track begins well before the retreat. 
+                            </h10>
+                            <section class="image-section" style="margin: 20px 0px; padding: 50 30px;">
+                                <div class="image-block" style="display: flex; align-items: center; flex-wrap: wrap;">
+                                    <div class="slider-image" style="flex: 0 0 50%; height: 50%; display: flex; justify-content: left;">
+                                        <img src="images/gallery/1/medical2.jpeg" class="responsive-img" style="object-fit: cover; height: 50%; width: 30%;">
+                                    </div>
+                                </div>
+                            </section>
+                                <b>All participants undergo comprehensive pre-assessments that encompass physical, psychological, and social evaluations. </b>
+                                <br>This thorough approach ensures we have a detailed understanding of each client's clinical, psychological, and social profile, enabling us to tailor our care to best meet their individual needs.
+                        </h10>
+                     </blockqoute>           
                 </figure>
             </div>
         </section>
 
 
         
+
     <!-- # menu block
         ================================================== -->
         <section id="about" class="s-about" style="margin-left: 3%;" style="margin-right: 50%;">
@@ -450,31 +804,16 @@
                     <div class="s-about__content-header section-header">
                         <h2 class="text-display-title with-line" style="font-size: 70px">
                             What We Offer</h2>                                              
-                        <div class="s-about__content-header-inner">                                            
+                        <div class="s-about__content-header-inner">   
+                                                                     
                     </div> <!-- end s-about__content-header -->      
                 </div>
             </div> <!-- end s-menublock__top --> 
 
-            <p class="text-desc" style="margin-left: 20px; margin-right: 100px; margin-top: -40px;">
+            <p class="text-desc" style="margin-left: 20px; margin-right: 50px; margin-top: -40px;">
                 <a style="text-decoration: none; color: #000000; font-size: 21px; font-family: 'Jost', sans-serif;">Our program integrates expert medical care, psychological support, 
                     and lifestyle modifications, all delivered in a peaceful community setting where participants can feel safe and supported.</a>
-            </p>            
-
-            <div class="row">
-                <div class="column xl-12 menublock__slider-nav">
-                    <div class="row" style="margin-top: -70px;">
-                    <div class="menublock-buttons">
-                        <div class="menublock-btn-prev">
-                            <svg clip-rule="evenodd" fill-rule="evenodd"="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.474 5.209s-4.501 4.505-6.254 6.259c-.147.146-.22.338-.22.53s.073.384.22.53c1.752 1.754 6.252 6.257 6.252 6.257.145.145.336.217.527.217.191-.001.383-.074.53-.221.293-.293.294-.766.004-1.057l-4.976-4.976h14.692c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-14.692l4.978-4.979c.289-.289.287-.761-.006-1.054-.147-.147-.339-.221-.53-.221-.191-.001-.38.071-.525.215z" fill-rule="nonzero"/></svg>
-                        </div>
-                        <div class="menublock-btn-next">
-                            <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero"/></svg>
-                        </div>
-                    </div>
-                </div> <!-- end s-menublock__slider-nav -->
-            </div>
-        </div>
-
+            </p>  
   
         <div class="row s-menublock__slider-wrap">
             <div class="column xl-12">                     
@@ -483,7 +822,7 @@
         
                         <!-- First Slide - Medical Consultations -->
                         <div class="s-menublock__slide swiper-slide">    
-                            <a href="retreats.html">
+                            <a href="retreat.html">
                                 <div class="menublock-item">
                                     <div class="menublock-item__thumb">
                                         <img src="images/gallery/1/doctor.jpeg" 
@@ -499,7 +838,7 @@
         
                         <!-- Second Slide - Psychological Support -->
                         <div class="s-menublock__slide swiper-slide">    
-                            <a href="retreats.html">
+                            <a href="retreat.html">
                                 <div class="menublock-item">
                                     <div class="menublock-item__thumb">
                                         <img src="images/gallery/1/pic 3.png" 
@@ -515,7 +854,7 @@
         
                         <!-- Third Slide - Interdisciplinary Workshops -->
                         <div class="s-menublock__slide swiper-slide">    
-                            <a href="retreats.html">
+                            <a href="retreat.html">
                                 <div class="menublock-item">
                                     <div class="menublock-item__thumb">
                                         <img src="images/gallery/1/outdoor cooking house.jpg" 
@@ -531,7 +870,7 @@
         
                         <!-- Fourth Slide - Cultural and Recreational Activities -->
                         <div class="s-menublock__slide swiper-slide">    
-                            <a href="retreats.html">
+                            <a href="retreat.html">
                                 <div class="menublock-item">
                                     <div class="menublock-item__thumb">
                                         <img src="images/gallery/1/Platamonas view.jpeg" 
@@ -547,48 +886,214 @@
         
                     </div> <!-- end swiper-wrapper -->                       
                 </div> <!-- end s-menublock__slider -->
-        
+                <div class="swiper-pagination" style="align-items: center;" class="hide-on-desktop"></div>
             </div>
         </div> 
     </section>
         <!--
          s-menublock__slider-wrap -->
 
-        <br>
-        <br>
 
-
-
-            <section class="image-section" style="margin: 20px 40px; padding: 0 30px;">
-                <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap;">
-                    <div class="slider-image" style="flex: 0 0 50%; height: 100%; display: flex; justify-content: center;">
-                        <img src="images/gallery/1/hotel breakfast copy.jpeg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
-                    </div>
-                    <figure class="pull-quote">
-                        <blockquote>
-                            <p3 style="font-size: 20px;">
-                                Special Features                            
-                            </p3>
-                            <br>
-                            <h10 style="font-size: 17px; line-height: 0.2px; font-size: 16px;">
-                                Discover the unique features that make our retreat an unforgettable experience.
-                                Indulge in comfort and serenity in our exclusive retreat, tailored for a truly rejuvenating experience.                            
+        <section class="image-section; hide-on-desktop" style="margin: 0px 10px; padding: 0 30px;">
+            <div class="image-block" style="display: flex; align-items: center; margin-top: 40px; flex-wrap: wrap;">
+                <figure>
+                    <blockquote>
+                        <h10 style="font-size: 17px; line-height: 0.9px;">
+                            <h10 style="font-size: 17px; line-height: 0.9px;">
+                                <b>Back on Track Retreat Journey: Preparation, Experience, and Follow-Up</b><br>
+                                A client's journey at Back on Track begins well before the retreat. 
                             </h10>
-                        
-                        </blockquote>
-                        <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 100px; margin-top: 0px;">
-                            <a href="FAQs.html" class="btn btn--stroke btn--medium u-fullwidth" 
-                               style="width: 400px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                               FAQs 
-                            </a>
-                        </div>
+                            <section class="image-section" style="margin: 20px 0px; padding: 50 30px;">
+                                <div class="image-block" style="display: flex; align-items: center; flex-wrap: wrap;">
+                                    <div class="slider-image" style="flex: 0 0 50%; height: 50%; display: flex; justify-content: left;">
+                                        <img src="images/gallery/1/pexels-photo-11423202.jpeg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
+                                    </div>
+                                </div>
+                            </section>
+                                <b>All participants undergo comprehensive pre-assessments that encompass physical, psychological, and social evaluations. </b>
+                                <br>This thorough approach ensures we have a detailed understanding of each client's clinical, psychological, and social profile, enabling us to tailor our care to best meet their individual needs.
+                        </h10>
+                     </blockqoute>           
+                </figure>
+            </div>
+        </section>
+
+
+        <section class="image-section; hide-on-mobile-tablet" style="margin: 30px 40px; padding: 0 30px;">
+            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap; margin-top: 2%;">
+                <div class="slider-image" style="flex: 0 0 50%; display: flex; justify-content: center;">
+                    <img src="images/activities/lake nearby.jpg" class="responsive-img" style="object-fit: cover; height: 50%; width: 100%;">
                 </div>
-            </section>
+                <figure class="pull-quote">
+                    <blockquote>
+                        <p3 style="font-size: 20px;">
                     
+                            <b>Further enriching the experience, our retreat extends beyond the confines of our facilities.</b> <br>
+                        </p3>
+                        <p3 style="font-size: 16px;">
+                            <br> Participants will have the opportunity to engage with the local natural environment through activities such as hiking, exploring both green and blue spaces, foraging, cooking in nature and many more.                         <br>
+                        </p3>
+                        <br>
+                        <h10 style="font-size: 18px; line-height: 0.2px; font-size: 16px;">
+                            Additionally, they will visit quaint, picturesque towns, immerse themselves in village life, and learn firsthand about the health practices of local communities. 
+                            This experiential approach offers a profound understanding of what contributes to health and well-being in the small villages of Greece.
+                        </h10>
+                        <h10 style="font-size: 15px; line-height: 0.2px; font-size: 16px;">
+                            Following the conclusion of the retreat, all participants are offered aftercare services with our staff. 
+                        This support allows for continued discussions about the retreat experience and guidance on maintaining and integrating the positive changes participants wish to implement in their everyday lives. Additionally, participants will have the opportunity to continue meeting as a group, which helps sustain the supportive community atmosphere and facilitates engagement with life after the retreat. These sessions are designed to reinforce the skills and insights gained, ensuring a lasting impact on participants' well-being.                                                                  
+                        </h10>
+                        
+                    
+                    </blockquote>
+                    <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 100px;">
+                        <a href="retreat.html" class="btn btn--stroke btn--medium u-fullwidth" 
+                           style="width: 400px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            Read More 
+                        </a>
+                    </div>
+            </div>
+        </section>
+
+        
+        <section class="image-section; hide-on-desktop" style="margin: 10px 10px; padding: 0 30px;">
+            <div class="image-block" style="display: flex; align-items: center; margin-bottom: 10px; flex-wrap: wrap; margin-top: -10%;">
+                <div class="slider-image" style="flex: 0 0 50%; display: flex; justify-content: center;">
+                    <img src="images/activities/lake nearby.jpg" class="responsive-img" style="object-fit: cover; height: 100%; width: 100%;">
                 </div>
-                <br>
-                <br>
-                <br>
+                <figure class="pull-quote">
+                    <blockquote>
+                        <p3 style="font-size: 20px;">
+                            <b>Further enriching the experience, our retreat extends beyond the confines of our facilities.</b> <br>
+                        </p3>
+                        <p3 style="font-size: 16px;">
+                            <br> Participants will have the opportunity to engage with the local natural environment through activities such as hiking, exploring both green and blue spaces, foraging, cooking in nature and many more.                         <br>
+                        </p3>
+                        <br>
+                        <h10 style="font-size: 18px; line-height: 0.2px; font-size: 16px;">
+                            Additionally, they will visit quaint, picturesque towns, immerse themselves in village life, and learn firsthand about the health practices of local communities. 
+                            This experiential approach offers a profound understanding of what contributes to health and well-being in the small villages of Greece.
+                        </h10>
+                        <h10 style="font-size: 15px; line-height: 0.2px; font-size: 16px;">
+                            Following the conclusion of the retreat, all participants are offered aftercare services with our staff. 
+                        This support allows for continued discussions about the retreat experience and guidance on maintaining and integrating the positive changes participants wish to implement in their everyday lives. Additionally, participants will have the opportunity to continue meeting as a group, which helps sustain the supportive community atmosphere and facilitates engagement with life after the retreat. These sessions are designed to reinforce the skills and insights gained, ensuring a lasting impact on participants' well-being.                                                                  
+                        </h10>
+                        
+                    
+                    </blockquote>
+                    <div class="s-about__content-btn" style="margin-left: 100px; margin-right: 100px;">
+                        <a href="retreat.html" class="btn btn--stroke btn--medium u-fullwidth" 
+                           style="width: 400px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                            Read More 
+                        </a>
+                    </div>
+            </div>
+        </section>
+
+
+        <br>
+        <br>
+
+
+
+            <!-- # menu block
+        ================================================== -->
+        <section id="about" class="s-about" style="margin-left: 3%;" style="margin-right: 50%;">
+
+            <div class="row s-about__content" style="margin-top: -200px;">
+                <div class="column xl-12 s-about__content-grid grid-block">    
+                    
+                    <div class="s-about__content-header section-header">
+                        <h2 class="text-display-title with-line" style="font-size: 70px">
+                            Special Features</h2>                                              
+                        <div class="s-about__content-header-inner">                                            
+                    </div> <!-- end s-about__content-header -->      
+                </div>
+            </div> <!-- end s-menublock__top --> 
+
+            <p class="text-desc" style="margin-left: 20px; margin-right: 50px; margin-top: -40px;">
+                <a style="text-decoration: none; color: #000000; font-size: 21px; font-family: 'Jost', sans-serif;"> Discover the unique features that make our retreat an unforgettable experience.
+                    Indulge in comfort and serenity in our exclusive retreat, tailored for a truly rejuvenating experience.</a>
+            </p>  
+  
+        <div class="row s-menublock__slider-wrap">
+            <div class="column xl-12">
+              <div class="swiper-container s-menublock__slider">
+                <div class="swiper-wrapper">
+                  <!-- First Slide - Medical Consultations -->
+                  <div class="s-menublock__slide swiper-slide">
+                    <a href="about.html">
+                      <div class="menublock-item">
+                        <div class="menublock-item__thumb">
+                          <img src="images/gallery/1/Petros Lecture(1).jpeg" 
+                               srcset="images/gallery/1/Petros Lecture(1).jpeg 1x, images/gallery/1/Petros Lecture(1).jpeg 2x" alt="Integrated Medical and Wellness Team">
+                        </div>
+                        <div class="menublock-item__text">
+                          <h5>Integrated Medical and Wellness Team
+                        </h5>
+                          <p>Forge meaningful connections with a diverse team comprising physicians, nurses, psychologists, and meditation practitioners beyond the traditional clinical settings.
+                        </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <!-- Second Slide - Psychological Support -->
+                  <div class="s-menublock__slide swiper-slide">
+                    <a href="retreat.html">
+                      <div class="menublock-item">
+                        <div class="menublock-item__thumb">
+                          <img src="images/gallery/1/olympus entrance.jpeg" 
+                               srcset="images/gallery/1/olympus entrance.jpeg 1x, images/gallery/1/olympus entrance.jpeg 2x" alt="Cultural Immersion in Greece">
+                        </div>
+                        <div class="menublock-item__text">
+                          <h5>Cultural Immersion in Greece</h5>
+                          <p>Gain a deep understanding of Greek culture through direct interactions with local residents.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <!-- Third Slide - Interdisciplinary Workshops -->
+                  <div class="s-menublock__slide swiper-slide">
+                    <a href="retreat.html">
+                      <div class="menublock-item">
+                        <div class="menublock-item__thumb">
+                          <img src="images/gallery/1/215.jpg" 
+                          srcset="images/gallery/1/215.jpg 1x, images/gallery/1/215.jpg 2x" alt="Culinary Excellence">                       
+                        </div>
+                        <div class="menublock-item__text">
+                          <h5>Culinary Excellence</h5>
+                          <p>Experience the award-winning culinary skills of Chef Agorastos Dimitris, renowned for his expertise in the traditional cuisine of Platamonas.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+          
+                  <!-- Fourth Slide - Cultural and Recreational Activities -->
+                  <div class="s-menublock__slide swiper-slide">
+                    <a href="retreat.html">
+                      <div class="menublock-item">
+                        <div class="menublock-item__thumb">
+                          <img src="images/gallery/1/Platamonas view.jpeg" 
+                               srcset="images/gallery/1/Platamonas view.jpeg 1x, images/gallery/1/Platamonas view.jpeg 2x" alt="Natural Beauty and Serenity">
+                        </div>
+                        <div class="menublock-item__text">
+                          <h5>Natural Beauty and Serenity</h5>
+                          <p>Enjoy the stunning landscape featuring mountains, the Aegean Sea, and picturesque local rivers</p><br><br>
+                        </div>
+
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination" style="align-items: center;" class="hide-on-desktop"></div>
+
+            </div>
+          </div>
+    </section>
+
+
 
             
             <!-- JavaScript for Auto-scrolling Slider -->
@@ -650,8 +1155,11 @@
 
 
 <!-- # footer ================================================== -->
+
+<!-- # footer ================================================== -->
+<!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 80px;">  
     
         <div class="row s-footer__main-content">
     
@@ -664,7 +1172,8 @@
                 <p>
                     Integrating expert medical care, psychological support, and lifestyle modifications, 
                     all delivered in a peaceful community setting where participants can feel safe and supported.
-                </p>               
+                </p>   
+                            
                 <ul class="s-footer__social social-list" style="padding-top: -50px;">
                     <li>
                         <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
@@ -680,12 +1189,15 @@
                             <span class="u-screen-reader-text">Instagram</span>
                         </a>
                     </li>
+                    <ul class="link-list" style="font-size: 18px;" style="margin-left: -50px;">
+                        <li><a href="FAQs.html">have more questions?</a></li>
+                    </ul> 
     
                 </ul> 
             </div> <!-- end s-footer__about -->
     
             <div class="column xl-6 md-12 s-footer__block s-footer__info">
-                <div class="row">
+                <div class="row" style="margin-top: -5%;">
                         <div class="column xl-6 lg-12" style="margin-top: 7%;">     
                             <div style="margin-left: -10%;">
                                 <h5 >Location</h5>
@@ -722,39 +1234,35 @@
     
     
     
-    
         <!-- Java Script
         ================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll('.hero-image');
-                let currentIndex = 0;
-        
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    images[currentIndex].style.opacity = 0;
-        
-                    currentIndex = (currentIndex + 1) % images.length;
-        
-                    images[currentIndex].classList.add('active');
-                    images[currentIndex].style.opacity = 1;
-                }
-        
-                const intervalId = setInterval(showNextImage, 3000);
-        
-                images[currentIndex].classList.add('active');
-                images[currentIndex].style.opacity = 1;
-        
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => clearInterval(intervalId));
-                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            document.addEventListener('DOMContentLoaded', function() {
+                // Trigger the scroll event once the page loads
+                window.dispatchEvent(new Event('scroll'));
+            });
+    
+            document.addEventListener('scroll', function() {
+                const slideDownElements = document.querySelectorAll('.slide-down');
+    
+                slideDownElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+    
+                    // Check if the element is in the viewport
+                    if (elementTop < window.innerHeight && elementBottom >= 0) {
+                        element.classList.add('animate');
+                    } else {
+                        element.classList.remove('animate');
+                    }
                 });
             });
         </script>
-    
+    </body>
+    </html>
     </body>
     </html>
     

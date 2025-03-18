@@ -3,6 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back on Track</title>
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="ellipse 45.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+            <style>
+                /* General Reset */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
+                body {
+                    font-family: var(--font-main);
+                    line-height: 1.6;
+                }
+        
+                /* Section Styling */
+                .s-pagecontent {
+                    padding: 40px 20px;
+                    background-color: white;
+                }
+        
+                .content-block {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 40px;
+                }
+        
+                .content-block--media-left, .content-block--media-right {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+                }
+        
+                .content-block--media-left .content-block__media {
+                    order: -1;
+                }
+        
+                .content-block__media img {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    max-width: 360px; /* Add this line */
+                    max-height: 600px; /* Add this line */
+                }
+        
+                .content-block__text {
+                    flex: 1;
+                }
+        
+                .content-block__text h3 {
+                    margin-bottom: 15px;
+                    font-size: 24px;
+                }
+        
+                .content-block__text p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+        
+                /* Footer Styling */
+                .s-footer {
+                    padding: 40px 20px;
+                    background-color: #f8f8f8;
+                    text-align: center;
+                }
+        
+                .s-footer__main-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: space-between;
+                }
+        
+                .s-footer__block {
+                    flex: 1;
+                    min-width: 250px;
+                }
+        
+                .s-footer__logo img {
+                    max-width: 150px;
+                    margin-bottom: 20px;
+                }
+        
+                .s-footer__social {
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                }
+        
+                .s-footer__social a {
+                    color: #000;
+                    text-decoration: none;
+                }
+        
+                .s-footer__social svg {
+                    width: 24px;
+                    height: 24px;
+                }
+        
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .content-block--media-left, .content-block--media-right {
+                        flex-direction: column;
+                    }
+        
+                    .content-block__media img {
+                        height: 300px;
+                    }
+        
+                    .s-footer__main-content {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            </style>
+    <style>
+        body {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .s-pageheader {
+            display: flex;
+            align-items: center;
+            background-image: url(images/platamonas/Platamon.2013.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            min-height: 100vh;
+        }
+        .s-pageheader__content {
+            width: 90%;
+            padding-left: 5%;
+            text-align: left;
+            color: white;
+            margin-top: 350px;
+        }
+        .row.width-narrow.content-block {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            margin-top: auto;
+        }
+        .grid-list-items.list-items {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mobile and Tablet Styles */
+        @media (max-width: 1024px) {
+            .hide-on-mobile-tablet {
+                display: none !important;
+            }
+            .s-pageheader {
+                height: auto !important;
+                padding: 20px;
+                text-align: center;
+                flex-direction: column !important;
+            }
+            .s-pageheader__content {
+                width: 100% !important;
+                padding-left: 0 !important;
+                text-align: center;
+                margin-top: auto !important;
+            }
+            .page-title {
+                font-size: 24px !important;
+                margin-top: 10px !important;
+            }
+            .column.xl-10 {
+                display: none !important;
+            }
+            .row.width-narrow.content-block {
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: justify !important;
+            }
+            .menu-list {
+                margin-left: -10px !important;
+                margin-right: 0 !important;
+            }
+            .cta-block {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 10px !important;
+            }
+            .attention-getter {
+                font-size: 16px !important;
+                text-align: justify !important;
+            }
+            .btn {
+                font-size: 16px !important;
+                padding: 10px 20px !important;
+                width: 100% !important;
+            }
+        }
+        /* Desktop Styles */
+        @media (min-width: 1025px) {
+            .hide-on-desktop {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body id="top">
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="page" class="s-pagewrap">
+        <div class="menu-underlay"></div>
+        <header class="s-header">
+            <div class="s-header__block">
+                <div class="s-header__logo">
+                    <a class="back-on-track logo" href="index.html">
+                        <img src="images/BACK ON TRACK LOGO.svg" alt="Homepage">
+                    </a>
+                </div>
+                <div class="s-header__cta">
+                    <ul class="s-header__nav-links">
+                        <li><a href="index.html" class="btn btn--primary s-header__cta-btn">Home</a></li>
+                        <li><a href="about.html" class="btn btn--primary s-header__cta-btn">About Us</a></li>
+                        <li><a href="retreat.html" class="btn btn--primary s-header__cta-btn">Retreat</a></li>
+                        <li><a href="consultations.html" class="btn btn--primary s-header__cta-btn">Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="s-section" style="padding-bottom: 25px;">
+            <article class="s-content">
+                <!-- Mobile and Tablet Content -->
+                <div class="hide-on-desktop">
+                    <section class="s-pageheader">
+                        <div class="column xl-6 s-pageheader__content">
+                            <h1 class="page-title slide-down" style="font-size: 17px; color: white;">
+                                Our Schedule
+                            </h1>
+                            <h2 class="page-title slide-down" style="font-size: 15px; color: white;">
+                                This retreat is not just about managing diabetes; it’s about discovering a healthier, more fulfilling way to live.                            </h2>
+                        </div>
+                    </section>
+                </div>
+                <!-- Desktop Content -->
+                <div class="hide-on-mobile-tablet">
+                    <section class="s-pageheader">
+                        <div class="column xl-6 s-pageheader__content">
+                            <h1 class="page-title slide-down" style="font-size: 60px; color: white;">
+                                Our Schedule
+                            </h1>
+                            <h1 class="page-title slide-down" style="font-size: 21px; color: white;">
+                                This retreat is not just about managing diabetes; it’s about discovering a healthier, more fulfilling way to live.                            </h1>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+        
+        
+        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
     <script>
         document.documentElement.classList.remove('no-js');
@@ -254,10 +535,10 @@
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 17px; color: white;">
+                            <h1 class="page-title slide-down" style="font-size: 17px; color: white;">
                                         Our Schedule
                                     </h1>
-                                    <h2 class="page-title" style="font-size: 15px; color: white;">
+                                    <h2 class="page-title slide-down" style="font-size: 15px; color: white;">
                                         This retreat is not just about managing diabetes; it’s about discovering a healthier, more fulfilling way to live.<br>
                                     </h2>
                                 </div>
@@ -267,10 +548,10 @@
                         <div class="hide-on-mobile-tablet">
                             <section class="s-pageheader">
                                 <div class="column xl-6 s-pageheader__content">
-                                    <h1 class="page-title" style="font-size: 60px; color: white;">
+                                    <h1 class="page-title slide-down" style="font-size: 60px; color: white;">
                                         Our Schedule
                                     </h1>
-                                    <h1 class="page-title" style="font-size: 21px; color: white;">
+                                    <h1 class="page-title slide-down" style="font-size: 21px; color: white;">
                                         This retreat is not just about managing diabetes; it’s about discovering a healthier, more fulfilling way to live.<br>
                                     </h1>
                                 </div>
@@ -299,14 +580,15 @@
                                     </li>
                                     <li class="menu-list__item">
                                         <div class="menu-list__item-desc">
-                                            <h4>Effective Diabetes Management Session 1</h4>
-                                            <p>Participate in a diabetes education session, where experts provide insights on effective diabetes management.</p>
+                                            <h4>Living with Diabetes Session 1</h4>
+                                            <p>Participate in various diabetes educational sessions, where experts provide insights on effective diabetes management.</p>
                                         </div>
                                     </li>
                                     <li class="menu-list__item">
                                         <div class="menu-list__item-desc">
                                             <h4>Group Session</h4>
-                                            <p>Participate in a diabetes education session, where experts provide insights on effective diabetes management.</p>
+                                            <p>Participants explore the psychological and physical dynamics of living with diabetes, exchanging experiences in a mutually supportive environment. 
+                                            </p>
                                         </div>
                                     </li>
                                 </ul>
@@ -350,7 +632,7 @@
                 </div>
 
                 <figure style="text-align: center;">
-                    <img src="images/gallery/1/ourdoor cooking pan.jpg" srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" style="width: 83%; height: 400px; object-fit: cover; border-radius: 15px; display: block; margin: 0 auto;">
+                    <img src="images/platamonas/olympus3.jpg" srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" style="width: 83%; height: 400px; object-fit: cover; border-radius: 15px; display: block; margin: 0 auto;">
                 </figure>
 
                 <div class="row width-narrower content-block" style="margin-top: 20px; margin-bottom: 20px;">
@@ -385,20 +667,21 @@
                     <div class="column xl-12">
                         <div class="menu-block">
                             <div class="menu-block__group">
-                                <h1 style="margin-left: 100px; margin-bottom: 15px; font-size: 40px;"></h1>
-                                <ul class="menu-list" style="margin-left: 100px; margin-right: -110px;">
-                                    <div class="row width-narrower row-x-center content-block content-block--grey cta-block" style="display: flex; justify-content: center; align-items: center; text-align: center; margin-left: auto; margin-right: auto;">
-                                        <div class="column xl-10 mob-12">
-                                            <h3>Upcoming Retreat Dates</h3>
-                                            <p class="attention-getter">
-                                                October 5 to 12, 2025
-                                            </p>
-                                        </div>
-                                        <div class="s-about__content-btn" style="margin-left: 80px; margin-right: 100px; margin-top: 0px;">
-                                            <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="align-items: ;">Book a Consultation with our Diabetes Specialist<br></a>
-                                        </div>
+                                <!-- Upcoming Retreat Dates Section -->
+                                <div class="row width-narrower row-x-center content-block content-block--grey cta-block">
+                                    <div class="column xl-10 mob-12">
+                                        <h3>Upcoming Retreat Dates</h3>
+                                        <p class="attention-getter">
+                                            October 5 to 12, 2025
+                                        </p>
                                     </div>
-                                </ul>
+                                    <!-- Button Section -->
+                                    <div class="s-about__content-btn">
+                                        <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth">
+                                            Book a Consultation with our Diabetes Specialist
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -792,10 +1075,9 @@
                 </div>
             </section>
 
- 
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 80px;">  
     
         <div class="row s-footer__main-content">
     
@@ -808,7 +1090,8 @@
                 <p>
                     Integrating expert medical care, psychological support, and lifestyle modifications, 
                     all delivered in a peaceful community setting where participants can feel safe and supported.
-                </p>               
+                </p>   
+                            
                 <ul class="s-footer__social social-list" style="padding-top: -50px;">
                     <li>
                         <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
@@ -824,12 +1107,15 @@
                             <span class="u-screen-reader-text">Instagram</span>
                         </a>
                     </li>
+                    <ul class="link-list" style="font-size: 18px;" style="margin-left: -50px;">
+                        <li><a href="FAQs.html">have more questions?</a></li>
+                    </ul> 
     
                 </ul> 
             </div> <!-- end s-footer__about -->
     
             <div class="column xl-6 md-12 s-footer__block s-footer__info">
-                <div class="row">
+                <div class="row" style="margin-top: -5%;">
                         <div class="column xl-6 lg-12" style="margin-top: 7%;">     
                             <div style="margin-left: -10%;">
                                 <h5 >Location</h5>
@@ -866,39 +1152,35 @@
     
     
     
-    
         <!-- Java Script
         ================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll('.hero-image');
-                let currentIndex = 0;
-        
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    images[currentIndex].style.opacity = 0;
-        
-                    currentIndex = (currentIndex + 1) % images.length;
-        
-                    images[currentIndex].classList.add('active');
-                    images[currentIndex].style.opacity = 1;
-                }
-        
-                const intervalId = setInterval(showNextImage, 3000);
-        
-                images[currentIndex].classList.add('active');
-                images[currentIndex].style.opacity = 1;
-        
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => clearInterval(intervalId));
-                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            document.addEventListener('DOMContentLoaded', function() {
+                // Trigger the scroll event once the page loads
+                window.dispatchEvent(new Event('scroll'));
+            });
+    
+            document.addEventListener('scroll', function() {
+                const slideDownElements = document.querySelectorAll('.slide-down');
+    
+                slideDownElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+    
+                    // Check if the element is in the viewport
+                    if (elementTop < window.innerHeight && elementBottom >= 0) {
+                        element.classList.add('animate');
+                    } else {
+                        element.classList.remove('animate');
+                    }
                 });
             });
         </script>
-    
+    </body>
+    </html>
     </body>
     </html>
     

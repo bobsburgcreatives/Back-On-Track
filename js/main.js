@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } // end ssGLightbox
 
 
+    
+
    /* swiper
     * ------------------------------------------------------ */ 
     const ssSwiper = function() {
@@ -165,7 +167,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }; // end specialtiesSlider
 
-        
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.new-slider');
+    const images = document.querySelectorAll('.new-slider-image');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+      const offset = -currentIndex * 100; // Calculate the offset
+      slider.style.transform = `translateX(${offset}%)`; // Move the slider
+    }
+
+    // Set interval to change image every 4 seconds
+    setInterval(showNextImage, 4000);
+
+    // Ensure the slider starts at the first image
+    slider.style.transform = `translateX(0%)`;
+  });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.slider');
+            const images = document.querySelectorAll('.slider-image');
+            let currentIndex = 0;
+
+            function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            const offset = -currentIndex * 100; // Calculate the offset
+            slider.style.transform = `translateX(${offset}%)`; // Move the slider
+            }
+
+            // Set interval to change image every 4 seconds
+            setInterval(showNextImage, 4000); !important
+
+            // Ensure the slider starts at the first image
+            slider.style.transform = `translateX(0%)`;
+        });
+
         const testimonialSlider = function() {
 
             const tSlider = document.querySelector('.s-testimonials__slider');            
@@ -204,6 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }; // end ssSwiper
 
+    
+    
 
    /* alert boxes
     * ------------------------------------------------------ */
@@ -227,7 +269,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }; // end ssAlertBoxes
 
+    
 
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const section = document.querySelector('.section');
+        const slideDown = document.querySelector('.slide-down');
+        const slideDown1 = document.querySelector('.slide-down-1');
+        const slideLeft = document.querySelector('.slide-left');
+        const slideRight = document.querySelector('.slide-right');
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the .animate class only once
+                    slideDown.classList.add('animate');
+                    slideDown1.classList.add('animate');
+                    slideLeft.classList.add('animate');
+                    slideRight.classList.add('animate');
+    
+                    // Stop observing after the animation triggers
+                    observer.unobserve(section);
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+    
+        // Start observing the section
+        observer.observe(section);
+    });
+
+
+    
    /* smoothscroll
     * ------------------------------------------------------ */
     const ssMoveTo = function() {

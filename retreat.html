@@ -15,126 +15,125 @@
     <link rel="icon" type="image/png" sizes="16x16" href="ellipse 45.svg">
     <link rel="manifest" href="site.webmanifest">
 
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-        }
-
-        /* Section Styling */
-        .s-pagecontent {
-            padding: 40px 20px;
-            background-color: white;
-        }
-
-        .content-block {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 40px;
-        }
-
-        .content-block--media-left, .content-block--media-right {
-            flex-direction: row;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .content-block--media-left .content-block__media {
-            order: -1;
-        }
-
-        .content-block__media img {
-            border-radius: 10px;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            max-width: 360px; /* Add this line */
-            max-height: 600px; /* Add this line */
-        }
-
-        .content-block__text {
-            flex: 1;
-        }
-
-        .content-block__text h3 {
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-
-        .content-block__text p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Footer Styling */
-        .s-footer {
-            padding: 40px 20px;
-            background-color: #f8f8f8;
-            text-align: center;
-        }
-
-        .s-footer__main-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .s-footer__block {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .s-footer__logo img {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-
-        .s-footer__social {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .s-footer__social a {
-            color: #000;
-            text-decoration: none;
-        }
-
-        .s-footer__social svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-block--media-left, .content-block--media-right {
-                flex-direction: column;
-            }
-
-            .content-block__media img {
-                height: 300px;
-            }
-
-            .s-footer__main-content {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-
+            <style>
+                /* General Reset */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
+                body {
+                    font-family: var(--font-main);
+                    line-height: 1.6;
+                }
+        
+                /* Section Styling */
+                .s-pagecontent {
+                    padding: 40px 20px;
+                    background-color: white;
+                }
+        
+                .content-block {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 40px;
+                }
+        
+                .content-block--media-left, .content-block--media-right {
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+                }
+        
+                .content-block--media-left .content-block__media {
+                    order: -1;
+                }
+        
+                .content-block__media img {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    max-width: 360px; /* Add this line */
+                    max-height: 600px; /* Add this line */
+                }
+        
+                .content-block__text {
+                    flex: 1;
+                }
+        
+                .content-block__text h3 {
+                    margin-bottom: 15px;
+                    font-size: 24px;
+                }
+        
+                .content-block__text p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+        
+                /* Footer Styling */
+                .s-footer {
+                    padding: 40px 20px;
+                    background-color: #f8f8f8;
+                    text-align: center;
+                }
+        
+                .s-footer__main-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: space-between;
+                }
+        
+                .s-footer__block {
+                    flex: 1;
+                    min-width: 250px;
+                }
+        
+                .s-footer__logo img {
+                    max-width: 150px;
+                    margin-bottom: 20px;
+                }
+        
+                .s-footer__social {
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                }
+        
+                .s-footer__social a {
+                    color: #000;
+                    text-decoration: none;
+                }
+        
+                .s-footer__social svg {
+                    width: 24px;
+                    height: 24px;
+                }
+        
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .content-block--media-left, .content-block--media-right {
+                        flex-direction: column;
+                    }
+        
+                    .content-block__media img {
+                        height: 300px;
+                    }
+        
+                    .s-footer__main-content {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            </style>
     <style>
         body {
             text-align: justify;
-            line-height: 1.6;
+            line-height: 1.0;
         }
         .s-pageheader {
             display: flex;
@@ -221,8 +220,97 @@
             }
         }
     </style>
-</head>
 
+    <style>
+        /* Slide Down Animation - Non-Intrusive */
+        .slide-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .slide-down.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add delays for each element */
+        .slide-down:nth-child(1) {
+            transition-delay: 0.5s;
+        }
+
+        .slide-down:nth-child(2) {
+            transition-delay: 1s;
+        }
+
+        .slide-down:nth-child(3) {
+            transition-delay: 1.5s;
+        }
+    </style>
+
+
+ <style>
+        /* Mobile Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            /* Adjust margins and padding for mobile */
+            .hide-on-mobile-tablet[style] {
+                margin: 0px 20px !important; /* Reduce side margins */
+                padding: 0 15px !important; /* Reduce padding */
+                margin-top: 0 !important; /* Reset top margin */
+                margin-bottom: 0 !important; /* Reset bottom margin */
+            }
+
+            /* Adjust font size and line height for mobile */
+            .page-title[style] {
+                font-size: 15px !important; /* Smaller font size for mobile */
+                line-height: 18px !important; /* Adjust line height */
+            }
+
+            /* Center-align text for mobile */
+            .page-title {
+                text-align: center;
+            }
+
+            /* Adjust blockquote spacing for mobile */
+            blockquote {
+                margin-top: 5px !important; /* Reduce top margin */
+            }
+
+            /* Ensure flex containers stack vertically on mobile */
+            div[style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+    </style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.s-menublock__slider', {
+        slidesPerView: 1, // Default for mobile
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          640: { // Tablet
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: { // Desktop
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+
+</head>
 <body id="top">
     <div id="preloader">
         <div id="loader" class="dots-fade">
@@ -250,19 +338,21 @@
                 </div>
             </div>
         </header>
+
+
+
+
         <section class="s-section" style="margin-bottom: 25px;">
             <article class="s-content">
                 <!-- Mobile and Tablet Content -->
                 <div class="hide-on-desktop">
                     <section class="s-pageheader">
                         <div class="column xl-6 s-pageheader__content">
-                            <h1 class="page-title" style="font-size: 17px; color: white;">
-                                        7-Day Wellness Retreat
-                                    </h1>
-                                    <h2 class="page-title" style="font-size: 15px; color: white;">
-                                        Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br><br><br>
-                                        <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>                                    </h2>
-                                </div>
+                            <h1 class="page-title" style="font-size: 12px; color: white;">
+                                7-Day Wellness Retreat                                    
+                            </h1>
+                            <h2 class="page-title" style="font-size: 15px; color: white;" style="margin-bottom: 160px;">
+                                Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br><br><br>
                             </section>
                         </div>
                         <!-- Desktop Content -->
@@ -270,16 +360,15 @@
                             <section class="s-pageheader">
                                 <div class="column xl-6 s-pageheader__content">
                                     <h1 class="page-title" style="font-size: 60px; color: white;">
-                                        7-Day Wellness Retreat
+                                        7-Day Wellness Retreat                                    
                                     </h1>
-                                    <h1 class="page-title" style="font-size: 21px; color: white;">
-                                        Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. <br>
-                                        <b style="color: #ffffff;">Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes.</i></b>                                    </h1>
-                                </div>
-                            </section>
+                                    <h1 class="page-title" style="font-size: 20px; color: white;">
+                                        Living with T2D can feel overwhelming due to the demands of managing blood sugar, diet, and emotional stress. 
+                                        <br>Our retreat addresses all aspects of your health—physical, mental, and emotional dedicated to improving the lives of individuals <i>with Type 2 Diabetes. <br><br><br>                            </section>
                         </div>
                     </article>
                 </section>
+
 
         <section>
 
@@ -287,13 +376,13 @@
                 <div class="hide-on-mobile-tablet">
                 <div class="row width-narrow content-block">
                     <div class="column xl-12">
-                        <h3 style="margin-top: 30px; margin-bottom: 0px;">A Tailored Retreat for Health and Relaxation</h3>
+                        <h3 style="margin-top: 25px; margin-bottom: 30px;">A Tailored Retreat for Health and Relaxation</h3>
                         <div class="grid-list-items list-items"></div>
                     </div>
                 </div>
                 <div class="hide-on-desktop">
                     <div class="row width-narrow content-block">
-                        <h3 style="margin-top: 90px; margin-bottom: -100px;">A Tailored Retreat for Health and Relaxation</h3>
+                        <h3 style="margin-top: 70px; margin-bottom: -100px;">A Tailored Retreat for Health and Relaxation</h3>
                         <div class="grid-list-items list-items"></div>
                       </div>
                     </div>
@@ -307,11 +396,10 @@
 <div class="hide-on-desktop">
     <div class="s-about__content-btn" class="hide-on-desktop" style="padding-inline: 10%;">
         <p class="attention-getter">
-            <b>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach.</b><br>
+            <b></b>                                                           
+            Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach.<br>
             Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
         </p>
-    <a onclick="window.location.href='#target-section'" class="btn btn--stroke btn--medium u-fullwidth">See Our Facilities and Rooms</a>
-    </div>
 </div>
 <br>
 <br>
@@ -323,11 +411,10 @@
                     <section class="s-section" style="margin-top: -180px;">        
                         <div class="row width-narrow content-block">
                             <div class="column xl-12"> 
-                                <div class="row width-narrower content-block" style="margin-top: -20px; margin-bottom: -50px;">
+                                <div class="row width-narrower content-block" style="margin-top: 30px; margin-bottom: -50px;">
                                     <div class="column xl-12">
                                         <div class="menu-block">
                                             <div class="menu-block__group">
-                                                <ul class="menu-list">
                                                         <div class="column xl-10 mob-12">
                                                             <p class="attention-getter">
                                                                 <b>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach.</b><br>
@@ -336,20 +423,27 @@
                                                                 <br>
                                                                 <br>
                                                             </p>
-                                                            <div class="s-about__content-btn">
-
-                                                                <a onclick="window.location.href='#target-section'" class="btn btn--stroke btn--medium u-fullwidth">See Our Facilities and Rooms</a>
-                                                            </div>
                                                         </div>
                                                     </div>
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+
+                <section>
+                    <div class="s-about__content-btn">
+
+                        <a onclick="window.location.href='#target-section'" class="btn btn--stroke btn--medium u-fullwidth" style="align-items: center;">See Our Facilities and Rooms</a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </section>
                     
                                 <!-- Row 1: First Two Images with Text -->
-                                <div class="grid-list-items list-items" style="display: flex; gap: 20px; text-align: justify; flex-wrap: wrap;">
+                                <div class="grid-list-items list-items;" style="display: flex; gap: 20px; text-align: justify; flex-wrap: wrap;">
                      
                                     <div class="column" style="flex: 1;">
                                         <figure>
@@ -369,15 +463,14 @@
                     
                                     <div class="column" style="flex: 1;">
                                         <figure>
-                                            <img src="images/gallery/1/Petros lecture.jpeg"  
+                                            <img src="images/retreat/one-on-one sessions.png"  
                                                 srcset="images/gallery/1/Petros lecture.jpeg 1x, images/gallery/1/Petros lecture.jpeg 2x" alt="" 
                                                 style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px;">
                                         </figure>
                                         <div class="text-block" style="max-width: 100%; margin-top: 10px;">
                                             <h6 class="list-items__item-small-title">Psychological Support</h6>
                                             <p> 
-                                                <i>Living with diabetes can often lead to feelings of isolation or emotional distress.</i>
-                                                Individual psychotherapy sessions with a combination of groups psychotherapeutic interventions. 
+                                                Living with diabetes can frequently result in emotional distress and a sense of isolation. We effectively alleviate these psychological symptoms by combining  individual and group psychotherapeutic interventions. 
 
                                             </p>
                                         </div>
@@ -476,6 +569,7 @@
                         </div>
                     </section>  
                 </div>          
+                
 
                                 <!-- Space between sections -->
                                 <div class="row width-narrower content-block" style="margin-top: 0px; margin-bottom: 20px;">
@@ -493,7 +587,10 @@
                                         <br>
                                         <br>
                                         <br>
-                                            <p>Our retreat is nestled a mere stone's throw from the pristine Platamonas Beach. Our facilities are a sanctuary of peace and luxury, where every detail is meticulously crafted to ensure your stay is nothing short of spectacular. Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
+                                        <br>
+                                        <br>
+                                            <p>Our retreat is nestled just a stone's throw from the pristine Platamonas Beach, along the shores of the Aegean Sea, renowned for its crystal-clear waters. Our facilities serve as a sanctuary of peace and luxury, where every detail is meticulously crafted to ensure your stay is spectacular. Unwind in privacy and luxury, enjoying breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings, all designed to enhance your retreat experience. 
+
                                                 <br>
                                             </p>
                                             <head>
@@ -523,9 +620,6 @@
                                                     <h1 style="font-size: 45px;" style="font-weight:600;"> Our Facilities</h1>
                                                 </tr>
                                             </thead>
-                                            <p style="margin-top:-3%;">Our facilities are a sanctuary of peace and luxury, where every detail is meticulously crafted to ensure your stay is nothing short of spectacular. Unwind in privacy and luxury with breathtaking mountain views, a serene outdoor swimming pool, and lush green surroundings.
-                                                <br>
-                                            </p>
                                         </table>
                                             
                                             <body>
@@ -629,7 +723,6 @@
                                             <head>
                                                 <meta charset="UTF-8">
                                                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                                <title>Two Images Side by Side</title>
                                                 <style>
                                                     .image-container {
                                                         width: 100%; /* Adds margin on sides */
@@ -695,20 +788,23 @@
                                                             </table>
                                                     
                                                 </table>
+                                                        </div>
+
+                                            <section>
                                                 <div class="row width-narrower row-x-center content-block content-block--grey cta-block" style="display: flex; justify-content: center; align-items: center; text-align: center; margin-left: auto; margin-right: auto;">
-                                                    <div class="column xl-10 mob-12">     
+                                                    <div class="column xl-10 mob-12">
                                                         <h3>Upcoming Retreat Dates</h3>
-                                                        <br>
-                                                        <br>
-                                                        <br>
                                                         <p class="attention-getter">
-                                                            October 5th to 12th 2025
-                                                            <div>
-                                                                <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="margin-top: 1%;">Book A Consultation With Our Diabetes Specialist
+                                                            October 5 to 12, 2025
+                                                        </p>
+                                                    </div>
+                                                    <div class="s-about__content-btn" style="margin-left: 80px; margin-right: 100px; margin-top: 0px;">
+                                                        <a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth" style="align-items: ;">Book a Consultation with our Diabetes Specialist<br></a>
                                                                 </a>
                                                             </div>  
                                                         </p>
                                                     </div>
+                                            </section>
                                                 
             
                                                 </div>
@@ -720,24 +816,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="hide-on-desktop">
-                    <div class="s-about__content-btn" class="hide-on-desktop" style="padding-inline: 10%;">
-                        <p class="attention-getter">
-                            <b>Upcoming Retreat Dates
-                        </p>
-                        <p>
-                            <b>
-                                October 5th to 12th 2025
-                            </b>
-                        </p>
-                    <a a href="consultations.html" class="btn btn--stroke btn--medium u-fullwidth">Book A Consultation With Our Diabetes Specialist</a>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <br>
-            
+
                 
              </div> <!-- end content-block -->
 
@@ -747,9 +826,9 @@
 
 
 
-<!-- # footer ================================================== -->
+<!-- <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
-    <footer id="footer" class="s-footer" style="padding-top: 200px;">  
+    <footer id="footer" class="s-footer" style="padding-top: 80px;">  
     
         <div class="row s-footer__main-content">
     
@@ -762,7 +841,8 @@
                 <p>
                     Integrating expert medical care, psychological support, and lifestyle modifications, 
                     all delivered in a peaceful community setting where participants can feel safe and supported.
-                </p>               
+                </p>   
+                            
                 <ul class="s-footer__social social-list" style="padding-top: -50px;">
                     <li>
                         <a href="hhttps://www.facebook.com/profile.php?id=61573658109081">
@@ -778,12 +858,15 @@
                             <span class="u-screen-reader-text">Instagram</span>
                         </a>
                     </li>
+                    <ul class="link-list" style="font-size: 18px;" style="margin-left: -50px;">
+                        <li><a href="FAQs.html">have more questions?</a></li>
+                    </ul> 
     
                 </ul> 
             </div> <!-- end s-footer__about -->
     
             <div class="column xl-6 md-12 s-footer__block s-footer__info">
-                <div class="row">
+                <div class="row" style="margin-top: -5%;">
                         <div class="column xl-6 lg-12" style="margin-top: 7%;">     
                             <div style="margin-left: -10%;">
                                 <h5 >Location</h5>
@@ -820,39 +903,36 @@
     
     
     
-    
         <!-- Java Script
         ================================================== -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll('.hero-image');
-                let currentIndex = 0;
-        
-                function showNextImage() {
-                    images[currentIndex].classList.remove('active');
-                    images[currentIndex].style.opacity = 0;
-        
-                    currentIndex = (currentIndex + 1) % images.length;
-        
-                    images[currentIndex].classList.add('active');
-                    images[currentIndex].style.opacity = 1;
-                }
-        
-                const intervalId = setInterval(showNextImage, 3000);
-        
-                images[currentIndex].classList.add('active');
-                images[currentIndex].style.opacity = 1;
-        
-                images.forEach(image => {
-                    image.addEventListener('mouseover', () => clearInterval(intervalId));
-                    image.addEventListener('mouseout', () => setInterval(showNextImage, 3000));
+            document.addEventListener('DOMContentLoaded', function() {
+                // Trigger the scroll event once the page loads
+                window.dispatchEvent(new Event('scroll'));
+            });
+    
+            document.addEventListener('scroll', function() {
+                const slideDownElements = document.querySelectorAll('.slide-down');
+    
+                slideDownElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+    
+                    // Check if the element is in the viewport
+                    if (elementTop < window.innerHeight && elementBottom >= 0) {
+                        element.classList.add('animate');
+                    } else {
+                        element.classList.remove('animate');
+                    }
                 });
             });
         </script>
-    
     </body>
     </html>
+    </body>
+    </html>
+    
     
