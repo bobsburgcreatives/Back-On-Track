@@ -188,6 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
         document.addEventListener('DOMContentLoaded', function () {
             const slider = document.querySelector('.slider');
             const images = document.querySelectorAll('.slider-image');
@@ -245,10 +248,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }; // end ssSwiper
 
     
+    document.getElementById('consultationForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        // Collect form data
+        const formData = new FormData(this);
+    
+        // Convert FormData to JSON
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+    
+        // Log the data being sent
+        console.log("Sending data:", data);
+    
+        // Send data to Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycby1eV0GjETqhXtYdgy4UwFjjQHHSavWrPLvNvsUGD-dVxmPYI4tzyDLWtcb1lVkWttx6A/exec', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Hide form and show thank-you message
+                document.getElementById('consultationForm').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+            } else {
+                throw new Error(data.message || 'Failed to submit form.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(`An error occurred: ${error.message}`);
+        });
+    });
+
+
     
 
-   /* alert boxes
-    * ------------------------------------------------------ */
     const ssAlertBoxes = function() {
 
         const boxes = document.querySelectorAll('.alert-box');

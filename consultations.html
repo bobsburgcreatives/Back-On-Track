@@ -373,42 +373,110 @@
             <!-- ## pagecontent -->
             <section class="s-pagecontent pagecontent">
 
-                <div class="row width-narrower pageintro text-center">
-                    <div class="column xl-12">
-                        <p class="lead">
-                        Add your details below & we'll be in touch shortly!
-                        </p>
-                    </div>                       
-                </div> <!-- end pageintro -->   
-                
-                <div class="row width-narrower content-block" style="padding-left: 20%;">
-                    <div class="column xl-12">
+    <div class="row width-narrower pageintro text-center">
+        <div class="column xl-12">
+            <p class="lead">
+            Add your details below & we'll be in touch shortly!
+            </p>
+        </div>                       
+    </div> <!-- end pageintro -->   
 
-                        <form name="rform" id="rform" class="reservation-form" method="post" action="" autocomplete="off">
-                            <fieldset class="row">
-                               
-                                <form action="https://formspree.io/f/mqaergbr" method="POST">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
-                                    
-                                
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
-                    
-                                    <label for="message">Message:</label>
-                                    <textarea id="message" name="message" required></textarea>
-                                
-                                    <button type="submit" style="color: #000000;">Send</button>                                
-                                </form>
-
-                    </div>
-                </div> <!-- end content-block -->
-
-
-            </section> <!-- pagecontent --> 
-
-        </article> <!-- end main content -->
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consultation Form</title>
+        <style>
+            /* Add custom styles for the form */
+            #consultationForm {
+                width: calc(100% - 200px); /* Full width with 100px margins on each side */
+                margin: 0 100px; /* 100px margins on left and right */
+                padding: 20px; /* Optional: Add padding for better spacing */
+                box-sizing: border-box; /* Ensure padding is included in the width */
+            }
+            /* Style form elements as needed */
+            #consultationForm input, #consultationForm textarea, #consultationForm button {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            /* Style the submit button */
+            #consultationForm button[type="submit"] {
+                background-color: #ffffff; /* White background */
+                color: #41BCA5; /* 41BCA5 text color */
+                border: 1px solid #41BCA5; /* 41BCA5 border */
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+            }
+            /* Hover effect for the submit button */
+            #consultationForm button[type="submit"]:hover {
+                background-color: #41BCA5; /* 41BCA5 background */
+                color: #ffffff; /* White text */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Your form HTML -->
+        <form id="consultationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <button type="submit">Submit</button>
+        </form>
+    
+        <!-- Thank you message (hidden by default) -->
+        <div id="thankYouMessage" style="display: none;">
+            <p>Thank you for your submission!</p>
+        </div>
+    
+        <!-- JavaScript at the end of the body -->
+        <script>
+            document.getElementById('consultationForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+    
+                // Collect form data
+                const formData = new FormData(this);
+    
+                // Convert FormData to JSON
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+    
+                // Send data to Google Apps Script
+                fetch('https://script.google.com/macros/s/AKfycbx0AaiTvvVHdaWcbKlOI5QDD6ICPjIrVtiHQ3zzTSLVzHYSy6gMxyRLHCL7sUDOp1DR4w/exec', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Hide form and show thank-you message
+                        document.getElementById('consultationForm').style.display = 'none';
+                        document.getElementById('thankYouMessage').style.display = 'block';
+                    } else {
+                        throw new Error('Failed to submit form.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            });
+        </script>
+        <br>
+        <br>
+    </body>
+    </html>
 <!-- # footer ================================================== -->
 <div class="hide-on-mobile-tablet">
     <footer id="footer" class="s-footer" style="padding-top: 80px;">  

@@ -976,6 +976,47 @@ body {
     background-color: white; /* Add this line */
 }
 
+
+
+/* -------------------------------------------------------------------- */
+/*consultation form  */
+/* -------------------------------------------------------------------- */
+
+
+
+<style>
+  /* Form Container Styling */
+  .form-iframe-container {
+    width: 100%;
+    max-width: 800px; /* Adjust this to control the maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding around the form */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+
+  /* Make the iframe responsive */
+  .form-iframe-container iframe {
+    width: 100%;
+    height: 600px; /* Adjust this to control the initial height */
+    border: none; /* Remove the iframe border */
+    display: block; /* Ensure the iframe behaves as a block element */
+  }
+
+  /* Adjust height for smaller devices */
+  @media (max-width: 768px) {
+    .form-iframe-container iframe {
+      height: 800px; /* Increase height for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-iframe-container iframe {
+      height: 1000px; /* Further increase height for mobile devices */
+    }
+  }
+</style>
+
+
 /* -------------------------------------------------------------------- */
 /* New responsive styles for specific components (add below your grid system) */
 /* -------------------------------------------------------------------- */
