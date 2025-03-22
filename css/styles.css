@@ -977,6 +977,75 @@ body {
 }
 
 
+/* -------------------------------------------------------------------- */
+/* mobile footer settings  */
+/* -------------------------------------------------------------------- */
+
+.mobile-tablet-footer {
+    display: none;
+    background-color: #f9f9f9; /* Adjust as needed */
+    padding: 20px; /* Added padding to prevent bleeding */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
+    width: 100%; /* Ensure footer takes full width */
+    overflow: hidden; /* Prevent content from bleeding out */
+}
+
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+
+    .mobile-tablet-footer {
+        display: block;
+    }
+
+    .s-footer__main-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%; /* Ensure content takes full width */
+    }
+
+    .s-footer__block {
+        margin-bottom: 4px; /* Reduced spacing between sections */
+        width: 100%; /* Ensure blocks take full width */
+    }
+
+    .s-footer__logo img {
+        max-width: 150px; /* Adjust logo size */
+        display: block; /* Ensure logo is centered */
+        margin: 0 auto; /* Center logo horizontally */
+    }
+
+    .s-footer__social .social-list {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Reduced gap between icons */
+        padding: 0;
+    }
+
+    .s-footer__info .row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure row takes full width */
+    }
+
+    .s-footer__info .link-list {
+        padding: 0;
+        list-style: none;
+        text-align: center; /* Center text */
+    }
+
+    .btn--medium {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: center; /* Center button text */
+        display: block; /* Ensure button is centered */
+    }
+}
 
 /* -------------------------------------------------------------------- */
 /*consultation form  */
