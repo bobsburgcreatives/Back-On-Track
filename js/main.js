@@ -100,153 +100,167 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     
+/* ====================================================== */
+/* SLIDER OVERRIDE SYSTEM - FAST TRANSITION, 6SEC PAUSES  */
+/* ====================================================== */
 
-   /* swiper
-    * ------------------------------------------------------ */ 
-    const ssSwiper = function() {
-        
-        const specialtiesSlider = function() {
-
-            const prevButton = document.querySelector('.menublock-btn-prev');
-            const nextButton = document.querySelector('.menublock-btn-next');
-            const mSlider = document.querySelector('.s-menublock__slider');            
-            if (!(mSlider)) return;
-
-            const slider = new Swiper(mSlider, {
-
-                slidesPerView: 1,
-                pagination: {
-                    // el: '.swiper-pagination',
-                    clickable: true,
-                    navigation: {
-                        nextEl: '.menublock-btn-next',
-                        prevEl: '.menublock-btn-prev',
-                    }
-                },
-                breakpoints: {
-                    // when window width is > 400px
-                    401: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    // when window width is > 680px
-                    681: {
-                        slidesPerView: 2,
-                        spaceBetween: 44
-                    },
-                    // when window width is > 1100px
-                    1101: {
-                        slidesPerView: 3,
-                        spaceBetween: 50
-                    },
-                    // when window width is > 1400px
-                    1401: {
-                        slidesPerView: 3,
-                        spaceBetween: 60
-                    }
-                }
-            });
-
-            prevButton.addEventListener('click', function() {
-                if (slider.activeIndex === 0) {                    
-                  // At the beginning of the slider
-                  slider.slideTo(slider.slides.length - 1); // Go to the last slide
-                } else {
-                  slider.slidePrev();
-                }
-            });
-              
-            nextButton.addEventListener('click', function() {
-                if (slider.activeIndex === slider.slides.length - 1) {
-                  // At the end of the slider
-                  slider.slideTo(0); // Go to the first slide
-                } else {
-                  slider.slideNext();
-                }
-            });
-
-        }; // end specialtiesSlider
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.new-slider');
-    const images = document.querySelectorAll('.new-slider-image');
-    let currentIndex = 0;
-
-    function showNextImage() {
-      currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
-      const offset = -currentIndex * 100; // Calculate the offset
-      slider.style.transform = `translateX(${offset}%)`; // Move the slider
+// First, remove any existing slider instances and intervals
+(function() {
+    // Clear all intervals
+    const intervalIds = window.setInterval(() => {}, 9999); // Get highest ID
+    for (let i = 1; i <= intervalIds; i++) {
+        clearInterval(i);
     }
 
-    // Set interval to change image every 4 seconds
-    setInterval(showNextImage, 4000);
+    // Destroy existing Swiper instances
+    if (typeof Swiper !== 'undefined') {
+        document.querySelectorAll('[class*="swiper"]').forEach(swiper => {
+            if (swiper.swiper) swiper.swiper.destroy(true, true);
+        });
+    }
 
-    // Ensure the slider starts at the first image
-    slider.style.transform = `translateX(0%)`;
-  });
+    // Reset all slider elements
+    document.querySelectorAll('.new-slider, [class*="slider"]').forEach(slider => {
+        slider.removeAttribute('style');
+        const newSlider = slider.cloneNode(true);
+        slider.parentNode.replaceChild(newSlider, slider);
+    });
+})();
 
-
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.querySelector('.slider');
-            const images = document.querySelectorAll('.slider-image');
-            let currentIndex = 0;
-
-            function showNextImage() {
-            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
-            const offset = -currentIndex * 100; // Calculate the offset
-            slider.style.transform = `translateX(${offset}%)`; // Move the slider
+// Main slider implementation
+document.addEventListener('DOMContentLoaded', function() {
+    /* ======================= */
+    /* 1. MENU BLOCK SLIDER */
+    /* ======================= */
+    const menuSliderEl = document.querySelector('.s-menublock__slider');
+    if (menuSliderEl) {
+        new Swiper(menuSliderEl, {
+            slidesPerView: 1,
+            autoplay: {
+                delay: 6000, // 6 seconds pause
+                disableOnInteraction: false,
+                waitForTransition: true
+            },
+            speed: 300, // Fast 300ms transition
+            loop: true,
+            navigation: {
+                nextEl: '.menublock-btn-next',
+                prevEl: '.menublock-btn-prev',
+            },
+            breakpoints: {
+                401: { slidesPerView: 1, spaceBetween: 20 },
+                681: { slidesPerView: 2, spaceBetween: 44 },
+                1101: { slidesPerView: 3, spaceBetween: 50 },
+                1401: { slidesPerView: 3, spaceBetween: 60 }
             }
+        });
+    }
 
-            // Set interval to change image every 4 seconds
-            setInterval(showNextImage, 4000); !important
+    /* ======================= */
+    /* 2. TESTIMONIALS SLIDER */
+    /* ======================= */
+    const testimonialSliderEl = document.querySelector('.s-testimonials__slider');
+    if (testimonialSliderEl) {
+        new Swiper(testimonialSliderEl, {
+            slidesPerView: 1,
+            autoplay: {
+                delay: 6000, // 6 seconds pause
+                disableOnInteraction: false,
+                waitForTransition: true
+            },
+            speed: 300, // Fast 300ms transition
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                401: { slidesPerView: 1, spaceBetween: 20 },
+                901: { slidesPerView: 2, spaceBetween: 50 },
+                1201: { slidesPerView: 2, spaceBetween: 80 }
+            }
+        });
+    }
 
-            // Ensure the slider starts at the first image
-            slider.style.transform = `translateX(0%)`;
+    /* ======================= */
+    /* 3. CUSTOM NEW SLIDER */
+    /* ======================= */
+    const customSliderEl = document.querySelector('.new-slider');
+    if (customSliderEl) {
+        const slides = customSliderEl.querySelectorAll('.new-slider-image');
+        const slideCount = slides.length;
+        let currentIndex = 0;
+        const transitionSpeed = 300; // Fast transition
+        const pauseDuration = 6000; // 6 second pause
+
+        // Initialize slider
+        customSliderEl.style.display = 'flex';
+        customSliderEl.style.width = '100%';
+        slides.forEach(slide => {
+            slide.style.minWidth = '100%';
+            slide.style.flexShrink = '0';
         });
 
-        const testimonialSlider = function() {
-
-            const tSlider = document.querySelector('.s-testimonials__slider');            
-            if (!(tSlider)) return;
-
-            const slider = new Swiper(tSlider, {
-
-                slidesPerView: 1,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    // when window width is > 400px
-                    401: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    // when window width is > 900px
-                    901: {
-                        slidesPerView: 2,
-                        spaceBetween: 50
-                    },
-                    // when window width is > 1200px
-                    1201: {
-                        slidesPerView: 2,
-                        spaceBetween: 80
-                    }
+        function slideNext() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            
+            // Apply fast transition
+            customSliderEl.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+            customSliderEl.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Handle infinite loop
+            setTimeout(() => {
+                if (currentIndex === slideCount - 1) {
+                    customSliderEl.style.transition = 'none';
+                    customSliderEl.style.transform = 'translateX(0)';
+                    setTimeout(() => currentIndex = 0, 50);
                 }
-            });
+            }, transitionSpeed);
+        }
 
-        }; // end testimonialSlider
+        // Start slider with precise timing
+        let sliderInterval = setInterval(slideNext, pauseDuration + transitionSpeed);
 
-        specialtiesSlider();
-        testimonialSlider();
+        // Pause on hover
+        customSliderEl.addEventListener('mouseenter', () => clearInterval(sliderInterval));
+        customSliderEl.addEventListener('mouseleave', () => {
+            sliderInterval = setInterval(slideNext, pauseDuration + transitionSpeed);
+        });
 
-    }; // end ssSwiper
+        // Force initial position
+        setTimeout(() => customSliderEl.style.transform = 'translateX(0)', 100);
+    }
+});
 
+/* ======================= */
+/* CSS OVERRIDES */
+/* ======================= */
+const sliderStyleOverrides = `
+    .new-slider {
+        display: flex !important;
+        width: 100% !important;
+        transition: transform 300ms ease-in-out !important;
+    }
+    .new-slider-image {
+        min-width: 100% !important;
+        flex-shrink: 0 !important;
+    }
+    .swiper-container {
+        overflow: hidden !important;
+    }
+    .swiper-wrapper {
+        transition-timing-function: ease-in-out !important;
+        transition-duration: 300ms !important;
+    }
+    .swiper-slide {
+        transition: opacity 300ms !important;
+    }
+`;
+
+// Apply styles
+const styleElement = document.createElement('style');
+styleElement.innerHTML = sliderStyleOverrides;
+document.head.appendChild(styleElement);
     
     document.getElementById('consultationForm').addEventListener('submit', function (e) {
         e.preventDefault();
