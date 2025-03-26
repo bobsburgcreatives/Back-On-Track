@@ -378,7 +378,7 @@
             Add your details below & we'll be in touch shortly!
             </p>
         </div>                       
-    </div> <!-- end pageintro -->   
+    </div> <!-- end pageintro -->    
 
     <!-- FORM (NO VISUAL CHANGES) -->
     <form id="consultationForm" 
@@ -386,11 +386,11 @@
           method="POST"
           style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
         
-        <!-- FormSubmit Configuration -->
+        <!-- FormSubmit Configuration - REMOVED AUTO-RESPONSE -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse" value="Thank you for contacting Back on Track Diabetes! We've received your message and will respond within 24 hours.">
+        <!-- Removed _autoresponse and _next -->
         
         <!-- Your Original Fields -->
         <label for="name">Name:</label>
@@ -407,19 +407,13 @@
         </button>
     </form>
 
-    <!-- Success Message (same styling) -->
-    <div id="thankYouMessage" style="display: none; width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box; color: #41BCA5;">
-        <p><strong>Thank you!</strong> We've received your message and will contact you shortly.</p>
-    </div>
-
-    <!-- JavaScript (optimized) -->
+    <!-- JavaScript for Popup Message -->
     <script>
-        const form = document.getElementById('consultationForm');
-        const thankYou = document.getElementById('thankYouMessage');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        
-        form.addEventListener('submit', async (e) => {
+        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
             
             // Loading state
             submitBtn.disabled = true;
@@ -428,14 +422,16 @@
             submitBtn.textContent = 'Sending...';
             
             try {
+                // Submit to FormSubmit
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
                 });
                 
                 if (response.ok) {
-                    form.style.display = 'none';
-                    thankYou.style.display = 'block';
+                    // Show popup instead of thank-you message
+                    alert('Thank you! We\'ve received your message and will contact you shortly.');
+                    form.reset(); // Clear the form
                 } else {
                     throw new Error('Submission failed');
                 }
