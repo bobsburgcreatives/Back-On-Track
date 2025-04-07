@@ -382,31 +382,40 @@
     </div> <!-- end pageintro -->   
 
     <!-- FORM (NO VISUAL CHANGES) -->
-    <form id="consultationForm" 
-          action="https://formsubmit.co/info@backontrack-diabetes.com" 
-          method="POST"
-          style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
-        
-        <!-- FormSubmit Configuration -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
-        <input type="hidden" name="_template" value="table">
-        <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
-        <input type="hidden" name="_autoresponse" value="Thank you for contacting us!">
-        
-        <!-- Your Original Fields -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-    
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-    
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;"></textarea>
-    
-        <button type="submit" style="background-color: #ffffff; color: #41BCA5; border: 1px solid #41BCA5; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;">
-            Submit
-        </button>
+   <!-- FORM (NO VISUAL CHANGES) -->
+<form id="consultationForm" 
+action="https://formsubmit.co/info@backontrack-diabetes.com" 
+method="POST"
+style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
+
+<!-- FormSubmit Configuration -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
+<input type="hidden" name="_autoresponse" value="Dear Guest,
+
+Thank you for reaching out about our 7-day wellness retreat for people living with type 2 diabetes. Your request has been received, and we'll contact you shortly to schedule your consultation.
+
+Warm regards,
+[Your Name]
+Wellness Retreat Team
+info@backontrack-diabetes.com">
+
+<!-- Your Original Fields -->
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;"></textarea>
+
+<button type="submit" style="background-color: #ffffff; color: #41BCA5; border: 1px solid #41BCA5; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;">
+  Submit
+</button>
+</form>
     </form>
 
     <!-- Popup Modal -->
