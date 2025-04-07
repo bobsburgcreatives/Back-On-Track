@@ -1,7 +1,5 @@
 /* ===================================================================
- * Maillard Third-party Stylesheets
- * Template Ver. 1.0.0
- * 08-03-2023
+ * BB Creatives / Sofia 4.6.2
  * -------------------------------------------------------------------
  *
  * TOC:
@@ -12,12 +10,6 @@
  * ------------------------------------------------------------------- */
 
 /* ===================================================================
- * # PrismJS 1.20.0
- *   https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+markup-templating+php 
- *   
- *   okaidia theme for JavaScript, CSS and HTML
- *   Loosely based on Monokai textmate theme by http://www.monokai.nl/
- *   @author ocodia
  * ------------------------------------------------------------------- */
 code[class*=language-],
 pre[class*=language-] {
@@ -138,7 +130,7 @@ pre[class*=language-] {
  *   Most modern mobile touch slider and framework with hardware accelerated transitions
  *   https://swiperjs.com
  *
- *   Copyright 2014-2020 Vladimir Kharlampidi
+ *   Copyright 2014-2020 Vladimir Kharlampid
  *
  *   Released under the MIT License
  *
