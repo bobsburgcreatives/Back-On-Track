@@ -31,30 +31,38 @@ const ssPreloader = function() {
     });
 }; // end ssPreloader
 
-document.getElementById("consultationForm").addEventListener("submit", function(e) {
+<script>
+document.getElementById("consultationForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const button = form.querySelector("button[type='submit']");
     
-    // Send form data to your email
-    fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service_id: "YOUR_SERVICE_ID",
-        template_id: "YOUR_TEMPLATE_ID",
-        user_id: "YOUR_USER_ID",
-        template_params: {
-          name: document.querySelector("[name='name']").value,
-          email: document.querySelector("[name='email']").value,
-          date: document.querySelector("[name='consultation_date']").value,
-          message: document.querySelector("[name='message']").value
+    // Show loading state
+    button.disabled = true;
+    button.textContent = "Sending...";
+    
+    try {
+        const response = await fetch("https://backontrack-diabetes.com/send_email.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(new FormData(form))
+        });
+        const result = await response.json();
+        
+        if (result.success) {
+            alert("Thank you! Check your email for confirmation.");
+            form.reset();
+        } else {
+            throw new Error(result.error || "Failed to send");
         }
-      })
-    })
-    .then(() => alert("Thank you! We'll contact you soon."))
-    .catch(() => alert("Error: Please email us directly at info@backontrack-diabetes.com"));
-  });
-
-  
+    } catch (error) {
+        alert("Error: " + error.message);
+    } finally {
+        button.disabled = false;
+        button.textContent = "Submit Consultation";
+    }
+});
+</script>
 /* offcanvas nav menu
 * ------------------------------------------------------ */
 const ssOffCanvas = function() {
