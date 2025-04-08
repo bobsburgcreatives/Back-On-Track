@@ -375,14 +375,11 @@
                 method="POST"
                 style="margin: 0 30px; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           
-              <!-- FormSubmit Configuration -->
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_subject" value="New Consultation Request">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_autoresponse" value="custom">
-              <input type="hidden" name="_replyto" value="%email%">
-              <input type="text" name="_honey" style="display:none">
-              <input type="hidden" name="_autoresponse" value="https://github.com/bobsburgcreatives/Back-On-Track/blob/d0e4f29dc10d6b388954207cb2d9d957b8944831/emailauto.html">
+            <!-- SIMPLIFIED FormSubmit Config -->
+            <input type="hidden" name="_autoresponse" value="Thank you for your consultation request, %name%! We'll contact you by email within 24 hours to confirm your appointment for %consultation_date%. For immediate questions, reply to this email.">
+            <input type="hidden" name="_subject" value="New Consultation Request">
+            <input type="hidden" name="_template" value="basic">
+            <input type="text" name="_honey" style="display:none">
           
               <!-- Form Fields -->
               <div style="margin-bottom: 20px;">
