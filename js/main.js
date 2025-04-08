@@ -31,38 +31,7 @@ const ssPreloader = function() {
     });
 }; // end ssPreloader
 
-<script>
-document.getElementById("consultationForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const button = form.querySelector("button[type='submit']");
-    
-    // Show loading state
-    button.disabled = true;
-    button.textContent = "Sending...";
-    
-    try {
-        const response = await fetch("https://backontrack-diabetes.com/send_email.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(new FormData(form))
-        });
-        const result = await response.json();
-        
-        if (result.success) {
-            alert("Thank you! Check your email for confirmation.");
-            form.reset();
-        } else {
-            throw new Error(result.error || "Failed to send");
-        }
-    } catch (error) {
-        alert("Error: " + error.message);
-    } finally {
-        button.disabled = false;
-        button.textContent = "Submit Consultation";
-    }
-});
-</script>
+
 /* offcanvas nav menu
 * ------------------------------------------------------ */
 const ssOffCanvas = function() {
