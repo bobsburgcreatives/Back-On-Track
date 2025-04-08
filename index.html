@@ -770,7 +770,7 @@
                             <section class="image-section" style="margin: 20px 0px; padding: 50 30px;">
                                 <div class="image-block" style="display: flex; align-items: center; flex-wrap: wrap;">
                                     <div class="slider-image" style="flex: 0 0 50%; height: 50%; display: flex; justify-content: left;">
-                                        <img src="images/gallery/1/medical2.jpeg" class="responsive-img" style="object-fit: cover; height: 50%; width: 30%;">
+                                        <img src="images/gallery/1/our expertise.webp" class="responsive-img" style="object-fit: cover; height: 50%; width: 30%;">
                                     </div>
                                 </div>
                             </section>
@@ -810,6 +810,75 @@
             <div class="column xl-12">                     
                 <div class="swiper-container s-menublock__slider">    
                     <div class="swiper-wrapper">
+
+                        <!-- Add this CSS in your <head> or stylesheet -->
+<style>
+    /* Hide navigation on desktop */
+    @media (min-width: 768px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none !important;
+        }
+    }
+    
+    /* Style for mobile navigation */
+    .swiper-button-next {
+        right: 10px;
+        background: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .swiper-button-next::after {
+        content: '→';
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Your existing slider code with navigation enabled -->
+<div class="row s-menublock__slider-wrap">
+    <div class="column xl-12">                     
+        <div class="swiper-container s-menublock__slider">    
+            <div class="swiper-wrapper">
+                <!-- Your existing slides... -->
+            </div>
+            
+            <!-- Add pagination -->
+            <div class="swiper-pagination hide-on-desktop"></div>
+            
+            <!-- Add navigation buttons -->
+            <div class="swiper-button-next hide-on-desktop"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Initialize Swiper with navigation -->
+<script>
+    var swiper = new Swiper('.s-menublock__slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            }
+        }
+    });
+</script>
         
                         <!-- First Slide - Medical Consultations -->
                         <div class="s-menublock__slide swiper-slide">    
