@@ -382,47 +382,32 @@
     </div> <!-- end pageintro -->   
 
     <!-- FORM (NO VISUAL CHANGES) -->
-   <!-- FORM (NO VISUAL CHANGES) -->
-   <form id="consultationForm" 
-   action="https://formsubmit.co/info@backontrack-diabetes.com" 
-   method="POST"
-   style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
- 
- <!-- FormSubmit Configuration -->
- <input type="hidden" name="_captcha" value="false">
- <input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
- <input type="hidden" name="_template" value="box">
- <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
- 
- <!-- Auto-Reply Settings -->
- <input type="hidden" name="_autoresponse" value="We have received your request for a free consultation!
-
-Thank you for reaching out about our 7-Day Wellness Retreat for people living with Type 2 Diabetes. Your request has been received, and we'll contact you shortly to schedule your consultation.
-
-Warm regards,
-Back On Track 
-(46)737510623">
- 
- <!-- Retreat Info -->
- <input type="hidden" name="retreat_name" value="7-Day Diabetes Wellness Retreat">
- 
- <!-- Form Fields -->
- <label for="name">Full Name:</label>
- <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-
- <label for="email">Email:</label>
- <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-
- <label for="phone">Phone Number (optional):</label>
- <input type="tel" id="phone" name="phone" style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-
- <label for="message">How can we help you?</label>
- <textarea id="message" name="message" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;"></textarea>
-
- <button type="submit" style="background-color: #ffffff; color: #41BCA5; border: 1px solid #41BCA5; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;">
-     Request Consultation
- </button>
-</form>
+    <form id="consultationForm" 
+          action="https://formsubmit.co/info@backontrack-diabetes.com" 
+          method="POST"
+          style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
+        
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting us!">
+        
+        <!-- Your Original Fields -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
+    
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;"></textarea>
+    
+        <button type="submit" style="background-color: #ffffff; color: #41BCA5; border: 1px solid #41BCA5; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;">
+            Submit
+        </button>
+    </form>
 
     <!-- Popup Modal -->
     <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
