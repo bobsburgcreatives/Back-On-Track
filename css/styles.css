@@ -5734,8 +5734,35 @@ footer {
 }
 
 
+  /* Only show arrow on mobile */
+  @media (max-width: 767px) {
+    .mobile-swiper-nav {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 10;
+      cursor: pointer;
+    }
+    .mobile-swiper-nav::after {
+      content: '→';
+      color: black;
+      font-weight: bold;
+    }
+  }
+  @media (min-width: 768px) {
+    .mobile-swiper-nav { display: none !important; }
+  }
 
-
+  
 /* ===================================================================
  * # PAGE STYLES 
  *
