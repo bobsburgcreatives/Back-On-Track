@@ -31,7 +31,30 @@ const ssPreloader = function() {
     });
 }; // end ssPreloader
 
+document.getElementById("consultationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // Send form data to your email
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        service_id: "YOUR_SERVICE_ID",
+        template_id: "YOUR_TEMPLATE_ID",
+        user_id: "YOUR_USER_ID",
+        template_params: {
+          name: document.querySelector("[name='name']").value,
+          email: document.querySelector("[name='email']").value,
+          date: document.querySelector("[name='consultation_date']").value,
+          message: document.querySelector("[name='message']").value
+        }
+      })
+    })
+    .then(() => alert("Thank you! We'll contact you soon."))
+    .catch(() => alert("Error: Please email us directly at info@backontrack-diabetes.com"));
+  });
 
+  
 /* offcanvas nav menu
 * ------------------------------------------------------ */
 const ssOffCanvas = function() {
