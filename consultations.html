@@ -378,11 +378,11 @@
             </p>
         </div>                       
     </div>
-
+    
     <form id="consultationForm" 
           action="https://formsubmit.co/info@backontrack-diabetes.com" 
           method="POST"
-          style="max-width: 600px; margin: 0 auto; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          style="max-width: 600px; margin: 20px auto; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: calc(100% - 40px);">
       
         <!-- FormSubmit Config -->
         <input type="hidden" name="_captcha" value="false">
@@ -393,25 +393,36 @@
         <div style="margin-bottom: 20px;">
             <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name*</label>
             <input type="text" id="name" name="name" required 
-                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
         </div>
       
         <div style="margin-bottom: 20px;">
             <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email*</label>
             <input type="email" id="email" name="email" required 
-                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
         </div>
       
         <div style="margin-bottom: 20px;">
             <label for="consultation_date" style="display: block; margin-bottom: 8px; font-weight: 500;">Preferred Date*</label>
             <input type="date" id="consultation_date" name="consultation_date" required 
-                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="consultation_time" style="display: block; margin-bottom: 8px; font-weight: 500;">Preferred Time</label>
+            <select id="consultation_time" name="consultation_time" 
+                    style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+                <option value="">Any time</option>
+                <option value="morning">Morning (9am-12pm)</option>
+                <option value="afternoon">Afternoon (1pm-5pm)</option>
+                <option value="evening">Evening (6pm-8pm)</option>
+            </select>
         </div>
       
         <div style="margin-bottom: 20px;">
-            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message*</label>
+            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Tell us about your health goals and concerns*</label>
             <textarea id="message" name="message" required 
-                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 150px;"></textarea>
+                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 150px; box-sizing: border-box;"></textarea>
         </div>
       
         <button type="submit" 
@@ -420,21 +431,17 @@
         </button>
     </form>
 
-            <!-- Popup Modal -->
-            <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-                <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-                    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R5Y2IyanJ1OHFqZzhva3Y2Ym16NWNnMmZrbHl2cXZkdWgwNnpnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2wWBH0vXsVUmKtRJOe/giphy.gif" 
-                         alt="Thank you" 
-                         style="max-width: 100%; margin-bottom: 20px; border-radius: 8px;"
-                         onload="this.onload=null; this.src=this.src+'?t='+Date.now();">
-                    <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
-                    <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
-                    <button onclick="document.getElementById('thankYouPopup').style.display = 'none';" 
-                            style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
-                        Close
-                    </button>
-                </div>
-            </div>
+    <!-- Success Modal -->
+    <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; width: calc(100% - 40px); margin: 0 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+            <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
+            <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
+            <button onclick="document.getElementById('thankYouPopup').style.display = 'none';" 
+                    style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
+                Close
+            </button>
+        </div>
+    </div>
 
     <!-- Date Picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -447,7 +454,7 @@
             dateFormat: "Y-m-d",
             disable: [
                 function(date) {
-                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
+                    return (date.getDay() === 0 || date.getDay() === 6);
                 }
             ]
         });
@@ -459,7 +466,6 @@
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            // Show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
             
@@ -480,7 +486,6 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Fallback to standard form submission
                 form.submit();
             })
             .finally(() => {
