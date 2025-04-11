@@ -422,7 +422,7 @@
         <div style="margin-bottom: 20px;">
             <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Tell us about your health goals and concerns*</label>
             <textarea id="message" name="message" required 
-                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 150px; box-sizing: border-box;"></textarea>
+                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 150px; box-sizing: border-box; resize: none;"></textarea>
         </div>
       
         <button type="submit" 
@@ -431,21 +431,21 @@
         </button>
     </form>
 
-               <!-- Popup Modal -->
-               <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-                <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-                    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R5Y2IyanJ1OHFqZzhva3Y2Ym16NWNnMmZrbHl2cXZkdWgwNnpnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2wWBH0vXsVUmKtRJOe/giphy.gif" 
-                         alt="Thank you" 
-                         style="max-width: 100%; margin-bottom: 20px; border-radius: 8px;"
-                         onload="this.onload=null; this.src=this.src+'?t='+Date.now();">
-                    <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
-                    <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
-                    <button onclick="document.getElementById('thankYouPopup').style.display = 'none';" 
-                            style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
-                        Close
-                    </button>
-                </div>
-            </div>
+<!-- Your Preferred Popup Modal -->
+<div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R5Y2IyanJ1OHFqZzhva3Y2Ym16NWNnMmZrbHl2cXZkdWgwNnpnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2wWBH0vXsVUmKtRJOe/giphy.gif" 
+             alt="Thank you" 
+             style="max-width: 100%; margin-bottom: 20px; border-radius: 8px;"
+             onload="this.onload=null; this.src=this.src+'?t='+Date.now();">
+        <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
+        <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
+        <button onclick="window.location.href='https://www.backontrack-diabetes.com/consultation'" 
+                style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
+            Return to Form
+        </button>
+    </div>
+</div>
 
     <!-- Date Picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
