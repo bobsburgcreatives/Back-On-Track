@@ -368,104 +368,58 @@
                         </div>
                     </article>
                 </section>
+        
+<!-- ## pagecontent -->
+<section class="s-pagecontent pagecontent">
+    <div class="row width-narrower pageintro text-center">
+        <div class="column xl-12">
+            <p class="lead">
+            Add your details below & we'll be in touch shortly!
+            </p>
+        </div>                       
+    </div>
 
-                <section class="s-section" style="margin-bottom: 25px;">
-                    <article class="s-content">
-                        <!-- Mobile and Tablet Content -->
-                        <div class="hide-on-desktop">
-                            <section class="s-pageheader">
-                                <div class="column xl-6 s-pageheader__content">
-                                    <h1 class="page-title" style="font-size: 12px; color: white;">
-                                        Schedule a Free Consulation with Us                                   
-                                    </h1>
-                                    <h2 class="page-title" style="font-size: 15px; color: white;" style="margin-bottom: 160px;">
-                                        Learn how we can help you take the first steps toward renewed well-being.                                    </div>
-                                    </section>
-                                </div>
-                                <!-- Desktop Content -->
-                                <div class="hide-on-mobile-tablet">
-                                    <section class="s-pageheader">
-                                        <div class="column xl-6 s-pageheader__content">
-                                            <h1 class="page-title" style="font-size: 60px; color: white;">
-                                                Schedule a Free Consulation with Us                                    
-                                            </h1>
-                                            <h1 class="page-title" style="font-size: 20px; color: white;">
-                                                Learn how we can help you take the first steps toward renewed well-being.                                    </div>
-                                    </section>
-                                </div>
-                            </article>
-                        </section>
-        
-        
-        <!-- ## pagecontent -->
-        <section class="s-pagecontent pagecontent">
-        
-            <div class="row width-narrower pageintro text-center">
-                <div class="column xl-12">
-                    <p class="lead">
-                    Add your details below & we'll be in touch shortly!
-                    </p>
-                </div>                       
-            </div> <!-- end pageintro -->   
-        
-            <!-- FORM (NO VISUAL CHANGES) -->
-            <form id="consultationForm" 
-                  action="https://formsubmit.co/info@backontrack-diabetes.com" 
-                  method="POST"
-                  style="width: calc(100% - 200px); margin: 0 100px; padding: 20px; box-sizing: border-box;">
-                
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Consultation Request - Back on Track Diabetes">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting us!">
-                
+    <form id="consultationForm" 
+          action="https://formsubmit.co/info@backontrack-diabetes.com" 
+          method="POST"
+          style="max-width: 600px; margin: 0 auto; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      
+        <!-- FormSubmit Config -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="basic">
+        <input type="text" name="_honey" style="display:none">
+      
         <!-- Form Fields -->
-        <div class="form-group">
-            <label for="name">Full Name*</label>
+        <div style="margin-bottom: 20px;">
+            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name*</label>
             <input type="text" id="name" name="name" required 
-                   placeholder="John Smith">
-            <span class="validation-error"></span>
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
         </div>
-    
-        <div class="form-group">
-            <label for="email">Email*</label>
+      
+        <div style="margin-bottom: 20px;">
+            <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email*</label>
             <input type="email" id="email" name="email" required 
-                   placeholder="john@example.com">
-            <span class="validation-error"></span>
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
         </div>
-    
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" 
-                   placeholder="(123) 456-7890">
+      
+        <div style="margin-bottom: 20px;">
+            <label for="consultation_date" style="display: block; margin-bottom: 8px; font-weight: 500;">Preferred Date*</label>
+            <input type="date" id="consultation_date" name="consultation_date" required 
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
         </div>
-    
-        <div class="form-group">
-            <label for="consultation_date">Preferred Consultation Date*</label>
-            <input type="text" id="consultation_date" name="consultation_date" required 
-                   placeholder="Select a date" readonly>
-            <span class="validation-error"></span>
-        </div>
-    
-        <div class="form-group">
-            <label for="consultation_time">Preferred Time</label>
-            <select id="consultation_time" name="consultation_time">
-                <option value="">Any time</option>
-                <option value="morning">Morning (9am-12pm)</option>
-                <option value="afternoon">Afternoon (1pm-5pm)</option>
-                <option value="evening">Evening (6pm-8pm)</option>
-            </select>
-        </div>
-    
-        <div class="form-group">
-            <label for="message">How Can We Help You?*</label>
+      
+        <div style="margin-bottom: 20px;">
+            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message*</label>
             <textarea id="message" name="message" required 
-                      placeholder="Tell us about your health goals and any specific concerns"></textarea>
-            <span class="validation-error"></span>
+                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 150px;"></textarea>
         </div>
-        
+      
+        <button type="submit" 
+                style="width: 100%; padding: 14px; background-color: #41BCA5; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;">
+            Submit Consultation
+        </button>
+    </form>
+
             <!-- Popup Modal -->
             <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
                 <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
@@ -481,55 +435,61 @@
                     </button>
                 </div>
             </div>
-        
-            <!-- Improved JavaScript -->
-            <script>
-                document.getElementById('consultationForm').addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const form = e.target;
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.textContent;
-                    
-                    // Loading state
-                    submitBtn.disabled = true;
-                    submitBtn.style.opacity = '0.7';
-                    submitBtn.textContent = 'Sending...';
-                    
-                    try {
-                        // First try FormSubmit
-                        const response = await fetch(form.action, {
-                            method: 'POST',
-                            body: new FormData(form),
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-                        
-                        if (response.ok) {
-                            // Show success popup
-                            document.getElementById('thankYouPopup').style.display = 'flex';
-                            form.reset();
-                        } else {
-                            // If FormSubmit fails, try direct form submission
-                            form.submit();
-                        }
-                    } catch (error) {
-                        console.error('Submission error:', error);
-                        // Fallback to direct form submission
-                        form.submit();
-                    } finally {
-                        submitBtn.disabled = false;
-                        submitBtn.style.opacity = '1';
-                        submitBtn.textContent = originalText;
-                    }
-                });
-            </script>
-        
-            <br>
-            <br>
-        </section>
-        
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        // Initialize date picker
+        flatpickr("#consultation_date", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            disable: [
+                function(date) {
+                    return (date.getDay() === 0 || date.getDay() === 6); // Disable weekends
+                }
+            ]
+        });
+
+        // Form submission
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending...';
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('thankYouPopup').style.display = 'flex';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Fallback to standard form submission
+                form.submit();
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            });
+        });
+    </script>
+</section>
 
  
 <!-- Desktop Footer (unchanged) -->
