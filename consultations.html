@@ -421,20 +421,50 @@
                 <input type="text" name="_honey" style="display:none"> <!-- Honeypot for spam -->
                 <input type="hidden" name="_autoresponse" value="Thank you for contacting us!">
                 
-             <!-- Your Original Fields -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box;">
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required style="width: 100%; margin-bottom: 10px; padding: 10px; box-sizing: border-box; resize: none;"></textarea>
-        
-        <button type="submit" style="background-color: #ffffff; color: #41BCA5; border: 1px solid #41BCA5; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;">
-            Submit
-        </button>
-        </form>
+        <!-- Form Fields -->
+        <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input type="text" id="name" name="name" required 
+                   placeholder="John Smith">
+            <span class="validation-error"></span>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required 
+                   placeholder="john@example.com">
+            <span class="validation-error"></span>
+        </div>
+    
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" 
+                   placeholder="(123) 456-7890">
+        </div>
+    
+        <div class="form-group">
+            <label for="consultation_date">Preferred Consultation Date*</label>
+            <input type="text" id="consultation_date" name="consultation_date" required 
+                   placeholder="Select a date" readonly>
+            <span class="validation-error"></span>
+        </div>
+    
+        <div class="form-group">
+            <label for="consultation_time">Preferred Time</label>
+            <select id="consultation_time" name="consultation_time">
+                <option value="">Any time</option>
+                <option value="morning">Morning (9am-12pm)</option>
+                <option value="afternoon">Afternoon (1pm-5pm)</option>
+                <option value="evening">Evening (6pm-8pm)</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="message">How Can We Help You?*</label>
+            <textarea id="message" name="message" required 
+                      placeholder="Tell us about your health goals and any specific concerns"></textarea>
+            <span class="validation-error"></span>
+        </div>
         
             <!-- Popup Modal -->
             <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
