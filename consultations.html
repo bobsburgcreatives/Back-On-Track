@@ -368,8 +368,7 @@
                         </div>
                     </article>
                 </section>
-        
-<!-- ## pagecontent -->
+      <!-- ## pagecontent -->
 <section class="s-pagecontent pagecontent">
     <div class="row width-narrower pageintro text-center">
         <div class="column xl-12">
@@ -380,7 +379,7 @@
     </div>
 
     <form id="consultationForm" 
-          action="https://formsubmit.co/info@backontrack-diabetes.com" 
+          action="https://formsubmit.co/ajax/info@backontrack-diabetes.com" 
           method="POST"
           style="max-width: 1300px; margin: 20px auto; margin-top: -5%; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: calc(100% - 40px);">
       
@@ -431,21 +430,21 @@
         </button>
     </form>
 
-<!-- Your Preferred Popup Modal -->
-<div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R5Y2IyanJ1OHFqZzhva3Y2Ym16NWNnMmZrbHl2cXZkdWgwNnpnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2wWBH0vXsVUmKtRJOe/giphy.gif" 
-             alt="Thank you" 
-             style="max-width: 100%; margin-bottom: 20px; border-radius: 8px;"
-             onload="this.onload=null; this.src=this.src+'?t='+Date.now();">
-        <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
-        <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
-        <button onclick="window.location.href='https://www.backontrack-diabetes.com/consultation'" 
-                style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
-            Return to Form
-        </button>
+    <!-- Your Preferred Popup Modal -->
+    <div id="thankYouPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 16px; max-width: 400px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3R5Y2IyanJ1OHFqZzhva3Y2Ym16NWNnMmZrbHl2cXZkdWgwNnpnbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2wWBH0vXsVUmKtRJOe/giphy.gif" 
+                 alt="Thank you" 
+                 style="max-width: 100%; margin-bottom: 20px; border-radius: 8px;"
+                 onload="this.onload=null; this.src=this.src+'?t='+Date.now();">
+            <h3 style="color: #41BCA5; margin-bottom: 10px;">Thank you!</h3>
+            <p style="margin-bottom: 20px;">We've received your message and will contact you shortly.</p>
+            <button onclick="document.getElementById('thankYouPopup').style.display = 'none';" 
+                    style="background-color: #41BCA5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 500;">
+                Close
+            </button>
+        </div>
     </div>
-</div>
 
     <!-- Date Picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -463,7 +462,7 @@
             ]
         });
 
-        // Form submission with fallback
+        // Form submission
         document.getElementById('consultationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const form = e.target;
@@ -473,7 +472,7 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
             
-            // First try FormSubmit's AJAX endpoint
+            // Submit to FormSubmit
             fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
@@ -483,13 +482,12 @@
             })
             .then(response => {
                 if (response.ok) {
+                    // Show your custom modal
+                    document.getElementById('thankYouPopup').style.display = 'flex';
+                    form.reset();
                     return response.json();
                 }
-                throw new Error('FormSubmit failed');
-            })
-            .then(data => {
-                document.getElementById('thankYouPopup').style.display = 'flex';
-                form.reset();
+                throw new Error('Form submission failed');
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -505,7 +503,6 @@
     </script>
 </section>
 
- 
 <!-- Desktop Footer (unchanged) -->
 <div class="hide-on-mobile-tablet">
     <footer id="footer" class="s-footer" style="padding-top: 80px;">  
