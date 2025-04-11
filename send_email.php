@@ -1,39 +1,163 @@
 <?php
-header('Content-Type: application/json');
+// Set headers for HTML email
+header('Content-Type: text/html; charset=UTF-8');
 
-// Validate form data
-if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['consultation_date'])) {
-    echo json_encode(['success' => false, 'error' => 'All fields are required']);
-    exit;
+// Get form data
+$name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '';
+$email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+$consultation_date = isset($_POST['consultation_date']) ? htmlspecialchars($_POST['consultation_date']) : '';
+$message = isset($_POST['message']) ? nl2br(htmlspecialchars($_POST['message'])) : '';
+
+// Validate required fields
+if (empty($name) || empty($email) || empty($consultation_date) || empty($message)) {
+    http_response_code(400);
+    die("Error: All fields are required.");
 }
 
-// Set email headers
-$headers = [
-    'From: Back on Track <info@backontrack-diabetes.com>',
-    'Reply-To: info@backontrack-diabetes.com',
-    'Content-Type: text/html; charset=UTF-8'
-];
+// Email content
+$email_content = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        .email-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #41BCA5;
+            padding: 30px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: white;
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .appointment-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #41BCA5;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .retreat-banner {
+            background-color: #f0f8ff;
+            border: 1px solid #d1e7ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #41BCA5;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://github.com/bobsburgcreatives/Back-On-Track/blob/d0e4f29dc10d6b388954207cb2d9d957b8944831/images/backontracklogo.jpg" 
+                 alt="Back on Track Diabetes Logo" 
+                 class="logo">
+            <h1>Thank You, {$name}!</h1>
+        </div>
+        
+        <div class="content">
+            <p>We've received your consultation request for <strong>{$consultation_date}</strong> and will confirm availability within 24 hours.</p>
+            
+            <div class="appointment-box">
+                <h3 style="margin-top: 0; color: #41BCA5;">Your Request Details:</h3>
+                <p><strong>Name:</strong> {$name}</p>
+                <p><strong>Email:</strong> {$email}</p>
+                <p><strong>Preferred Date:</strong> {$consultation_date}</p>
+                <p><strong>Message:</strong><br>{$message}</p>
+            </div>
+            
+            <div class="retreat-banner">
+                <h3 style="margin-top: 0; color: #41BCA5;">✨ Exclusive Retreat Opportunity ✨</h3>
+                <p><strong>November 2-9, 2025</strong></p>
+                <p>Join our transformative diabetes retreat for personalized coaching, nutrition planning, and community support in a serene environment.</p>
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="https://www.backontrack-diabetes.com/retreat.html" 
+                       class="button">
+                       Learn About the Retreat
+                    </a>
+                </div>
+            </div>
+            
+            <p>We'll be in touch soon to confirm your consultation time. Meanwhile, feel free to reply to this email with any questions.</p>
+            
+            <div style="text-align: center; margin: 25px 0;">
+                <a href="https://www.backontrack-diabetes.com" 
+                   class="button">
+                   Visit Our Website
+                </a>
+            </div>
+            
+            <div style="margin-top: 30px; font-style: italic; color: #555;">
+                <p>To your health,</p>
+                <p><strong>The Back on Track Team</strong><br>
+                <a href="mailto:info@backontrack-diabetes.com" style="color: #41BCA5;">info@backontrack-diabetes.com</a><br>
+                (46) 737 510 623</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Back on Track Diabetes. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
+HTML;
 
-// 1. Email YOU (admin notification)
-$admin_subject = "New Consultation: " . $_POST['name'];
-$admin_message = "
-    <h3>New Consultation Request</h3>
-    <p><strong>Name:</strong> {$_POST['name']}</p>
-    <p><strong>Email:</strong> {$_POST['email']}</p>
-    <p><strong>Date:</strong> {$_POST['consultation_date']}</p>
-    <p><strong>Message:</strong><br>{$_POST['message']}</p>
-";
-mail('info@backontrack-diabetes.com', $admin_subject, $admin_message, implode("\r\n", $headers));
+// Email headers
+$headers = "From: info@backontrack-diabetes.com\r\n";
+$headers .= "Reply-To: info@backontrack-diabetes.com\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-// 2. Auto-respond to user
-$user_subject = "Thank you, {$_POST['name']}!";
-$user_message = "
-    <p>Hi {$_POST['name']},</p>
-    <p>We've received your request for <strong>{$_POST['consultation_date']}</strong>.</p>
-    <p>Expect a confirmation email within 24 hours.</p>
-    <p>— Back on Track Team</p>
-";
-mail($_POST['email'], $user_subject, $user_message, implode("\r\n", $headers));
+// Send email to admin
+$admin_email = "info@backontrack-diabetes.com";
+$admin_subject = "New Consultation Request: {$name}";
+mail($admin_email, $admin_subject, $email_content, $headers);
 
-echo json_encode(['success' => true]);
+// Send confirmation to user
+$user_subject = "Thank you for your consultation request";
+mail($email, $user_subject, $email_content, $headers);
+
+// Return success response
+echo "success";
 ?>

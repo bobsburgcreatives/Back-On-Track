@@ -369,53 +369,49 @@
                     </article>
                 </section>
 
-
                 <form id="consultationForm" 
-                action="https://formsubmit.co/sofia.m.g.gmz@gmail.com" 
+                action="send_email.php"  <!-- Changed to PHP handler -->
                 method="POST"
                 style="margin: 0 30px; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            
+            <!-- Removed FormSubmit config -->
+            <input type="text" name="_honey" style="display:none"> <!-- Keep honeypot -->
           
-            <!-- SIMPLIFIED FormSubmit Config -->
-            <input type="hidden" name="_autoresponse" value="Thank you for your consultation request, %name%! We'll contact you by email within 24 hours to confirm your appointment for %consultation_date%. For immediate questions, reply to this email.">
-            <input type="hidden" name="_subject" value="New Consultation Request">
-            <input type="hidden" name="_template" value="basic">
-            <input type="text" name="_honey" style="display:none">
+            <!-- Your Original Form Fields (unchanged) -->
+            <div style="margin-bottom: 20px;">
+                <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name*</label>
+                <input type="text" id="name" name="name" required 
+                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            </div>
           
-              <!-- Form Fields -->
-              <div style="margin-bottom: 20px;">
-                  <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name*</label>
-                  <input type="text" id="name" name="name" required 
-                         style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-              </div>
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email*</label>
+                <input type="email" id="email" name="email" required 
+                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            </div>
           
-              <div style="margin-bottom: 20px;">
-                  <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email*</label>
-                  <input type="email" id="email" name="email" required 
-                         style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-              </div>
+            <div style="margin-bottom: 20px;">
+                <label for="consultation_date" style="display: block; margin-bottom: 8px; font-weight: 500;">Preferred Date*</label>
+                <input type="date" id="consultation_date" name="consultation_date" required 
+                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+            </div>
           
-              <div style="margin-bottom: 20px;">
-                  <label for="consultation_date" style="display: block; margin-bottom: 8px; font-weight: 500;">Preferred Date*</label>
-                  <input type="date" id="consultation_date" name="consultation_date" required 
-                         style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-              </div>
+            <div style="margin-bottom: 20px;">
+                <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message*</label>
+                <textarea id="message" name="message" required 
+                          style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; 
+                                 height: 150px; resize: none; box-sizing: border-box;"></textarea>
+            </div>
           
-              <div style="margin-bottom: 20px;">
-                  <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Message*</label>
-                  <textarea id="message" name="message" required 
-                            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; 
-                                   height: 150px; resize: none; box-sizing: border-box;"></textarea>
-              </div>
-          
-              <button type="submit" 
-                      style="width: 100%; padding: 14px; background-color: #41BCA5; color: white; 
-                             border: none; border-radius: 8px; font-size: 16px; font-weight: 600; 
-                             cursor: pointer; transition: background-color 0.3s;">
-                  Submit Consultation
-              </button>
+            <button type="submit" 
+                    style="width: 100%; padding: 14px; background-color: #41BCA5; color: white; 
+                           border: none; border-radius: 8px; font-size: 16px; font-weight: 600; 
+                           cursor: pointer; transition: background-color 0.3s;">
+                Submit Consultation
+            </button>
           </form>
           
-          <!-- Date Picker Enhancement -->
+          <!-- Date Picker (unchanged) -->
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
           <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
           <script>
@@ -445,49 +441,32 @@
             </button>
         </div>
     </div>
-
-    <!-- Improved JavaScript -->
-    <script>
-        document.getElementById('consultationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            // Loading state
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.7';
-            submitBtn.textContent = 'Sending...';
-            
-            try {
-                // First try FormSubmit
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    // Show success popup
-                    document.getElementById('thankYouPopup').style.display = 'flex';
-                    form.reset();
-                } else {
-                    // If FormSubmit fails, try direct form submission
-                    form.submit();
-                }
-            } catch (error) {
-                console.error('Submission error:', error);
-                // Fallback to direct form submission
-                form.submit();
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-                submitBtn.textContent = originalText;
-            }
+<!-- NEW: AJAX Submission Handler -->
+<script>
+    document.getElementById('consultationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const btn = this.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.innerHTML = 'Sending...';
+        
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Show thank you popup
+            document.getElementById('thankYouPopup').style.display = 'flex';
+            btn.innerHTML = 'Submit Consultation';
+        })
+        .catch(error => {
+            alert('Error: ' + error);
+            btn.disabled = false;
+            btn.innerHTML = 'Submit Consultation';
         });
+    });
     </script>
 
     <br>
