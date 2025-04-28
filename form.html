@@ -15,63 +15,63 @@
       justify-content: center;
       align-items: center;
       padding: 2rem;
-      background-color: #f0f4f8; /* Light blue-gray background */
+      background-color: #f0f4f8; 
       width: 100%;
-      max-width: 800px; /* Adjust as needed */
-      margin: 0 auto; /* Center the form */
+      max-width: 800px; 
+      margin: 0 auto;
       box-sizing: border-box;
     }
 
     .form-container {
-      background: #ffffff; /* White background */
+      background: #ffffff; 
       padding: 2.5rem;
-      border-radius: 25px; /* More rounded edges */
+      border-radius: 25px; 
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       width: 100%;
       text-align: center;
     }
 
     .logo {
-      width: 150px; /* Adjust logo size */
+      width: 150px; 
       margin-bottom: 2rem;
     }
 
     .form-container h2 {
       margin-bottom: 1.5rem;
       font-size: 1.75rem;
-      color: #1B1D57; /* Dark blue for heading */
+      color: #1B1D57; 
       font-weight: 600;
     }
 
     .form-group {
-      margin-bottom: 1.75rem; /* Increased margin */
+      margin-bottom: 1.75rem; 
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.75rem; /* Increased margin */
-      color: #1B1D57; /* Dark blue for labels */
+      margin-bottom: 0.75rem; 
+      color: #1B1D57; 
       font-weight: 500;
-      text-align: left; /* Align labels to the left */
+      text-align: left; 
     }
 
     .form-group input,
     .form-group textarea,
     .form-group select {
       width: 100%;
-      padding: 0.875rem; /* Slightly larger padding */
-      border: 2px solid #dfe6e9; /* Light gray border */
-      border-radius: 15px; /* More rounded edges for inputs */
+      padding: 0.875rem; 
+      border: 2px solid #dfe6e9; 
+      border-radius: 15px; 
       font-size: 1rem;
-      color: #1B1D57; /* Dark blue for text */
-      background-color: #f9f9f9; /* Light gray background for inputs */
+      color: #1B1D57; 
+      background-color: #f9f9f9; 
       transition: border-color 0.3s ease;
     }
 
     .form-group input:focus,
     .form-group textarea:focus,
     .form-group select:focus {
-      border-color: #42C1A9; /* Teal border on focus */
+      border-color: #42C1A9; 
       outline: none;
     }
 
@@ -81,11 +81,11 @@
     }
 
     .submit-btn {
-      background: #42C1A9; /* Teal button */
+      background: #42C1A9; 
       color: white;
       border: none;
-      padding: 0.875rem 1.5rem; /* Slightly larger padding */
-      border-radius: 15px; /* More rounded edges for button */
+      padding: 0.875rem 1.5rem; 
+      border-radius: 15px; 
       font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
@@ -94,20 +94,20 @@
     }
 
     .submit-btn:hover {
-      background: #36a18f; /* Darker teal on hover */
+      background: #36a18f; 
     }
 
     .submit-btn:active {
-      background: #2b8273; /* Even darker teal on click */
+      background: #2b8273; 
     }
 
     .thank-you-message {
-      display: none; /* Hidden by default */
-      margin-top: 2rem; /* Increased margin */
-      padding: 1.5rem; /* Increased padding */
-      background: #e8f5e9; /* Light green background */
-      border-radius: 15px; /* More rounded edges */
-      color: #1B1D57; /* Dark blue text */
+      display: none; 
+      margin-top: 2rem; 
+      padding: 1.5rem; 
+      background: #e8f5e9; 
+      border-radius: 15px; 
+      color: #1B1D57;
       font-weight: 500;
       text-align: center;
     }
@@ -178,9 +178,9 @@
   // Get form data
   const formData = new FormData(this);
   const data = Object.fromEntries(formData);
-  data['g-recaptcha-response'] = recaptchaResponse; // Add reCAPTCHA response to data
+  data['g-recaptcha-response'] = recaptchaResponse; 
 
-  // Send data to Google Apps Script
+  
   fetch('https://script.google.com/macros/s/AKfycbx0AaiTvvVHdaWcbKlOI5QDD6ICPjIrVtiHQ3zzTSLVzHYSy6gMxyRLHCL7sUDOp1DR4w/exec', {
     method: 'POST',
     body: JSON.stringify(data),
@@ -191,7 +191,6 @@
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        // Hide form and show thank-you message
         document.getElementById('consultationForm').style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
       } else {
