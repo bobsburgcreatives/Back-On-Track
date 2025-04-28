@@ -1,6 +1,6 @@
 # Back On Track Diabetes Retreat Website
 
-![Website Preview](https://www.backontrack-diabetes.com/index.html)  
+![Website Preview](https://drive.google.com/drive/folders/1gA6ls64N9ZULIKvedrttZh1Hpzmpgjla?usp=sharing)  
 *Static website for diabetes wellness retreat program*
 
 ## Technical Specifications
@@ -12,7 +12,7 @@
 
 ## Technical Details
 ```bash
-.
+
 ├── index.html          # Homepage
 ├── about.html          # Team/mission
 ├── retreat.html        # Program details
