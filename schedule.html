@@ -55,8 +55,8 @@
                     width: 100%;
                     height: auto;
                     object-fit: cover;
-                    max-width: 360px; /* Add this line */
-                    max-height: 600px; /* Add this line */
+                    max-width: 360px; 
+                    max-height: 600px; 
                 }
         
                 .content-block__text {
@@ -252,31 +252,26 @@
  <style>
         /* Mobile Responsive Styles */
         @media only screen and (max-width: 768px) {
-            /* Adjust margins and padding for mobile */
             .hide-on-mobile-tablet[style] {
-                margin: 0px 20px !important; /* Reduce side margins */
-                padding: 0 15px !important; /* Reduce padding */
-                margin-top: 0 !important; /* Reset top margin */
-                margin-bottom: 0 !important; /* Reset bottom margin */
+                margin: 0px 20px !important; 
+                padding: 0 15px !important; 
+                margin-top: 0 !important;
+                margin-bottom: 0 !important; 
             }
 
-            /* Adjust font size and line height for mobile */
             .page-title[style] {
-                font-size: 15px !important; /* Smaller font size for mobile */
-                line-height: 18px !important; /* Adjust line height */
+                font-size: 15px !important; 
+                line-height: 18px !important; 
             }
 
-            /* Center-align text for mobile */
             .page-title {
                 text-align: center;
             }
 
-            /* Adjust blockquote spacing for mobile */
             blockquote {
-                margin-top: 5px !important; /* Reduce top margin */
+                margin-top: 5px !important; 
             }
 
-            /* Ensure flex containers stack vertically on mobile */
             div[style*="display: flex"] {
                 flex-direction: column !important;
                 align-items: center !important;
@@ -288,7 +283,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       const swiper = new Swiper('.s-menublock__slider', {
-        slidesPerView: 1, // Default for mobile
+        slidesPerView: 1, 
         spaceBetween: 10,
         loop: true,
         pagination: {
