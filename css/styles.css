@@ -983,11 +983,11 @@ body {
 
 .mobile-tablet-footer {
     display: none;
-    background-color: #f9f9f9; /* Adjust as needed */
-    padding: 20px; /* Added padding to prevent bleeding */
-    box-sizing: border-box; /* Ensures padding is included in the element's total width/height */
-    width: 100%; /* Ensure footer takes full width */
-    overflow: hidden; /* Prevent content from bleeding out */
+    background-color: #f9f9f9; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    width: 100%; 
+    overflow: hidden; 
 }
 
 @media (max-width: 1023px) {
@@ -1003,37 +1003,37 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100%; /* Ensure content takes full width */
+        width: 100%; 
     }
 
     .s-footer__block {
-        margin-bottom: 4px; /* Reduced spacing between sections */
-        width: 100%; /* Ensure blocks take full width */
+        margin-bottom: 4px; 
+        width: 100%; 
     }
 
     .s-footer__logo img {
-        max-width: 150px; /* Adjust logo size */
-        display: block; /* Ensure logo is centered */
-        margin: 0 auto; /* Center logo horizontally */
+        max-width: 150px; 
+        display: block; 
+        margin: 0 auto; 
     }
 
     .s-footer__social .social-list {
         display: flex;
         justify-content: center;
-        gap: 15px; /* Reduced gap between icons */
+        gap: 15px;
         padding: 0;
     }
 
     .s-footer__info .row {
         flex-direction: column;
         align-items: center;
-        width: 100%; /* Ensure row takes full width */
+        width: 100%;
     }
 
     .s-footer__info .link-list {
         padding: 0;
         list-style: none;
-        text-align: center; /* Center text */
+        text-align: center; 
     }
 
     .btn--medium {
@@ -1042,8 +1042,8 @@ body {
         margin: 0 auto;
         font-size: 16px;
         padding: 10px 20px;
-        text-align: center; /* Center button text */
-        display: block; /* Ensure button is centered */
+        text-align: center; 
+        display: block; 
     }
 }
 
@@ -1057,30 +1057,30 @@ body {
   /* Form Container Styling */
   .form-iframe-container {
     width: 100%;
-    max-width: 800px; /* Adjust this to control the maximum width of the form */
-    margin: 0 auto; /* Center the form horizontally */
-    padding: 20px; /* Add some padding around the form */
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    box-sizing: border-box; 
   }
 
-  /* Make the iframe responsive */
+  /* iframe responsive */
   .form-iframe-container iframe {
     width: 100%;
-    height: 600px; /* Adjust this to control the initial height */
-    border: none; /* Remove the iframe border */
-    display: block; /* Ensure the iframe behaves as a block element */
+    height: 600px; 
+    border: none; 
+    display: block; 
   }
 
-  /* Adjust height for smaller devices */
+  /*  height for smaller devices */
   @media (max-width: 768px) {
     .form-iframe-container iframe {
-      height: 800px; /* Increase height for smaller screens */
+      height: 800px; 
     }
   }
 
   @media (max-width: 480px) {
     .form-iframe-container iframe {
-      height: 1000px; /* Further increase height for mobile devices */
+      height: 1000px; 
     }
   }
 </style>
@@ -1326,7 +1326,7 @@ textarea {
 }
 .column {
     float: left;
-    width: 100%; /* Full width on mobile by default */
+    width: 100%; 
 }
 
 /* Ensuring content does not bleed */
@@ -1334,28 +1334,28 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden; 
 }
 
 /* Grid, list, and content styling */
 .content-block h3 {
-    margin-top: 20px; /* Adjusted margin for smaller screens */
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 /* Tablet and desktop adjustments */
-@media screen and (min-width: 768px) { /* Targeting tablets and above */
-    .column.xl-12 { width: 100%; } /* Full width on tablets */
+@media screen and (min-width: 768px) { 
+    .column.xl-12 { width: 100%; } 
     
     .content-block h3 {
-        margin-top: 90px; /* Original spacing for larger screens */
+        margin-top: 90px; 
         margin-bottom: -100px;
     }
 }
 
-@media screen and (min-width: 1024px) { /* Targeting desktops */
+@media screen and (min-width: 1024px) { 
     .row.width-narrow { 
-        max-width: 960px; /* Example narrower width for desktop */
+        max-width: 960px; 
     }
 }
 
@@ -1553,16 +1553,16 @@ body, html {
   .slider {
     display: flex;
     width: 100%;
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    transition: transform 0.5s ease-in-out; 
   }
 
   .slider-image {
-    flex: 0 0 100%; /* Each image takes full width */
+    flex: 0 0 100%; 
     height: 100%;
   }
 
   .responsive-img {
-    object-fit: cover; /* Ensure images fill the container */
+    object-fit: cover; 
     height: 100%;
     width: 100%;
   }
@@ -1584,18 +1584,18 @@ body, html {
   .new-slider {
     display: flex;
     width: 100%;
-    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+    transition: transform 0.5s ease-in-out; 
   }
 
   /* Individual slide */
   .new-slider-image {
-    flex: 0 0 100%; /* Each image takes full width */
+    flex: 0 0 100%; 
     height: 100%;
   }
 
   /* Responsive images */
   .new-responsive-img {
-    object-fit: cover; /* Ensure images fill the container */
+    object-fit: cover; 
     height: 100%;
     width: 100%;
   }
@@ -1698,7 +1698,7 @@ body, html {
 
     .s-footer-mobile {
       padding: 20px;
-      background: #3062a0; /* Match your background color */
+      background: #3062a0; 
       text-align: center;
     }
 
@@ -1776,7 +1776,7 @@ body, html {
 
 /* Target the menu items */
 .nav-menu li {
-    margin-right: 5px; /* Adjust the gap between items */
+    margin-right: 5px; 
 }
 
 /* Remove margin from the last item to avoid extra space */
@@ -1789,7 +1789,7 @@ body, html {
     text-decoration: none;
     color: #333;
     font-size: 16px;
-    padding: 4px 0; /* Add padding to the links if needed */
+    padding: 4px 0; 
 }
 
 
@@ -3692,131 +3692,131 @@ body.menu-is-open {
     .s-header__block {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 20px; /* Add padding to avoid content sticking to edges */
+        padding: 0 20px; 
     }
 
     .s-header__logo {
         position: static;
         left: auto;
         transform: none;
-        margin-bottom: 15px; /* Increase space between logo and menu */
-        margin-left: 0; /* Reset margin */
+        margin-bottom: 15px;
+        margin-left: 0; 
     }
 
     .s-header__logo img {
-        width: 12rem; /* Adjust logo size for mobile */
+        width: 12rem; 
     }
 
     .s-header__cta {
         position: static;
         display: block;
         width: 100%;
-        margin-top: 10px; /* Add space between logo and CTA */
+        margin-top: 10px; 
     }
 
     .s-header__nav-links {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: flex-start; /* Align items to the left */
-        gap: 10px; /* Space between menu items */
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 10px; 
         padding-left: 0;
     }
 
     .s-header__nav-links li {
-        margin-right: 0; /* Remove horizontal margin */
-        margin-bottom: 10px; /* Add vertical margin between items */
+        margin-right: 0; 
+        margin-bottom: 10px; 
     }
 
     .s-header__cta-btn {
-        font-size: 16px; /* Set font size for CTA button */
-        padding: 10px 15px; /* Adjust padding for better touch targets */
+        font-size: 16px; 
+        padding: 10px 15px;
     }
 
     .s-header__menu-toggle {
-        display: block; /* Show toggle icon for mobile */
-        margin-left: 0; /* Reset margin */
-        top: 20px; /* Adjust position */
+        display: block; 
+        margin-left: 0; 
+        top: 20px; 
     }
 
     .s-header__nav {
-        width: 100%; /* Full width for mobile menu */
-        padding: 20px; /* Add padding for better spacing */
+        width: 100%; 
+        padding: 20px; 
     }
 
     .s-header__nav-links li a {
-        font-size: 16px; /* Set font size for menu items */
-        padding: 8px 0; /* Adjust padding for better touch targets */
+        font-size: 16px; 
+        padding: 8px 0; 
     }
 
     .s-header__nav-social {
-        margin-left: 0; /* Reset margin */
-        justify-content: center; /* Center social icons */
+        margin-left: 0;
+        justify-content: center; 
     }
 
     .s-pageheader {
-        padding-top: var(--vspace-4); /* Reduce padding for mobile */
+        padding-top: var(--vspace-4); 
         padding-bottom: var(--vspace-1_5);
     }
 
     .s-pageheader .page-title {
-        font-size: clamp(var(--text-xxl), 8vw, var(--text-huge-1)); /* Adjust font size for mobile */
+        font-size: clamp(var(--text-xxl), 8vw, var(--text-huge-1)); 
     }
 
     .s-pageheader .page-title::before {
-        margin-top: 10px; /* Increase space between text and line */
+        margin-top: 10px; 
     }
 }
 
 /* Mobile Styles (max-width: 767px) */
 @media (max-width: 767px) {
     .s-header__nav-links {
-        flex-direction: column !important; /* Stack menu items vertically */
-        align-items: flex-start !important; /* Align items to the left */
-        gap: 0px !important; /* Drastically reduce space between menu items */
-        padding-left: 70px !important; /* Add padding to prevent bleeding */
-        line-height: 3 !important; /* Reduce line height for menu items */
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        gap: 0px !important; 
+        padding-left: 70px !important; 
+        line-height: 3 !important; 
     }
 
     .s-header__nav-links li {
-        margin-right: 0 !important; /* Remove horizontal margin */
-        margin-bottom: -80px !important; /* Drastically reduce vertical margin between items */
+        margin-right: 0 !important; 
+        margin-bottom: -80px !important; 
     }
 
     .s-header__nav-links a {
-        font-size: 16px !important; /* Set font size for menu items */
-        padding: 4px 0 !important; /* Reduce padding for tighter spacing */
-        line-height: 1 !important; /* Reduce line height for menu items */
+        font-size: 16px !important;
+        padding: 4px 0 !important;
+        line-height: 1 !important;
     }
 
     .s-header__nav-links a::before {
-        font-size: 0.3em !important; /* Adjust counter size for mobile */
-        margin-bottom: 0.05em !important; /* Reduce space between counter and text */
+        font-size: 0.3em !important; 
+        margin-bottom: 0.05em !important; 
     }
 }
 
 /* Tablet Styles (min-width: 768px) and (max-width: 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .s-header__nav-links {
-        flex-direction: column !important; /* Stack menu items vertically */
-        align-items: flex-start !important; /* Align items to the left */
-        gap: 4px !important; /* Slightly more space than mobile */
-        padding-left: 20px !important; /* Add padding to prevent bleeding */
-        line-height: 1.1 !important; /* Slightly larger line height than mobile */
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        gap: 4px !important; 
+        padding-left: 20px !important; 
+        line-height: 1.1 !important; 
     }
 
     .s-header__nav-links li {
-        margin-right: 0 !important; /* Remove horizontal margin */
-        margin-bottom: 4px !important; /* Slightly more space than mobile */
+        margin-right: 0 !important; 
+        margin-bottom: 4px !important; 
     }
 
     .s-header__nav-links a {
-        font-size: 18px !important; /* Slightly larger font size for tablet */
-        padding: 6px 0 !important; /* Adjust padding for better touch targets */
-        line-height: 1.1 !important; /* Slightly larger line height than mobile */
+        font-size: 18px !important;
+        padding: 6px 0 !important; 
+        line-height: 1.1 !important; 
     }
 
     .s-header__nav-links a::before {
-        font-size: 0.35em !important; /* Adjust counter size for tablet */
-        margin-bottom: 0.1em !important; /* Slightly more space than mobile */
+        font-size: 0.35em !important; 
+        margin-bottom: 0.1em !important;
     }
 }
 
@@ -3846,10 +3846,10 @@ body.menu-is-open {
  * ## logo (centered)
  * -------------------------------------------------------------------- */
 .s-header__logo {
-    z-index : 999; /* Ensure it is above everything else */
-    position: absolute; /* Use absolute positioning to center */
+    z-index : 999; 
+    position: absolute; 
     left    : 10.5%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%); 
     top: 27px;
 }
 
@@ -3864,15 +3864,15 @@ body.menu-is-open {
 
 .s-header__logo img {
     width         : var(--logo-width);
-    margin        : 0; /* Corrected margin value (removed invalid '100') */
+    margin        : 0; 
     vertical-align: top;
 }
 
 /* Mobile Styles (max-width: 767px) */
 @media (max-width: 767px) {
     .s-header__logo img {
-        width: 120px; /* Adjust logo width for mobile */
-        margin-left: 50px; /* Add left margin to prevent bleeding */
+        width: 120px; 
+        margin-left: 50px; 
     }
 }
 
@@ -3897,7 +3897,7 @@ body.menu-is-open {
 }
 
 .s-header__nav-links li {
-    margin-right: 0px; /* Space between menu items */
+    margin-right: 0px; 
     margin-top: 15%;
 }
 
@@ -3905,10 +3905,10 @@ body.menu-is-open {
     padding: 10px 20px;
     font-size: 16px;
     text-decoration: none;
-    color: #000; /* Choose a color that fits your design */
+    color: #000; 
 }
 
-/* Ensure the menu items are aligned to the left */
+/* menu items aligned to left */
 .s-header__cta ul {
     display: flex;
     justify-content: flex-start;
@@ -3998,19 +3998,19 @@ body.menu-is-open {
  .s-header__cta {
     --vspace-btn: var(--vspace-1_5);
     position: absolute;
-    top: calc((var(--header-height) - var(--vspace-btn)) / 2); /* Center the button vertically */
-    right: calc(var(--gutter) + 1.6rem); /* Position the button from the right */
+    top: calc((var(--header-height) - var(--vspace-btn)) / 2); 
+    right: calc(var(--gutter) + 1.6rem); 
 }
 
 .s-header__cta-btn {
     margin: 0;
-    padding: 0 2.4rem; /* Add horizontal padding */
+    padding: 0 2.4rem; 
 }
 
 .s-header__nav-links {
     display: flex;
     flex-direction: row; 
-    align-items: flex-start; /* Align the items to the right */
+    align-items: flex-start; 
 }
 
 /* --------------------------------------------------------------------
@@ -4071,17 +4071,17 @@ body.menu-is-open {
 }
 
 .s-header__cta {
-    z-index: 10; /* Make sure it's above other elements */
-    position: absolute; /* Ensure it is positioned correctly */
+    z-index: 10; 
+    position: absolute; 
     top: 0;
-    left: 0; /* Move to the left */
+    left: 0; 
     margin-top: -35px;
-    margin-left: 75px; /* Adjust as needed */
-    display: flex; /* Make sure it follows flex behavior */    
+    margin-left: 75px;
+    display: flex;   
     
     .s-header__nav-links {
         z-index: 11;
-        position: relative; /* Ensure it's in the correct stacking order */
+        position: relative;
     }
     
 }
@@ -4089,7 +4089,7 @@ body.menu-is-open {
 .s-header__nav-links {
     list-style: none;
     display: flex;
-    justify-content: flex-start; /* Aligns items to the left */
+    justify-content: flex-start;
     align-items: center;
     padding: 0;
     margin: 0;
@@ -4198,23 +4198,23 @@ body.menu-is-open {
     margin-top : var(--vspace-1);
     padding-top: var(--vspace-0_5);
     border-top : 1px solid rgba(255, 255, 255, 0.05);
-    margin-left: -40px; /* Moves icons 40px to the left */
+    margin-left: -40px; 
     display: flex;
-    justify-content: flex-start; /* Aligns icons to the left */
-    gap: 4px; /* Space between icons */
+    justify-content: flex-start;
+    gap: 4px;
     position: relative;
-    z-index: 10; /* Ensure it's above other elements */
+    z-index: 10; 
     pointer-events: auto;
 }
 
 .s-header__nav-social svg {
-    cursor: pointer; /* Show hand cursor on hover */
+    cursor: pointer; 
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
 .s-header__nav-social svg:hover {
-    opacity: 0.8; /* Increase visibility on hover */
+    opacity: 0.8; 
 }
 
 
@@ -4258,13 +4258,13 @@ body.menu-is-open {
 /* Mobile Styles (max-width: 767px) */
 @media (max-width: 767px) {
     .s-pageheader {
-        height: auto !important; /* Allow height to adjust based on content */
-        min-height: 50vh; /* Minimum height for mobile */
+        height: auto !important; 
+        min-height: 50vh; 
         padding: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
+        justify-content: center; 
+        align-items: center; 
     }
 
     .s-pageheader__content {
@@ -4275,7 +4275,7 @@ body.menu-is-open {
 
     .s-pageheader h1 {
         font-size: 40px !important;
-        margin-top: 0 !important; /* Remove top margin for better stacking */
+        margin-top: 0 !important; 
     }
 
     .s-pageheader h1.page-title {
@@ -4287,13 +4287,13 @@ body.menu-is-open {
 /* Tablet Styles (min-width: 768px) and (max-width: 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .s-pageheader {
-        height: auto !important; /* Allow height to adjust based on content */
-        min-height: 70vh; /* Minimum height for tablet */
+        height: auto !important; 
+        min-height: 70vh; 
         padding: 30px;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
+        justify-content: center; 
+        align-items: center; 
     }
 
     .s-pageheader__content {
@@ -4304,7 +4304,7 @@ body.menu-is-open {
 
     .s-pageheader h1 {
         font-size: 28px !important;
-        margin-top: 0 !important; /* Remove top margin for better stacking */
+        margin-top: 0 !important; 
     }
 
     .s-pageheader h1.page-title {
@@ -4346,21 +4346,21 @@ body.menu-is-open {
 .s-pageheader .page-title::before {
     content         : "";
     display         : block;
-    width           : 100%; /* Makes the line extend under the text */
+    width           : 100%; 
     height          : 1px;
     background-color: var(--color-1);
     position        : absolute;
-    top             : 100%; /* Position the line directly below the text */
-    left            : 0; /* Align the line to the left */
-    margin-top      : 5px; /* Adds 5px space between the text and the line */
+    top             : 100%; 
+    left            : 0; 
+    margin-top      : 5px; 
 }
 
 .s-pageheader .page-title::after {
-    content: none; /* Remove any second line */
+    content: none; 
 }
 
 .s-pageheader .page-title + .page-title::before {
-    content: none; /* Remove any duplicate lines if the same class is applied multiple times */
+    content: none;
 }
 
 .s-pageheader::before {
@@ -4508,14 +4508,13 @@ body.menu-is-open {
 }
 
 .hero-image {
-    display: none; /* Hide all images by default */
+    display: none; 
 }
 
 .hero-image.active {
-    display: block; /* Show the active image */
-    transition: opacity 0.5s ease; /* Optional: smooth transition effect */
-    opacity: 1; /* Ensure the active image is fully visible */
-}
+    display: block; 
+    transition: opacity 0.5s ease; 
+    opacity: 1; 
 
 .s-intro__bg::before,
 .s-intro__bg::after {
@@ -4534,15 +4533,15 @@ body.menu-is-open {
     text-align: center;
     padding: 20px;
     background: image(backontrackprivate/images/gallery);
-    position: relative; /* Position relative for absolute children */
-    overflow: hidden; /* Hide overflow */
+    position: relative; 
+    overflow: hidden; 
 }
 
 .s-intro__content {
     max-width: 800px;
     margin: 0 auto;
-    position: relative; /* Position relative for content */
-    z-index: 2; /* Ensure content is above images */
+    position: relative; 
+    z-index: 2; 
     
 }
 
@@ -4564,25 +4563,25 @@ body.menu-is-open {
 }
 
 .image-slider {
-    position: absolute; /* Position images absolutely */
+    position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex; /* Use flexbox for images */
-    transition: opacity 1s ease; /* Transition for fade effect */
+    display: flex; 
+    transition: opacity 1s ease; 
 }
 
 .hero-image {
-    display: none; /* Hide all images by default */
-    width: 100%; /* Ensure images take full width */
-    height: auto; /* Maintain aspect ratio */
+    display: none; 
+    width: 100%; 
+    height: auto; 
 }
 
 .hero-image.active {
-    display: block; /* Show the active image */
-    opacity: 1; /* Fully visible */
-    transition: opacity 1s ease; /* Smooth transition */
+    display: block; 
+    opacity: 1; 
+    transition: opacity 1s ease; 
 }
 
 footer {
@@ -5447,23 +5446,23 @@ footer {
  * ------------------------------------------------------------------- */
  .s-footer {
     --bottom-padding: var(--vspace-5);
-    background: linear-gradient(to bottom, #1A1C56, #41C2A9); /* Gradient background from top to bottom */
+    background: linear-gradient(to bottom, #1A1C56, #41C2A9);
     padding-top: var(--vspace-1_7);
     padding-bottom: var(--bottom-padding);
     color: #fff;
-    height: 500px; /* Set the height of the footer to 500px */
+    height: 500px; 
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Center content vertically */
+    justify-content: center;  
     align-items: center;
     text-align: center;
 }
 
 
 .s-footer h5 {
-    color: #fff; /* Changed text to white */
+    color: #fff; 
     margin: 0;
-    padding-top: 10px; /* Moved text down a little bit */
+    padding-top: 10px; 
     padding-bottom: 10px;
     line-height: 1.5;
     font-size: 20px;
@@ -5473,9 +5472,9 @@ footer {
 .s-footer a,
 .s-footer .btn,
 .s-footer__top .link-list a {
-    color: #bb1b1b00; /* Text color */
-    text-decoration: none; /* Removed underline */
-    transition: transform 0.3s ease; /* Enlarge effect on hover */
+    color: #bb1b1b00; 
+    text-decoration: none; 
+    transition: transform 0.3s ease; 
 }
 
 .s-footer a:hover,
@@ -5483,14 +5482,14 @@ footer {
 .s-footer__top .link-list a:hover {
     background-color: #ffffff00;
     color: #41C2A9;
-    transform: scale(1.05); /* Enlarge on hover */
+    transform: scale(1.05); 
 }
 
 
 /* Style for Book a Consultation button */
 .s-footer__top .btn {
     display: inline-block;
-    padding: 5px 10px; /* Increase the horizontal padding to make it longer */
+    padding: 5px 10px;
     background-color: #41C2A9;
     color: #fff;
     font-size: 18px;
@@ -5498,9 +5497,9 @@ footer {
     border-radius: 50px;
     text-decoration: none;
     margin-top: 400px;
-    width: auto; /* Allow the button to auto adjust to the padding */
-    min-width: 500px; /* Set a minimum width for consistency */
-    max-width: 400px; /* Optional: Max width to prevent the button from being too large */
+    width: auto; 
+    min-width: 500px; 
+    max-width: 400px; 
     margin-left: -10%;
     transition: all 0.3s ease;
 }
@@ -5508,7 +5507,7 @@ footer {
 .s-footer__top .btn:hover {
     background-color: #ffffff00;
     color: #41C2A9;
-    transform: scale(1.05); /* Enlarge button on hover */
+    transform: scale(1.05); 
 }
 
 .s-footer__block {
@@ -5570,7 +5569,7 @@ footer {
 .s-footer .link-list a:focus,
 .s-footer .link-list a:hover {
     color: #41C2A9;
-    transform: scale(1.05); /* Enlarge on hover */
+    transform: scale(1.05); 
 }
 
 .s-footer .opening-hours {
