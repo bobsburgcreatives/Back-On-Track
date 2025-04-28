@@ -1,6 +1,6 @@
 # Back On Track Diabetes Retreat Website
 
-![Website Preview](https://www.backontrack-diabetes.com/)  
+![Website Preview](images/gallery/PREVIEW.JPG)  
 *Static website for diabetes wellness retreat program*
 
 ## Technical Specifications
